@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css?family=Abel');
+
+html,
+body {
+  background: #FCEEB5;
+  font-family: Abel, Arial, Verdana, sans-serif;
+}
+
+.center {
+  margin-left: 250px;
+}
+
+.card {
+  width: 950px;
+  height: 550px;
+  background-color: #fff;
+  background: linear-gradient(#f8f8f8, #fff);
+  box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  margin: 1.5rem;
+}
+
+.card .additional {
+  position: absolute;
+  width: 350px;
+  height: 100%;
+  background: linear-gradient(#dE685E, #EE786E);
+  transition: width 0.4s;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.card.green .additional {
+  background: linear-gradient(#92bCa6, #A2CCB6);
+}
+
+
+
+.card .additional .user-card {
+  width: 150px;
+  height: 100%;
+  position: relative;
+  float: left;
+}
+
+.card .additional .user-card::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 10%;
+  right: -2px;
+  height: 80%;
+  border-left: 2px solid rgba(0, 0, 0, 0.025);
+
+}
+
+.card .additional .user-card .level,
+.card .additional .user-card .points {
+  top: 15%;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.15);
+  padding: 0.125rem 0.75rem;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.card .additional .user-card .points {
+  top: 85%;
+}
+
+.card .general {
+  width: 600px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  box-sizing: border-box;
+  padding: 1rem;
+  padding-top: 0;
+}
+
+.card .general .more {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 0.9em;
+}
+
+p {
+  text-align: center;
+}
+
+.button {
+  background-color: #4CAF50;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  font-size: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.price {
+  margin-top: 40px;
+  color: black;
+  display: flex;
+  font-size: 20px;
+  justify-content: center;
+}
+
+.qty {
+  margin-top: 30px;
+}
+
+.size {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.img {
+  width: 350px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.head_text {
+  font-size: 40px;
+  color: black;
+  font-weight: 900;
+}
+
+.clothing_type {
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+
+}
+
+.size {
+  color: black;
+  font-size: 20px;
+}
+
+.qty {
+  display: flex;
+  justify-content: center;
+  color: black;
+  font-size: 20px;
+}
+
+.price1 {
+  font-weight: bold;
+}
