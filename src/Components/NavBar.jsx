@@ -2,13 +2,13 @@ import React from 'react'
 import Nike from '../assets/nike.png'
 import { IoFingerPrintOutline,IoSearch  } from "react-icons/io5";
 import { CiHeart,CiShoppingCart  } from "react-icons/ci";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 const NavBar = () => {
   return (
     <div className="sticky bg-white py-1 top-0  z-50 w-full font-Poppins text-black flex flex-col items-center">
       <div className="flex justify-between items-center  text-lg font-medium h-16 w-11/12 ">
-        <Link to={'/'}>
-            <img src={Nike} alt="" className="h-12"  />
+        <Link to={"/"}>
+          <img src={Nike} alt="" className="h-12" />
         </Link>
         {/* <div className='flex gap-5'>
           <div>New & Featured</div>
@@ -31,12 +31,42 @@ const NavBar = () => {
       </div>
       <div className="flex justify-between w-11/12   font-medium tracking-tighter py-3  border-b-[0.1px] border-[#f4f4f4]">
         <div className="flex gap-10 ">
-          <Link  to={'/men'}>Men</Link>
-          <Link  to={'/women'}>Women</Link>
-          <Link  to={'/kids'}>Kids</Link>
-          <Link  to={'/sports'}>Sports</Link>
-          <Link  to={'/new'}>New</Link>
-          <Link  to={'/sales'}>Sales</Link>
+          <NavLink
+            className={({ isActive }) => (isActive ? "text-active" : "")}
+            to={"/men"}
+          >
+            Men
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "text-active" : "")}
+            to={"/women"}
+          >
+            Women
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "text-active" : "")}
+            to={"/kids"}
+          >
+            Kids
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "text-active" : "")}
+            to={"/sports"}
+          >
+            Sports
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "text-active" : "")}
+            to={"/new"}
+          >
+            New
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "text-active" : "")}
+            to={"/sales"}
+          >
+            Sales
+          </NavLink>
         </div>
         <div>
           <div className="flex  justify-center items-center gap-5">

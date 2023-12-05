@@ -27,7 +27,8 @@ export default {
       'button': '#6e57e0',
       //light mode
       'bg-light':"#ffffff",
-      'primary-light':"#000000"
+      'primary-light':"#000000",
+      'active':'#6e57e0'
 
     },
       
