@@ -33,6 +33,7 @@ export default {
       
     },
     fontFamily: {
+      Poppins: ['Poppins', 'sans-serif'],
       Montserrat: ['Montserrat', 'sans-serif'],
       Roboto: ['Roboto Mono', 'monospace'],
       Chakra: ['Chakra Petch', 'sans-serif'],
