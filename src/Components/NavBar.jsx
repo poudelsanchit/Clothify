@@ -67,6 +67,12 @@ const NavBar = () => {
           >
             Sales
           </NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "text-active" : "")}
+            to={"/shoe"}
+          >
+            Test
+          </NavLink>
         </div>
         <div>
           <div className="flex  justify-center items-center gap-5">
