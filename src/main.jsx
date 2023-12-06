@@ -12,6 +12,11 @@ const colors = {
     800: '#153e75',
     700: '#2a69ac',
   },
+  poudel: {
+    100: '#fafafa',
+    200: '#f7f7f7',
+  },
+
 }
 
 const theme = extendTheme({ colors })

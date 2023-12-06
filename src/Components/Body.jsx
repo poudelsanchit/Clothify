@@ -1,12 +1,11 @@
 import React from 'react'
-import { Spinner } from '@chakra-ui/react'
+import Home from '../Pages/Home';
 
 
 const Body = () => {
   return <>
-  <div className='h-max w-full'>
-    Home Page
-  </div>
+  <Home/>
+  <Home/>
   </>;
 }
 
