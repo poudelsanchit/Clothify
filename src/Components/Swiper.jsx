@@ -5,7 +5,7 @@ import image1 from '../assets/image1.png'
 // import image3 from '../assets/image3'
 // import image4 from '../assets/image4'
 
-function Swiper() {
+function Swiper2() {
   return (
     <div><img className=" h-[40rem] object-cover  right-1  " src={image1} alt="hero-image" />
     
@@ -14,4 +14,4 @@ function Swiper() {
   )
 }
 
-export default Swiper
+export default Swiper2
