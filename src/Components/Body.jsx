@@ -5,7 +5,7 @@ import Home from '../Pages/Home';
 const Body = () => {
   return <>
   <Home/>
-  <Home/>
+  
   </>;
 }
 
