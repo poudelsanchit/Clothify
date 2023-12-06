@@ -1,14 +1,14 @@
 import React from 'react'
 import { TbShoppingBag } from "react-icons/tb";
 import { Button, ButtonGroup, Stack } from '@chakra-ui/react'
-import Swiper from '../Components/Swiper';
+import Swiper from '../Components/SwiperTool.jsx';
 
 
 function Home() {
   return (
    <>
-   <div className="hero-content  flex w-full   px-12 justify-between">
-         <div className=' w-3/6 mt-8'> 
+   <div className="hero-content  flex w-full   pl-12 justify-between ">
+         <div className=' w-3/6 mt-32'> 
                     <h1 className='font-Poppins font-black text-7xl  mb-4 '>YOUR STYLE DESERVES THE BEST</h1>
                 <p className="title font-Poppins font-bold text-1xl mt-8 mb-4">
                 Elevate your style with our Nike Products, providing top-notch fashion solutions to meet your every need. Upgrade your look with us today and experience the best in athletic fashion.
@@ -30,7 +30,7 @@ function Home() {
   </Button> */}
   
 </Stack>
-        
+  
                 {/* <div className="shopping">
                     <p>Also Available On</p>
         
@@ -40,7 +40,7 @@ function Home() {
                 </div> */}
                 </div>
            
-            <Swiper/>
+                <Swiper className=" h-[40rem] bg-pink-100" />    
          
         </div>
         
