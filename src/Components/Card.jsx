@@ -1,19 +1,13 @@
 import React from 'react'
-import { Avatar, Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Flex, Stack, Text } from '@chakra-ui/react';
+import { Avatar, Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Stack } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { BsDot } from "react-icons/bs";
 import Jordan from '../assets/jordan.png'
-import Jordan1 from '../assets/jordan.png'
-
+import Jordan1 from "../assets/jordan.png";
 import whiteJordan from '../assets/whiteJordan.png'
-import { Button, ButtonGroup } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react'
 import { CiShoppingCart,CiHeart  } from "react-icons/ci";
-
 import { IconButton } from '@chakra-ui/react'
-
-
-
-import { Badge } from '@chakra-ui/react'
 import { FaStar } from "react-icons/fa";
 
 const Card = () => {
@@ -39,7 +33,7 @@ const Card = () => {
             </BreadcrumbItem>
 
             <BreadcrumbItem isCurrentPage>
-              <BreadcrumbLink as={Link} to="/men/product">
+              <BreadcrumbLink as={Link}  to="/men/product">
                 Product
               </BreadcrumbLink>
             </BreadcrumbItem>
