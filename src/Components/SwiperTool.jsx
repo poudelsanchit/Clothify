@@ -19,7 +19,7 @@ function SwiperTool() {
         className=" h-[40rem] w-[29rem]  object-cover "
         spaceBetween={0}
         slidesPerView={1}
-        autoplay={{ delay: 1000, disableOnInteraction: false }}
+        autoplay={{ delay: 1000, disableOnInteraction: true }}
         pagination={{ clickable: true }}
       >
         <SwiperSlide>
