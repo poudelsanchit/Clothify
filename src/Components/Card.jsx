@@ -1,8 +1,17 @@
 import React from 'react'
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
+import { Avatar, Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Flex, Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { BsDot } from "react-icons/bs";
 import Jordan from '../assets/jordan.png'
+import Jordan1 from '../assets/jordan.png'
+import Jordan2 from '../assets/Jordan2.png'
+import Jordan3 from '../assets/Jordan3.png'
+import Jordan4 from '../assets/Jordan4.png'
+import whiteJordan from '../assets/whiteJordan.png'
+
+import { Badge } from '@chakra-ui/react'
+import { FaStar } from "react-icons/fa";
+
 const Card = () => {
   return (
     <div className="flex w-full h-full justify-center  ">
@@ -44,22 +53,22 @@ const Card = () => {
               className="h-[5.2rem] w-[5.2rem] rounded-md object-cover "
             />
             <img
-              src={Jordan}
+              src={Jordan1}
               alt=""
               className="h-[5.2rem] w-[5.2rem] rounded-md object-cover "
             />
             <img
-              src={Jordan}
+              src={Jordan2}
               alt=""
               className="h-[5.2rem] w-[5.2rem] rounded-md object-cover "
             />
             <img
-              src={Jordan}
+              src={Jordan3}
               alt=""
               className="h-[5.2rem] w-[5.2rem] rounded-md object-cover "
             />
             <img
-              src={Jordan}
+              src={Jordan4}
               alt=""
               className="h-[5.2rem] w-[5.2rem] rounded-md object-cover "
             />
@@ -68,7 +77,39 @@ const Card = () => {
             </div>
           </div>
         </div>
-        <div className=" w-1/2"></div>
+        <div className=" w-1/2  mt-12">
+          <div className="flex items-center gap-2">
+            <Avatar    src="https://i.pinimg.com/564x/1b/99/35/1b993547a8a3d69870d1a5d55a5cccc2.jpg" />
+            <div className='font-medium text-xl font-Poppins'>Nike</div>
+          </div>
+          <div>Air Jordan 1 Retro High OG</div>
+          <div className='flex gap-2 items-center '>
+           <FaStar/>    
+            <FaStar/>
+            <FaStar/>
+            <FaStar/>
+            <FaStar/>
+              42 Reviews
+
+          </div>
+          <div>$180</div>
+          <div className='flex items-center'>
+            Color <BsDot/> White
+          </div>
+          <div className=' flex gap-2'>
+          <img
+              src={Jordan1}
+              alt=""
+              className="h-16 w-14 rounded-md object-cover "
+            />
+            <img
+              src={whiteJordan}
+              alt=""
+              className="h-16 w-14 rounded-md object-cover "
+            />
+            
+          </div>
+        </div>
       </div>
     </div>
   );
