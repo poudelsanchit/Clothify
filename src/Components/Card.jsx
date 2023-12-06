@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 import { BsDot } from "react-icons/bs";
 import Jordan from '../assets/jordan.png'
 import Jordan1 from '../assets/jordan.png'
-import Jordan3 from '../assets/Jordan3.png'
-import Jordan4 from '../assets/Jordan4.png'
+
 import whiteJordan from '../assets/whiteJordan.png'
 import { Button, ButtonGroup } from '@chakra-ui/react'
 import { CiShoppingCart,CiHeart  } from "react-icons/ci";
@@ -67,12 +66,12 @@ const Card = () => {
               className="h-[5.2rem] w-[5.2rem] rounded-md object-cover "
             />
             <img
-              src={Jordan3}
+              src={Jordan1}
               alt=""
               className="h-[5.2rem] w-[5.2rem] rounded-md object-cover "
             />
             <img
-              src={Jordan4}
+              src={Jordan1}
               alt=""
               className="h-[5.2rem] w-[5.2rem] rounded-md object-cover "
             />
