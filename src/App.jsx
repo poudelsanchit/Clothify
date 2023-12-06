@@ -8,6 +8,7 @@ import Sports from './Pages/Sports'
 import New from './Pages/New'
 import Sales from './Pages/Sales'
 import Kids from './Pages/Kids'
+import Card from './Components/Card'
 
 const App = () => {
   return (
@@ -21,6 +22,8 @@ const App = () => {
       <Route path='/sports' element={<Sports/>} />
       <Route path='/new' element={<New/>} />
       <Route path='/sales' element={<Sales/>} />
+      <Route path='/shoe' element={<Card/>} />
+
 
 
     </Routes>
