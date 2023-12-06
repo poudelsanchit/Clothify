@@ -49,7 +49,6 @@ const Card = () => {
           <img
             src={Jordan}
             alt=""
-            srcset=""
             className="w-11/12 bg-orange-400 rounded-md h-[30rem] object-cover"
           />
           <div className=" flex w-11/12 justify-between gap-5">
