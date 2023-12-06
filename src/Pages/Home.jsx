@@ -1,6 +1,7 @@
 import React from 'react'
 import { TbShoppingBag } from "react-icons/tb";
 import { Button, ButtonGroup, Stack } from '@chakra-ui/react'
+import Swiper from '../Components/Swiper';
 
 
 function Home() {
@@ -38,9 +39,9 @@ function Home() {
                     </div>
                 </div> */}
                 </div>
-            <div className="">
-            <img className=" h-[40rem] object-cover  right-1  " src="public/hello.jpeg" alt="hero-image" />
-            </div>
+           
+            <Swiper/>
+         
         </div>
         
 
