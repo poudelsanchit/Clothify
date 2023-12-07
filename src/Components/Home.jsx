@@ -1,6 +1,6 @@
 import React from 'react'
 import { TbShoppingBag } from "react-icons/tb";
-import { Button, ButtonGroup, Stack } from '@chakra-ui/react'
+import { Button, Stack } from '@chakra-ui/react'
 import Swiper from './SwiperTool.jsx';
 
 
@@ -36,18 +36,7 @@ function Home() {
             >
               Shop <TbShoppingBag className="text-xl" />
             </Button>
-            {/* <Button colorScheme='gray' variant='outline'>
-    Button
-  </Button> */}
           </Stack>
-
-          {/* <div className="shopping">
-                    <p>Also Available On</p>
-        
-                    <div className="brand-icons">
-                    <img width={80} height="10px" src="https://benkoorthodontics.com/wp-content/uploads/2018/12/2000px-Amazon_logo_plain.svg.png" alt="flipkart-logo" />
-                    </div>
-                </div> */}
         </div>
 
         <Swiper className=" h-[40rem] bg-pink-100" />
