@@ -26,7 +26,7 @@ function Home() {
           </p>
 
           <Stack direction="row" spacing={4} align="center">
-            <a href="#homeShop">
+             <a href="#homeShop">
             <Button
               className="flex gap-1 p-2 mt-6 text-4xl"
               variant="solid"
