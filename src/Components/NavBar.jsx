@@ -39,7 +39,7 @@ const NavBar = () => {
            </button>  
           </>) :  
           (<>
-          <button className='flex' onClick={() => loginWithRedirect()}> <IoFingerPrintOutline className="text-2xl hover:scale-[1.01]" />Log In</button></>) }
+          <button className='flex gap-2' onClick={() => loginWithRedirect()}> <IoFingerPrintOutline className="text-2xl hover:scale-[1.01]" />Log In</button></>) }
 
          
 
