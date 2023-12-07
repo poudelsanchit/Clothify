@@ -33,7 +33,7 @@ const Card = () => {
             </BreadcrumbItem>
 
             <BreadcrumbItem isCurrentPage>
-              <BreadcrumbLink as={Link}  to="/men/product">
+              <BreadcrumbLink as={Link} to="/men/product">
                 Product
               </BreadcrumbLink>
             </BreadcrumbItem>
@@ -75,90 +75,86 @@ const Card = () => {
           </div>
         </div>
         <div className=" w-1/2 flex mt-12 justify-center ">
-          <div className='flex flex-col gap-5 w-5/6'>
-          <div className="flex items-center gap-2">
-            <Avatar src="https://i.pinimg.com/564x/1b/99/35/1b993547a8a3d69870d1a5d55a5cccc2.jpg" />
-            <div className="font-medium text-xl font-Poppins">Nike</div>
-          </div>
-          <div className="font-bold font-Poppins text-3xl">
-            Air Jordan 1 Retro High OG
-          </div>
-          <div className="flex gap-2 items-center ">
-            <FaStar className="text-yellow-500" />
-            <FaStar className="text-yellow-500" />
-            <FaStar className="text-yellow-500" />
-            <FaStar className="text-yellow-500" />
-            <FaStar className="text-gray-300" />
-            <div className="text-secondary-text font-Poppins text-xs">
-              {" "}
-              69 Reviews
+          <div className="flex flex-col gap-5 w-5/6">
+            <div className="flex items-center gap-2">
+              <Avatar src="https://i.pinimg.com/564x/1b/99/35/1b993547a8a3d69870d1a5d55a5cccc2.jpg" />
+              <div className="font-medium text-xl font-Poppins">Nike</div>
             </div>
-          </div>
-          <div className="font-bold font-Poppins text-4xl">$180</div>
-          <div className="flex flex-col ">
-            <div className='flex font-Poppins text-sm items-center'>
-              
-              <div>Color</div> <BsDot className="text-[#a6a6a6] text-3xl" />
-              <div className="text-secondary-text">White</div>
+            <div className="font-bold font-Poppins text-3xl">
+              Air Jordan 1 Retro High OG
             </div>
-            <div className=" flex gap-2">
-            <img
-              src={Jordan1}
-              alt=""
-              className="h-14 w-12 rounded-md object-cover "
-            />
-            <img
-              src={whiteJordan}
-              alt=""
-              className="h-14 w-12 rounded-md object-cover "
-            />
-          </div>
+            <div className="flex gap-2 items-center ">
+              <FaStar className="text-yellow-500" />
+              <FaStar className="text-yellow-500" />
+              <FaStar className="text-yellow-500" />
+              <FaStar className="text-yellow-500" />
+              <FaStar className="text-gray-300" />
+              <div className="text-secondary-text font-Poppins text-xs">
+                {" "}
+                69 Reviews
+              </div>
+            </div>
+            <div className="font-bold font-Poppins text-4xl">$180</div>
+            <div className="flex flex-col ">
+              <div className="flex font-Poppins text-sm items-center">
+                <div>Color</div> <BsDot className="text-[#a6a6a6] text-3xl" />
+                <div className="text-secondary-text">White</div>
+              </div>
+              <div className=" flex gap-2">
+                <img
+                  src={Jordan1}
+                  alt=""
+                  className="h-14 w-12 rounded-md object-cover "
+                />
+                <img
+                  src={whiteJordan}
+                  alt=""
+                  className="h-14 w-12 rounded-md object-cover "
+                />
+              </div>
+            </div>
 
-          </div>
-        
-          <div className="flex flex-col ">
-            <div className='flex font-Poppins text-sm items-center'>
-              
-              <div>Size</div> <BsDot className="text-[#a6a6a6] text-3xl" />
-              <div className="text-secondary-text">EU Men</div>
-            </div>
-            <div className=" flex gap-2">
-            <img
-              src={Jordan1}
-              alt=""
-              className="h-16 w-14 rounded-md object-cover "
-            />
-            <img
-              src={whiteJordan}
-              alt=""
-              className="h-16 w-14 rounded-md object-cover "
-            />
-          </div>
+            <div className="flex flex-col ">
+              <div className="flex font-Poppins text-sm items-center">
+                <div>Size</div> <BsDot className="text-[#a6a6a6] text-3xl" />
+                <div className="text-secondary-text">EU Men</div>
+              </div>
+              <div className=" flex gap-2 flex-wrap  w-5/6">
+                <div className="h-16 w-16 rounded-md  border-2 flex justify-center items-center text-sm font-Poppins font-bold" >40.5</div>
+                <div className="h-16 w-16 rounded-md  border-2 flex justify-center items-center text-sm font-Poppins font-bold text-white bg-black" >41</div>
+                <div className="h-16 w-16 rounded-md  border-2 flex justify-center items-center text-sm font-Poppins font-bold" >42</div>
+                <div className="h-16 w-16 rounded-md  border-2 flex justify-center items-center text-sm font-Poppins font-bold" >43</div>
+                <div className="h-16 w-16 rounded-md  border-2 flex justify-center items-center text-sm font-Poppins font-bold" >43.5</div>
+                <div className="h-16 w-16 rounded-md  border-2 flex justify-center items-center text-sm font-Poppins font-bold" >44</div>
+                <div className="h-16 w-16 rounded-md  border-2 flex justify-center items-center text-sm font-Poppins font-bold" >44.5</div>
+                <div className="h-16 w-16 rounded-md  border-2 flex justify-center items-center text-sm font-Poppins font-bold" >45</div>
+                <div className="h-16 w-16 rounded-md  border-2 flex justify-center items-center text-sm font-Poppins font-bold" >46</div>
 
-          </div>
-          <Stack direction="row" spacing={4} align="center">
-            <Button
-              className="flex gap-1  text-4xl"
-              variant="solid"
-              bgColor="black"
-              color="white"
-              colorScheme="#ffffff"
-              width={96}
-              height={12}
-              _hover={{ bgColor: "#4F5054", color: "white" }}
-            >
-              <CiShoppingCart />
-              Add to cart
-            </Button>
-            <IconButton
-              height={12}
-              width={12}
-              colorScheme="blue"
-              aria-label="Search database"
-              icon={<CiHeart className="text-2xl" />}
-            />
-          </Stack>
-          <div>Free delivery on orders over $30.0</div>
+              </div>
+            </div>
+            <Stack direction="row" spacing={4} align="center">
+              <Button
+                className="flex gap-1  text-4xl"
+                variant="solid"
+                bgColor="black"
+                color="white"
+                colorScheme="#ffffff"
+                width={96}
+                height={12}
+                _hover={{ bgColor: "#4F5054", color: "white" }}
+              >
+                <CiShoppingCart />
+                Add to cart
+              </Button>
+              <IconButton
+                height={12}
+                width={12}
+                colorScheme="blue"
+                aria-label="Search database"
+                icon={<CiHeart className="text-2xl" />}
+              />
+            </Stack>
+            <div>Free delivery on orders over $30.0</div>
           </div>
         </div>
       </div>
