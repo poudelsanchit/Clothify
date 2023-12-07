@@ -1,6 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination,  Scrollbar, A11y } from 'swiper/modules';
+import { Navigation, Pagination,  Scrollbar, A11y,Autoplay } from 'swiper/modules';
 import image1 from '../assets/image1.png';
 import image2 from '../assets/image2.jpeg';
 import image3 from '../assets/image3.png';
@@ -15,12 +15,14 @@ function SwiperTool() {
     <>
       <Swiper
         // install Swiper modules
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        modules={[Autoplay,Navigation, Pagination, Scrollbar, A11y]}
         className="h-[40rem] w-[29rem] object-cover"
         spaceBetween={0}
         slidesPerView={1}
-        autoplay={{ delay: 1000, disableOnInteraction: false }}  // Set disableOnInteraction to false
-        pagination={{ clickable: true }}
+        autoplay={{
+          delay: 1000,
+          disableOnInteraction: false,
+        }}        pagination={{ clickable: true }}
       >
         <SwiperSlide>
           <img className="h-[40rem] object-cover" src={image4} alt="hero-image" />
