@@ -9,10 +9,14 @@ import { CiShoppingCart,CiHeart  } from "react-icons/ci";
 import { IconButton } from '@chakra-ui/react'
 import { FaStar } from "react-icons/fa";
 import {Jordan1,Jordan2,Jordan3,Jordan4,Jordan5,Jordan6 } from '../assets/index'
+import { useParams } from 'react-router-dom';
 const Card = () => {
   const Sizes = [40.5,41,42,43,43.5,44,44.5,45,46];
   const ShoesColor=[Jordan,whiteJordan];
   const ShoeViews=[Jordan,Jordan1,Jordan2,Jordan3,Jordan4,Jordan5,Jordan6];
+  const id= useParams()
+  console.log(id)
+  
   return (
     <div className="flex w-full h-full justify-center  ">
       <div className="w-11/12 h-full flex ">

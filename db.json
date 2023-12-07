@@ -1,0 +1,37 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "product_name": "Air Jordan 1 High OG Royal Reimagined",
+      "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/21692e08-697b-4bda-9b9d-fea249a11439/air-jordan-1-high-og-royal-reimagined-mens-shoes-gX9FS0.png",
+      "price ": "$180",
+      "productId":"fcdcc8df34543"
+    },
+    {
+      "id": 2,
+      "product_name": "Air Jordan 1 Mid",
+      "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2a52c692-10b7-4efb-8fa0-35851db976d0/air-jordan-1-mid-womens-shoes-Kg3nnj.png",
+      "price ": "$125",
+      "productId":"fcdcc8df03433"
+
+    },
+    {
+      "id": 3,
+      "product_name": "Air Jordan 1 Mid SE",
+      "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/7e062ffd-efaf-42dc-931b-34cd84e56dc9/air-jordan-1-mid-se-womens-shoes-wkMdft.png",   
+      "price ": "$135",
+      "productId":"fcdcc8df5324"
+
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
