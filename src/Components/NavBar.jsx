@@ -9,7 +9,6 @@ const NavBar = () => {
 
   const { loginWithRedirect, logout,user, isAuthenticated, isLoading } = useAuth0();
 
-    
   return (
     <div className="sticky bg-white py-1 top-0  z-50 w-full font-Poppins text-black flex flex-col items-center">
       <div className="flex justify-between items-center  text-lg font-medium h-16 w-11/12 ">
