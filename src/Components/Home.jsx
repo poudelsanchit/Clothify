@@ -6,7 +6,7 @@ import Swiper from './SwiperTool.jsx';
 
 function Home() {
   return (
-    <>
+  
       <div className="flex w-full   pl-12 justify-between ">
         <div className=" w-3/6 mt-8">
           <div className="font-Poppins font-black text-8xl  mb-4 ">
@@ -17,6 +17,8 @@ function Home() {
               BEST
             </span>
           </div>
+
+          
           <p className=" font-Poppins font-semibold text-lg mt-5  mb-5">
             Elevate your style with our Nike Products, providing top-notch
             fashion solutions to meet your every need. Upgrade your look with us
@@ -24,6 +26,7 @@ function Home() {
           </p>
 
           <Stack direction="row" spacing={4} align="center">
+             <a href="#homeShop">
             <Button
               className="flex gap-1 p-2 mt-6 text-4xl"
               variant="solid"
@@ -35,13 +38,13 @@ function Home() {
               height={12}
             >
               Shop <TbShoppingBag className="text-xl" />
-            </Button>
+            </Button> </a>
           </Stack>
         </div>
 
         <Swiper className=" h-[40rem] bg-pink-100" />
       </div>
-    </>
+
   );
 }
 

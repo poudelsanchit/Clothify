@@ -2,7 +2,7 @@ import React from 'react'
 import {Jordan1,WhiteJordan} from '../assets/index'
 const HomeShop = () => {
   return (
-    <div className="w-screen h-auto flex justify-center">
+    <div className="w-screen h-auto flex justify-center" id='homeShop' >
       <div className="w-11/12 ">
         <div className="text-[1.7rem] font-medium font-Poppins mb-4">
           {" "}
