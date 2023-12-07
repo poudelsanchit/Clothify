@@ -3,6 +3,10 @@ import { Avatar, Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Stack } from '
 import { Link } from 'react-router-dom';
 import { BsDot } from "react-icons/bs";
 import Jordan from '../assets/jordan.png'
+import Jordan1 from '../assets/jordan.png'
+import Jordan2 from '../assets/Jordan2.png'
+import Jordan3 from '../assets/Jordan3.png'
+import Jordan4 from '../assets/Jordan4.png'
 import whiteJordan from '../assets/whiteJordan.png'
 import { Button } from '@chakra-ui/react'
 import { CiShoppingCart,CiHeart  } from "react-icons/ci";
@@ -45,17 +49,32 @@ const Card = () => {
             alt=""
             className="w-11/12 bg-orange-400 rounded-md h-[30rem] object-cover"
           />
-          <div className=" flex w-11/12 justify-between gap-5 flex-wrap">
-            {ShoeViews.slice(0,5).map((shoeViews) => {
-              return (
-                <img
-                  src={shoeViews}
-                  alt=""
-                  className="h-[5.2rem] w-[5.2rem] rounded-md object-cover "
-                />
-              );
-            })}
-
+          <div className=" flex w-11/12 justify-between gap-5">
+            <img
+              src={Jordan}
+              alt=""
+              className="h-[5.2rem] w-[5.2rem] rounded-md object-cover "
+            />
+            <img
+              src={Jordan1}
+              alt=""
+              className="h-[5.2rem] w-[5.2rem] rounded-md object-cover "
+            />
+            <img
+              src={Jordan2}
+              alt=""
+              className="h-[5.2rem] w-[5.2rem] rounded-md object-cover "
+            />
+            <img
+              src={Jordan3}
+              alt=""
+              className="h-[5.2rem] w-[5.2rem] rounded-md object-cover "
+            />
+            <img
+              src={Jordan4}
+              alt=""
+              className="h-[5.2rem] w-[5.2rem] rounded-md object-cover "
+            />
             <div className="h-[5.2rem] w-[5.2rem] border-[0.1px] border-[#ece9e9] rounded-md flex justify-center items-center text-xs font-medium text-secondary-text cursor-pointer">
               +2 more
             </div>
