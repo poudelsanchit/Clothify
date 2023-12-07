@@ -12,7 +12,7 @@ function Home() {
           <div className="font-Poppins font-black text-8xl  mb-4 ">
             YOUR STYLE DESERVES <br />
             THE{" "}
-            <span className="  bg-gradient-to-r from-purple-800  to-blue-950 text-transparent bg-clip-text ">
+            <span className="  bg-gradient-to-r from-purple-800  to-blue-900 text-transparent bg-clip-text ">
               {" "}
               BEST
             </span>
