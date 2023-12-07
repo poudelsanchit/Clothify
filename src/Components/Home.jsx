@@ -17,6 +17,8 @@ function Home() {
               BEST
             </span>
           </div>
+
+          
           <p className=" font-Poppins font-semibold text-lg mt-5  mb-5">
             Elevate your style with our Nike Products, providing top-notch
             fashion solutions to meet your every need. Upgrade your look with us
