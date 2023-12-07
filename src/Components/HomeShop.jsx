@@ -15,25 +15,35 @@ const HomeShop = () => {
               alt=""
               className="h-[30rem] w-[30rem] rounded-md bg-orange-500"
             />
-            <div className=' text-lg font-medium'>Air Jordan 1 Retro High OG</div>
-            <div className='text-secondary-text '>Men's Shoes</div>
-            <div className=' font-medium'>$180</div>
+            <div className=" text-lg font-medium">
+              Air Jordan 1 Retro High OG
+            </div>
+            <div className="text-secondary-text ">Men's Shoes</div>
+            <div className=" font-medium">$180</div>
           </div>
-          <div>
-            {" "}
-            <img
-              src={WhiteJordan}
-              alt=""
-              className="h-[30rem] w-[30rem] rounded-md bg-orange-500"
-            />
-          </div>
-          <div>
-            {" "}
+          <div className="flex flex-col font-Poppins">
             <img
               src={Jordan1}
               alt=""
               className="h-[30rem] w-[30rem] rounded-md bg-orange-500"
             />
+            <div className=" text-lg font-medium">
+              Air Jordan 1 Retro High OG
+            </div>
+            <div className="text-secondary-text ">Men's Shoes</div>
+            <div className=" font-medium">$180</div>
+          </div>
+          <div className="flex flex-col font-Poppins">
+            <img
+              src={Jordan1}
+              alt=""
+              className="h-[30rem] w-[30rem] rounded-md bg-orange-500"
+            />
+            <div className=" text-lg font-medium">
+              Air Jordan 1 Retro High OG
+            </div>
+            <div className="text-secondary-text ">Men's Shoes</div>
+            <div className=" font-medium">$180</div>
           </div>
         </div>
       </div>
