@@ -6,7 +6,6 @@ import { Link, NavLink } from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
 
 const NavBar = () => {
-
   const { loginWithRedirect, logout,user, isAuthenticated, isLoading } = useAuth0();
 
   return (
