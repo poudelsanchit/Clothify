@@ -3,14 +3,16 @@ import { Avatar, Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Stack } from '
 import { Link } from 'react-router-dom';
 import { BsDot } from "react-icons/bs";
 import Jordan from '../assets/jordan.png'
-import Jordan1 from "../assets/jordan.png";
 import whiteJordan from '../assets/whiteJordan.png'
 import { Button } from '@chakra-ui/react'
 import { CiShoppingCart,CiHeart  } from "react-icons/ci";
 import { IconButton } from '@chakra-ui/react'
 import { FaStar } from "react-icons/fa";
-
+import {Jordan1,Jordan2,Jordan3,Jordan4,Jordan5,Jordan6 } from '../assets/index'
 const Card = () => {
+  const Sizes = [40.5,41,42,43,43.5,44,44.5,45,46];
+  const ShoesColor=[Jordan,whiteJordan];
+  const ShoeViews=[Jordan,Jordan1,Jordan2,Jordan3,Jordan4,Jordan5,Jordan6];
   return (
     <div className="flex w-full h-full justify-center  ">
       <div className="w-11/12 h-full flex ">
@@ -43,32 +45,17 @@ const Card = () => {
             alt=""
             className="w-11/12 bg-orange-400 rounded-md h-[30rem] object-cover"
           />
-          <div className=" flex w-11/12 justify-between gap-5">
-            <img
-              src={Jordan}
-              alt=""
-              className="h-[5.2rem] w-[5.2rem] rounded-md object-cover "
-            />
-            <img
-              src={Jordan1}
-              alt=""
-              className="h-[5.2rem] w-[5.2rem] rounded-md object-cover "
-            />
-            <img
-              src={Jordan1}
-              alt=""
-              className="h-[5.2rem] w-[5.2rem] rounded-md object-cover "
-            />
-            <img
-              src={Jordan1}
-              alt=""
-              className="h-[5.2rem] w-[5.2rem] rounded-md object-cover "
-            />
-            <img
-              src={Jordan1}
-              alt=""
-              className="h-[5.2rem] w-[5.2rem] rounded-md object-cover "
-            />
+          <div className=" flex w-11/12 justify-between gap-5 flex-wrap">
+            {ShoeViews.slice(0,5).map((shoeViews) => {
+              return (
+                <img
+                  src={shoeViews}
+                  alt=""
+                  className="h-[5.2rem] w-[5.2rem] rounded-md object-cover "
+                />
+              );
+            })}
+
             <div className="h-[5.2rem] w-[5.2rem] border-[0.1px] border-[#ece9e9] rounded-md flex justify-center items-center text-xs font-medium text-secondary-text cursor-pointer">
               +2 more
             </div>
@@ -100,17 +87,16 @@ const Card = () => {
                 <div>Color</div> <BsDot className="text-[#a6a6a6] text-3xl" />
                 <div className="text-secondary-text">White</div>
               </div>
-              <div className=" flex gap-2">
-                <img
-                  src={Jordan1}
-                  alt=""
-                  className="h-14 w-12 rounded-md object-cover "
-                />
-                <img
-                  src={whiteJordan}
-                  alt=""
-                  className="h-14 w-12 rounded-md object-cover "
-                />
+              <div className=" flex gap-2 flex-wrap">
+                {ShoesColor.map((shoeColor) => {
+                  return (
+                    <img
+                      src={shoeColor}
+                      alt=""
+                      className="h-14 w-12 rounded-md object-cover "
+                    />
+                  );
+                })}
               </div>
             </div>
 
@@ -120,16 +106,13 @@ const Card = () => {
                 <div className="text-secondary-text">EU Men</div>
               </div>
               <div className=" flex gap-2 flex-wrap  w-5/6">
-                <div className="h-16 w-16 rounded-md  border-2 flex justify-center items-center text-sm font-Poppins font-bold" >40.5</div>
-                <div className="h-16 w-16 rounded-md  border-2 flex justify-center items-center text-sm font-Poppins font-bold text-white bg-black" >41</div>
-                <div className="h-16 w-16 rounded-md  border-2 flex justify-center items-center text-sm font-Poppins font-bold" >42</div>
-                <div className="h-16 w-16 rounded-md  border-2 flex justify-center items-center text-sm font-Poppins font-bold" >43</div>
-                <div className="h-16 w-16 rounded-md  border-2 flex justify-center items-center text-sm font-Poppins font-bold" >43.5</div>
-                <div className="h-16 w-16 rounded-md  border-2 flex justify-center items-center text-sm font-Poppins font-bold" >44</div>
-                <div className="h-16 w-16 rounded-md  border-2 flex justify-center items-center text-sm font-Poppins font-bold" >44.5</div>
-                <div className="h-16 w-16 rounded-md  border-2 flex justify-center items-center text-sm font-Poppins font-bold" >45</div>
-                <div className="h-16 w-16 rounded-md  border-2 flex justify-center items-center text-sm font-Poppins font-bold" >46</div>
-
+                {Sizes.map((sizes) => {
+                  return (
+                    <div className="h-16 w-16 rounded-md  border-2 flex justify-center items-center text-sm font-Poppins font-bold">
+                      {sizes}
+                    </div>
+                  );
+                })}
               </div>
             </div>
             <Stack direction="row" spacing={4} align="center">
