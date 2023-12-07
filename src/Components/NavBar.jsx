@@ -38,8 +38,8 @@ const NavBar = () => {
           <div>Logout</div>
            </button>  
           </>) :  
-          (<><IoFingerPrintOutline className="text-2xl hover:scale-[1.01]" />
-          <button onClick={() => loginWithRedirect()}>Log In</button></>) }
+          (<>
+          <button className='flex' onClick={() => loginWithRedirect()}> <IoFingerPrintOutline className="text-2xl hover:scale-[1.01]" />Log In</button></>) }
 
          
 
