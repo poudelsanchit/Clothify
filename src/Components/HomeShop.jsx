@@ -1,57 +1,65 @@
-import React, { useEffect, useState } from 'react'
-import {Jordan1,WhiteJordan,NikeDunk} from '../assets/index'
-import { nanoid } from 'nanoid'
-import EachCard from './EachCard'
-import axios from 'axios'
+
+import React, { useRef } from 'react';
+import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import shoedata from './shoedata'; 
+
 const HomeShop = () => {
-  const [products,setProducts]= useState([]);
-  const fetchProducts=async()=>{
-    const data= await axios.get('http://localhost:3000/products')
-    setProducts(data.data)
-  }
-  useEffect(()=>{
-    fetchProducts()
+  const sliderRef = useRef(null);
 
-  },[])
- 
 
-  const data = [
-    {
-      img: Jordan1,
-      price: "$180",
-      name: "Air Jordan 1 Retro High OG",
-      id: nanoid(),
-    },
-    {
-      img: WhiteJordan,
-      price: "$145",
-      name: "Nike Air Force 1 Mid By You",
-      id: nanoid(),
-    },
-    {
-      img: NikeDunk,
-      price: "$150",
-      name: "Nike Dunk Low",
-      id: nanoid(),
-    },
-  ];
+
+  const slideLeft = () => {
+    if (sliderRef.current) {
+      sliderRef.current.scrollLeft -= 540;
+    }
+  };
+
+  const slideRight = () => {
+    if (sliderRef.current) {
+      sliderRef.current.scrollLeft += 540;
+    }
+  };
+
   return (
-    <div className="w-screen h-auto flex justify-center" id="homeShop">
-      <div className="w-11/12 ">
-        <div className="text-[1.7rem] font-medium font-Poppins mb-4">
-          {" "}
+    <div className="w-screen h-auto flex justify-center mb-4" id="homeShop">
+      <div className="w-11/12">
+        <div className="text-[1.7rem]  font-medium font-Poppins mb-4">
           Popular Right Now
         </div>
-        <div className="w-full  flex gap-5">
-          {products.map((data) => {
-            return (
-              <EachCard data={data} key={data.id}/>
-            );
-          })}
+
+        <div className="flex items-center relative group">
+          <MdChevronLeft
+            onClick={slideLeft}
+            className="bg-white rounded-full text-black absolute right-14 top-2 opacity-50 cursor-pointer z-10 hidden group-hover:block"
+            size={40}
+          />
+
+          <MdChevronRight
+            onClick={slideRight}
+            className="bg-white rounded-full text-black absolute right-2 top-2 opacity-50 cursor-pointer z-10 hidden group-hover:block"
+            size={40}
+          />
+
+          <div className="flex flex-row gap-4 overflow-x-scroll whitespace-nowrap scroll-smooth relative" ref={sliderRef}>
+            {shoedata.map((product, index) => (
+              <div key={index} className="flex flex-col font-Poppins">
+                <img
+                  src={product.image}
+                  alt=""
+                  className="h-[30rem] w-[30rem] rounded-md object-cover bg-orange-500"
+                />
+                <div className="text-lg font-medium">{product.name}</div>
+                <div className="text-secondary-text">{product.category}</div>
+                <div className="font-medium w-[30rem] ">{product.price}</div>
+              </div>
+            ))}
+          </div>
+
+          
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default HomeShop
+export default HomeShop;
