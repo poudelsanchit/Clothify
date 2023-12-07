@@ -3,7 +3,13 @@ import Nike from '../assets/nike.png'
 import { IoFingerPrintOutline,IoSearch  } from "react-icons/io5";
 import { CiHeart,CiShoppingCart  } from "react-icons/ci";
 import { Link, NavLink } from 'react-router-dom';
+import { useAuth0 } from "@auth0/auth0-react";
+
 const NavBar = () => {
+
+  const { loginWithRedirect, logout,user, isAuthenticated, isLoading } = useAuth0();
+
+    
   return (
     <div className="sticky bg-white py-1 top-0  z-50 w-full font-Poppins text-black flex flex-col items-center">
       <div className="flex justify-between items-center  text-lg font-medium h-16 w-11/12 ">
@@ -25,8 +31,18 @@ const NavBar = () => {
           />
         </div>
         <div className="flex justify-center items-center gap-2 cursor-pointer ">
-          <IoFingerPrintOutline className="text-2xl hover:scale-[1.01]" />
-          <div className="text-lg">login</div>
+
+
+
+          {isAuthenticated?  (<><button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
+          {user.name}
+    </button></>) :  (<><IoFingerPrintOutline className="text-2xl hover:scale-[1.01]" />
+          <button onClick={() => loginWithRedirect()}>Log In</button></>) }
+
+         
+
+
+
         </div>
       </div>
       <div className="flex justify-between w-11/12   font-medium tracking-tighter py-3  border-b-[0.1px] border-[#f4f4f4]">
