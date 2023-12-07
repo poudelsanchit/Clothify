@@ -1,18 +1,23 @@
 import React from 'react'
 import { TbShoppingBag } from "react-icons/tb";
 import { Button, ButtonGroup, Stack } from '@chakra-ui/react'
-import Swiper from '../Components/SwiperTool.jsx';
+import Swiper from './SwiperTool.jsx';
 
 
 function Home() {
   return (
     <>
-      <div className="hero-content  flex w-full   pl-12 justify-between ">
+      <div className="flex w-full   pl-12 justify-between ">
         <div className=" w-3/6 mt-8">
-          <h1 className="font-Poppins font-black text-7xl  mb-4 ">
-            YOUR STYLE DESERVES THE BEST
-          </h1>
-          <p className="title font-Poppins font-bold text-1xl mt-8 mb-4">
+          <div className="font-Poppins font-black text-8xl  mb-4 ">
+            YOUR STYLE DESERVES <br />
+            THE{" "}
+            <span className="  bg-gradient-to-r from-purple-800  to-blue-950 text-transparent bg-clip-text ">
+              {" "}
+              BEST
+            </span>
+          </div>
+          <p className=" font-Poppins font-semibold text-lg mt-5  mb-5">
             Elevate your style with our Nike Products, providing top-notch
             fashion solutions to meet your every need. Upgrade your look with us
             today and experience the best in athletic fashion.
@@ -26,8 +31,10 @@ function Home() {
               color="white"
               colorScheme="#ffffff"
               _hover={{ bgColor: "#4F5054", color: "white" }}
+              width={32}
+              height={12}
             >
-              Shop <TbShoppingBag />
+              Shop <TbShoppingBag className="text-xl" />
             </Button>
             {/* <Button colorScheme='gray' variant='outline'>
     Button

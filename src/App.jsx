@@ -1,6 +1,6 @@
 import React from 'react'
 import NavBar from './Components/NavBar'
-import Body from './Components/Body'
+import Body from './Pages/Body'
 import { Route, Routes } from 'react-router-dom'
 import Men from './Pages/Men'
 import Women from './Pages/Women'
