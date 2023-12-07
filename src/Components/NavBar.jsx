@@ -32,9 +32,12 @@ const NavBar = () => {
 
           {/* Auth0 */}
 
-          {isAuthenticated?  (<><button className='flex gap-2 items-center' onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
-          <div>Hi,{user.nickname}</div> <img src={user.picture} className=' w-12 rounded-full border-solid border-2  border-black' /> 
-    </button></>) :  (<><IoFingerPrintOutline className="text-2xl hover:scale-[1.01]" />
+          {isAuthenticated?  (<>
+          <img src={user.picture} className=' w-12 rounded-full border-solid border-2  border-black' /> 
+          <button className='flex gap-2 items-center' onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
+          <div>Logout</div> </button>  
+          </>) :  
+          (<><IoFingerPrintOutline className="text-2xl hover:scale-[1.01]" />
           <button onClick={() => loginWithRedirect()}>Log In</button></>) }
 
          
