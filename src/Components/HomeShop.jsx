@@ -21,7 +21,7 @@ const HomeShop = () => {
   };
 
   return (
-    <div className="w-screen h-auto flex justify-center mb-4" id="homeShop">
+    <div className="w-full h-auto flex justify-center mb-4" id="homeShop">
       <div className="w-11/12">
         <div className="text-[1.7rem]  font-medium font-Poppins mb-4">
           Popular Right Now
@@ -41,7 +41,7 @@ const HomeShop = () => {
           />
 
           <div className="flex flex-row gap-4 overflow-x-scroll whitespace-nowrap scroll-smooth relative" ref={sliderRef}>
-            {shoedata.map((product, index) => (
+           {shoedata.map((product, index) => (
               <div key={index} className="flex flex-col font-Poppins">
                 <img
                   src={product.image}
