@@ -6,7 +6,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
 
 const NavBar = () => {
-  const { loginWithRedirect, logout,user, isAuthenticated, isLoading } = useAuth0();
+  const { loginWithRedirect, logout,user, isAuthenticated, } = useAuth0();
 
   return (
     <div className="sticky bg-white py-1 top-0  z-50 w-full font-Poppins text-black flex flex-col items-center">
@@ -30,10 +30,10 @@ const NavBar = () => {
         </div>
         <div className="flex justify-center items-center gap-2 cursor-pointer ">
 
+          {/* Auth0 */}
 
-
-          {isAuthenticated?  (<><button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
-          {user.name}
+          {isAuthenticated?  (<><button className='flex gap-2 items-center' onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
+          <div>Hi,{user.nickname}</div> <img src={user.picture} className=' w-12 rounded-full border-solid border-2  border-black' /> 
     </button></>) :  (<><IoFingerPrintOutline className="text-2xl hover:scale-[1.01]" />
           <button onClick={() => loginWithRedirect()}>Log In</button></>) }
 
