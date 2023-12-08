@@ -3,6 +3,7 @@ import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import shoedata from './shoedata'; 
 import axios from 'axios';
 import EachCard from './EachCard';
+import Swiper from '../Components/Swiper';
 
 const HomeShop = () => {
   const [products,setProducts]= useState([])
@@ -11,51 +12,35 @@ const HomeShop = () => {
     setProducts(ProductsData.data)
 
   }
+  const [products2,setProducts2]= useState([])
+  const fetchProducts2=async()=>{
+    const ProductsData = await axios.get('http://localhost:3000/products2')
+    setProducts2(ProductsData.data)
+
+  }
+  const [products3,setProducts3]= useState([])
+  const fetchProducts3=async()=>{
+    const ProductsData = await axios.get('http://localhost:3000/products3')
+    setProducts3(ProductsData.data)
+
+  }
   useEffect(()=>{
     fetchData();
+    fetchProducts2();
+    fetchProducts3();
+
   },[])
 
-  const sliderRef = useRef(null);
-  const slideLeft = () => {
-    if (sliderRef.current) {
-      sliderRef.current.scrollLeft -= 540;
-    }
-  };
 
-  const slideRight = () => {
-    if (sliderRef.current) {
-      sliderRef.current.scrollLeft += 540;
-    }
-  };
 
   return (
     <div className="w-full h-auto flex justify-center mb-4" id="homeShop">
       <div className="w-11/12">
-        <div className="text-[1.7rem]  font-medium font-Poppins mb-4">
-          Popular Right Now
-        </div>
+       
 
-        <div className="flex items-center relative group">
-          <MdChevronLeft
-            onClick={slideLeft}
-            className="bg-white rounded-full text-black absolute right-14 top-2 opacity-50 cursor-pointer z-10 hidden group-hover:block"
-            size={40}
-          />
-
-          <MdChevronRight
-            onClick={slideRight}
-            className="bg-white rounded-full text-black absolute right-2 top-2 opacity-50 cursor-pointer z-10 hidden group-hover:block"
-            size={40}
-          />
-
-          <div className="flex flex-row gap-4 overflow-x-scroll whitespace-nowrap scroll-smooth relative" ref={sliderRef}>
-           {products.map((product) => (
-             <EachCard data={product}/>
-            ))}
-          </div>
-
-          
-        </div>
+        <Swiper products={products} />
+        <Swiper products={products2} />
+        <Swiper products={products3} />
       </div>
     </div>
   );
