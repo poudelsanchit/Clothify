@@ -1,13 +1,21 @@
-
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import shoedata from './shoedata'; 
+import axios from 'axios';
+import EachCard from './EachCard';
 
 const HomeShop = () => {
+  const [products,setProducts]= useState([])
+  const fetchData=async()=>{
+    const ProductsData = await axios.get('http://localhost:3000/products')
+    setProducts(ProductsData.data)
+
+  }
+  useEffect(()=>{
+    fetchData();
+  },[])
+
   const sliderRef = useRef(null);
-
-
-
   const slideLeft = () => {
     if (sliderRef.current) {
       sliderRef.current.scrollLeft -= 540;
@@ -41,17 +49,8 @@ const HomeShop = () => {
           />
 
           <div className="flex flex-row gap-4 overflow-x-scroll whitespace-nowrap scroll-smooth relative" ref={sliderRef}>
-           {shoedata.map((product, index) => (
-              <div key={index} className="flex flex-col font-Poppins">
-                <img
-                  src={product.image}
-                  alt=""
-                  className="h-[30rem] w-[30rem] rounded-md object-cover bg-orange-500"
-                />
-                <div className="text-lg font-medium">{product.name}</div>
-                <div className="text-secondary-text">{product.category}</div>
-                <div className="font-medium w-[30rem] ">{product.price}</div>
-              </div>
+           {products.map((product) => (
+             <EachCard data={product}/>
             ))}
           </div>
 

@@ -7,7 +7,8 @@ import image1 from '../assets/image1.png'
 
 function Swiper2() {
   return (
-    <div><img className=" h-[40rem] object-cover  right-1  " src={image1} alt="hero-image" />
+    <div>
+      <img className=" h-[40rem] object-cover  right-1  " src={image1} alt="hero-image" />
     
     
     </div>

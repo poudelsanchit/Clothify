@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Avatar, Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Stack } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { BsDot } from "react-icons/bs";
@@ -10,13 +10,32 @@ import { IconButton } from '@chakra-ui/react'
 import { FaStar } from "react-icons/fa";
 import {Jordan1,Jordan2,Jordan3,Jordan4,Jordan5,Jordan6 } from '../assets/index'
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
 const Card = () => {
   const Sizes = [40.5,41,42,43,43.5,44,44.5,45,46];
   const ShoesColor=[Jordan,whiteJordan];
   const ShoeViews=[Jordan,Jordan1,Jordan2,Jordan3,Jordan4,Jordan5,Jordan6];
   const id= useParams()
-  console.log(id)
-  
+  const [product,setProducts]= useState([])
+  const fetchData=async()=>{
+    const response = await axios.get('http://localhost:3000/products')
+    const products = response.data;
+    const foundProduct = products.find(product => product.productId === id.id);
+    if (foundProduct) {
+      setProducts(foundProduct);
+    } else {
+      console.log('Product not found');
+    }
+
+
+  }
+
+  useEffect(()=>{
+    fetchData();
+      
+
+
+  },[])
   return (
     <div className="flex w-full h-full justify-center  ">
       <div className="w-11/12 h-full flex ">
@@ -45,7 +64,7 @@ const Card = () => {
             </BreadcrumbItem>
           </Breadcrumb>
           <img
-            src={Jordan}
+            src={product?.image}
             alt=""
             className="w-11/12 bg-orange-400 rounded-md h-[30rem] object-cover"
           />
@@ -70,7 +89,7 @@ const Card = () => {
               <div className="font-medium text-xl font-Poppins">Nike</div>
             </div>
             <div className="font-bold font-Poppins text-3xl">
-              Air Jordan 1 Retro High OG
+             {product?.name}
             </div>
             <div className="flex gap-2 items-center ">
               <FaStar className="text-yellow-500" />
@@ -83,14 +102,14 @@ const Card = () => {
                 69 Reviews
               </div>
             </div>
-            <div className="font-bold font-Poppins text-4xl">$180</div>
+            <div className="font-bold font-Poppins text-4xl">{product?.price}</div>
             <div className="flex flex-col ">
               <div className="flex font-Poppins text-sm items-center">
                 <div>Color</div> <BsDot className="text-[#a6a6a6] text-3xl" />
-                <div className="text-secondary-text">White</div>
+                <div className="text-secondary-text">Blue</div>
               </div>
               <div className=" flex gap-2 flex-wrap">
-                {ShoesColor.map((shoeColor) => {
+                {product?.color?.map((shoeColor) => {
                   return (
                     <img
                       src={shoeColor}
@@ -108,7 +127,7 @@ const Card = () => {
                 <div className="text-secondary-text">EU Men</div>
               </div>
               <div className=" flex gap-2 flex-wrap  w-5/6">
-                {Sizes.map((sizes) => {
+                {product?.sizes?.map((sizes) => {
                   return (
                     <div className="h-16 w-16 rounded-md  border-2 flex justify-center items-center text-sm font-Poppins font-bold">
                       {sizes}

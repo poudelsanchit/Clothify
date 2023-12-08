@@ -4,85 +4,105 @@
       "id": 1,
       "name": "Air Jordan 1 High OG Royal Reimagined",
       "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/21692e08-697b-4bda-9b9d-fea249a11439/air-jordan-1-high-og-royal-reimagined-mens-shoes-gX9FS0.png",
-      "price ": "$180",
-      "productId":"fcdcc8df34543"
+      "price": "$180",
+      "productId": "fcdcc8df34543",
+      "sizes": [40.5, 41, 42, 43, 43.5, 44, 44.5, 45, 46],
+      "imgsides": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/21692e08-697b-4bda-9b9d-fea249a11439/air-jordan-1-high-og-royal-reimagined-mens-shoes-gX9FS0.png"
+      ],
+      "color": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/21692e08-697b-4bda-9b9d-fea249a11439/air-jordan-1-high-og-royal-reimagined-mens-shoes-gX9FS0.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8aa1b974-a557-4b86-90ea-f56dab700262/air-jordan-1-retro-high-og-womens-shoes-SsFGW3.png"
+
+      ]
     },
     {
       "id": 2,
       "name": "Air Jordan 1 Mid",
       "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2a52c692-10b7-4efb-8fa0-35851db976d0/air-jordan-1-mid-womens-shoes-Kg3nnj.png",
-      "price ": "$125",
-      "productId":"fcdcc8df03433"
-
+      "price": "$125",
+      "productId": "fcdcc8df03433",
+      "sizes": [40.5, 41, 42, 43, 43.5, 44, 44.5, 45, 46]
     },
     {
       "id": 3,
       "name": "Air Jordan 1 Mid SE",
-      "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/7e062ffd-efaf-42dc-931b-34cd84e56dc9/air-jordan-1-mid-se-womens-shoes-wkMdft.png",   
-      "price ": "$135",
-      "productId":"fcdcc8df5324"
-
+      "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/7e062ffd-efaf-42dc-931b-34cd84e56dc9/air-jordan-1-mid-se-womens-shoes-wkMdft.png",
+      "price": "$135",
+      "productId": "fcdcc8df5324",
+      "sizes": [40.5, 41, 42, 43, 43.5, 44, 44.5, 45, 46]
     },
-      {
-        "productId": "fcdcc8df34543",
-        "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/874c4865-9bf9-477a-b99d-94257a8cced2/air-jordan-8-winterized-mens-shoes-HBQzn3.png",
-        "name": "Air Jordan 8 Winterized",
-        "category": "Men's Shoes",
-        "price": "$200"
-      },
-      {
-        "productId": "fcdcc8df45678",
-        "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/e274f47a-32ff-49f6-b419-a6a7636368d7/air-jordan-1-mid-womens-shoes-Kg3nnj.png",
-        "name": "Air Jordan 1 Mid Women's",
-        "category": "Women's Shoes",
-        "price": "$150"
-      },
-      {
-        "productId": "fcdcc8df56789",
-        "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c30a54ab-da3f-4815-8e6a-b53dd7507fe4/jumpman-mvp-mens-shoes-gzmjDz.png",
-        "name": "Jumpman MVP",
-        "category": "Men's Shoes",
-        "price": "$160"
-      },
-      {
-        "productId": "fcdcc8df67890",
-        "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/fcf51137-7a0c-414a-80ac-e1db54afdb4a/air-jordan-1-low-womens-shoes-rJrHLw.png",
-        "name": "Air Jordan 1 Low Women's",
-        "category": "Women's Shoes",
-        "price": "$170"
-      },
-      {
-        "productId": "fcdcc8df78901",
-        "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c4d511ca-3d9a-4b96-a1e5-4f5d0655237b/air-jordan-xxxvii-low-basketball-shoes-00ZHpg.png",
-        "name": "Air Jordan XXXVII Low",
-        "category": "Men's Shoes",
-        "price": "$190"
-      },
-      {
-        "productId": "fcdcc8df89012",
-        "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/ded1faa6-e625-4d08-81aa-0026fc46472f/jordan-one-take-4-basketball-shoes-nS8tqx.png",
-        "name": "Jordan One Take 4",
-        "category": "Men's Shoes",
-        "price": "$180"
-      },
-      {
-        "productId": "fcdcc8df90123",
-        "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c4d511ca-3d9a-4b96-a1e5-4f5d0655237b/air-jordan-xxxvii-low-basketball-shoes-00ZHpg.png",
-        "name": "Air Jordan XXXVII Low",
-        "category": "Men's Shoes",
-        "price": "$190"
-      },
-      {
-        "productId": "fcdcc8df01234",
-        "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d2205c94-5951-4107-b4d1-18fd718e9989/air-jordan-1-high-og-big-kids-shoes-Wqf4f4.png",
-        "name": "Air Jordan 1 High OG Big Kids",
-        "category": "Big Kids' Shoes",
-        "price": "$120"
-      }
-    
-    
+    {
+      "productId": "fcdcc8df34543",
+      "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/874c4865-9bf9-477a-b99d-94257a8cced2/air-jordan-8-winterized-mens-shoes-HBQzn3.png",
+      "name": "Air Jordan 8 Winterized",
+      "category": "Men's Shoes",
+      "price": "$200",
+      "sizes": [40.5, 41, 42, 43, 43.5, 44, 44.5, 45, 46]
+    },
+    {
+      "productId": "fcdcc8df45678",
+      "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/e274f47a-32ff-49f6-b419-a6a7636368d7/air-jordan-1-mid-womens-shoes-Kg3nnj.png",
+      "name": "Air Jordan 1 Mid Women's",
+      "category": "Women's Shoes",
+      "price": "$150",
+      "sizes": [40.5, 41, 42, 43, 43.5, 44, 44.5, 45, 46]
+    },
+    {
+      "productId": "fcdcc8df56789",
+      "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c30a54ab-da3f-4815-8e6a-b53dd7507fe4/jumpman-mvp-mens-shoes-gzmjDz.png",
+      "name": "Jumpman MVP",
+      "category": "Men's Shoes",
+      "price": "$160",
+      "sizes": [40.5, 41, 42, 43, 43.5, 44, 44.5, 45, 46]
+    },
+    {
+      "productId": "fcdcc8df67890",
+      "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/fcf51137-7a0c-414a-80ac-e1db54afdb4a/air-jordan-1-low-womens-shoes-rJrHLw.png",
+      "name": "Air Jordan 1 Low Women's",
+      "category": "Women's Shoes",
+      "price": "$170",
+      "sizes": [40.5, 41, 42, 43, 43.5, 44, 44.5, 45, 46]
+    },
+    {
+      "productId": "fcdcc8df78901",
+      "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c4d511ca-3d9a-4b96-a1e5-4f5d0655237b/air-jordan-xxxvii-low-basketball-shoes-00ZHpg.png",
+      "name": "Air Jordan XXXVII Low",
+      "category": "Men's Shoes",
+      "price": "$190",
+      "sizes": [40.5, 41, 42, 43, 43.5, 44, 44.5, 45, 46]
+    },
+    {
+      "productId": "fcdcc8df89012",
+      "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/ded1faa6-e625-4d08-81aa-0026fc46472f/jordan-one-take-4-basketball-shoes-nS8tqx.png",
+      "name": "Jordan One Take 4",
+      "category": "Men's Shoes",
+      "price": "$180",
+      "sizes": [40.5, 41, 42, 43, 43.5, 44, 44.5, 45, 46]
+    },
+    {
+      "productId": "fcdcc8df90123",
+      "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c4d511ca-3d9a-4b96-a1e5-4f5d0655237b/air-jordan-xxxvii-low-basketball-shoes-00ZHpg.png",
+      "name": "Air Jordan XXXVII Low",
+      "category": "Men's Shoes",
+      "price": "$190",
+      "sizes": [40.5, 41, 42, 43, 43.5, 44, 44.5, 45, 46]
+    },
+    {
+      "productId": "fcdcc8df01234",
+      "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d2205c94-5951-4107-b4d1-18fd718e9989/air-jordan-1-high-og-big-kids-shoes-Wqf4f4.png",
+      "name": "Air Jordan 1 High OG Big Kids",
+      "category": "Big Kids' Shoes",
+      "price": "$120",
+      "sizes": [40.5, 41, 42, 43, 43.5, 44, 44.5, 45, 46]
+    }
   ],
   "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
     {
       "id": 1,
       "body": "some comment",
