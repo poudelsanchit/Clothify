@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-
+import Card from '../Components/Card';
 const New = () => {
   const [data,setData]= useState([])
   const fetchData=async()=>{
@@ -17,7 +17,12 @@ const New = () => {
   console.log(data)
 
   return (
-    <div>New</div>
+    <div>
+
+<Card/>
+
+    </div>
+   
   )
 }
 
