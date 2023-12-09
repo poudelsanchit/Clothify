@@ -1,26 +1,28 @@
 import React from 'react';
-import { GoStarFill } from 'react-icons/go';
+// import { GoStarFill } from 'react-icons/go';
 import { SlLike, SlDislike } from 'react-icons/sl';
 import ReviewReply from './ReviewReply';
-import { reviewData as data } from '../../backend/reviewdata';
-function ReviewComment({reply}) {
-  console.log();
+
+function ReviewComment({data}) {
+ 
+  // console.log(data.replies[0].active)
+  // console.log(data?.replies);
 
   return (
     <div>
       <div className='flex mt-6 py-1'>
         {/* profile  */}
-        <div>
+        <div className='mr-2 w-12 h-12 bg-pink-300 rounded-full'>
           <img
             className='mr-2 w-12 h-12 object-cover rounded-full'
-            src='https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            src={data.image}
             alt='User Avatar'
           />
         </div>
         {/* contain */}
         <div>
           <div className='font-bold text-base'>
-            {data.user.name}
+            {data.name}
             <span className='font-normal text-sm text-gray-600'>{data.date}</span>
           </div>
           <div className='flex gap-1 py-1 pb-3'>
@@ -29,15 +31,14 @@ function ReviewComment({reply}) {
             ))}
           </div>
           <div>
-            <p className='pb-1 font-semibold text-sm'>{data.comment}</p>
+            <p className='pb-1 font-semibold text-sm'>{data.comments}</p>
           </div>
           <div className='flex items-center gap-2 text-xs mb-3'>
             <p>Reply</p>
             <SlLike />
-            {data.likes} <SlDislike /> {data.dislikes}
+            {data.likes} <SlDislike /> {data.dislike}
           </div>
-              {reply?  <ReviewReply data={data} /> : null  }
-          
+               {data.replies[0].active ?  <ReviewReply data={data?.replies} /> : null}
           <hr className='w-[740px]' />
         </div>
       </div>

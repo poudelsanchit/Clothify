@@ -20,9 +20,10 @@ const Card = () => {
     if (foundProduct) {
       setProducts(foundProduct);
     } else {
-      console.log('Product not found');
+      console.log( products,'Product not found');
     }
 
+    console.log(product.reviews)
 
   }
 
@@ -33,6 +34,8 @@ const Card = () => {
 
 
   },[])
+
+  console.log(product.reviews)
   
   return (
     <div className="flex flex-col w-full h-full justify-center items-center gap-20  ">
@@ -161,7 +164,7 @@ const Card = () => {
         </div>
         
       </div>
-      <Reviews/>
+      <Reviews data={product?.reviews} />
     </div>
   );
 }
