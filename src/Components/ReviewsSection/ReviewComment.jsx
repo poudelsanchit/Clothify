@@ -1,9 +1,11 @@
 import React from 'react';
-// import { GoStarFill } from 'react-icons/go';
+import { GoStarFill } from 'react-icons/go';
 import { SlLike, SlDislike } from 'react-icons/sl';
 import ReviewReply from './ReviewReply';
 
 function ReviewComment({data}) {
+
+ console.log(data.stars) 
  
   // console.log(data.replies[0].active)
   // console.log(data?.replies);
@@ -26,9 +28,11 @@ function ReviewComment({data}) {
             <span className='font-normal text-sm text-gray-600'>{data.date}</span>
           </div>
           <div className='flex gap-1 py-1 pb-3'>
-            {Array.from({ length: data.rating }, (_, index) => (
-              <GoStarFill key={index} color='#facc15' />
-            ))}
+          <GoStarFill  color='#facc15' />
+          <GoStarFill  color='#facc15' />
+          <GoStarFill  color='#facc15' />
+          <GoStarFill  color='#facc15' />
+           
           </div>
           <div>
             <p className='pb-1 font-semibold text-sm'>{data.comments}</p>

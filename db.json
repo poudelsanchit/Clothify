@@ -23,10 +23,11 @@
       ],
       "reviews": [
         {
-          "name":"Suman K.",
+          "name":"Riya T.",
           "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "date": "Yesterday",
           "comments": "Excellent Running shoes. It turns very Sharply on the foot",
+          "stars":5,
           "likes":4,
           "dislike":null,
           "replies": [
@@ -92,6 +93,7 @@
           "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "date": "Yesterday",
           "comments": "Excellent Running shoes. It turns very Sharply on the foot",
+          "stars":5,
           "likes":4,
           "dislike":null,
           "replies": [
@@ -149,9 +151,11 @@
       "reviews": [
         {
           "name":"Suman K.",
+
           "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "date": "Yesterday",
           "comments": "Excellent Running shoes. It turns very Sharply on the foot",
+          "stars":5,
           "likes":4,
           "dislike":null,
           "replies": [
@@ -209,9 +213,11 @@
       "reviews": [
         {
           "name":"Suman K.",
+
           "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "date": "Yesterday",
           "comments": "Excellent Running shoes. It turns very Sharply on the foot",
+          "stars":5,
           "likes":4,
           "dislike":null,
           "replies": [
@@ -269,9 +275,11 @@
       "reviews": [
         {
           "name":"Suman K.",
+
           "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "date": "Yesterday",
           "comments": "Excellent Running shoes. It turns very Sharply on the foot",
+          "stars":5,
           "likes":4,
           "dislike":null,
           "replies": [
@@ -329,9 +337,11 @@
       "reviews": [
         {
           "name":"Suman K.",
+
           "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "date": "Yesterday",
           "comments": "Excellent Running shoes. It turns very Sharply on the foot",
+          "stars":5,
           "likes":4,
           "dislike":null,
           "replies": [
@@ -389,9 +399,11 @@
       "reviews": [
         {
           "name":"Suman K.",
+
           "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "date": "Yesterday",
           "comments": "Excellent Running shoes. It turns very Sharply on the foot",
+          "stars":5,
           "likes":4,
           "dislike":null,
           "replies": [
@@ -449,9 +461,11 @@
       "reviews": [
         {
           "name":"Suman K.",
+
           "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "date": "Yesterday",
           "comments": "Excellent Running shoes. It turns very Sharply on the foot",
+          "stars":5,
           "likes":4,
           "dislike":null,
           "replies": [
@@ -509,9 +523,11 @@
       "reviews": [
         {
           "name":"Suman K.",
+
           "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "date": "Yesterday",
           "comments": "Excellent Running shoes. It turns very Sharply on the foot",
+          "stars":5,
           "likes":4,
           "dislike":null,
           "replies": [
@@ -569,9 +585,11 @@
       "reviews": [
         {
           "name":"Suman K.",
+
           "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "date": "Yesterday",
           "comments": "Excellent Running shoes. It turns very Sharply on the foot",
+          "stars":5,
           "likes":4,
           "dislike":null,
           "replies": [
@@ -625,51 +643,6 @@
       "color": [
         "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/21692e08-697b-4bda-9b9d-fea249a11439/air-jordan-1-high-og-royal-reimagined-mens-shoes-gX9FS0.png",
         "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8aa1b974-a557-4b86-90ea-f56dab700262/air-jordan-1-retro-high-og-womens-shoes-SsFGW3.png"
-      ],
-      "reviews": [
-        {
-          "name":"Suman K.",
-          "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          "date": "Yesterday",
-          "comments": "Excellent Running shoes. It turns very Sharply on the foot",
-          "likes":4,
-          "dislike":null,
-          "replies": [
-            {
-              "active": false,
-              "name": "Rojan B.",
-              "image": "https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?q=80&w=2885&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              "comments": "I'm glad you liked them!",
-              "likes": 4,
-              "dislike": 0
-            }
-          ]
-        },
-        {
-          "name":"Sanchit P.",
-          "image": "https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?q=80&w=2885&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          "date": "Yesterday",
-          "comments": "Excellent Running shoes. It turns very Sharply on the foot",
-          "replies": [
-            {
-              "active": true,
-              "name": "Sujan B.",
-              "image": "https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?q=80&w=2885&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              "comments": "I'm glad you liked them!",
-              "likes": 4,
-              "dislike": 0,
-              "Reply-replies": [
-                {
-                  "active": false,
-                  "name": "Sujan B.",
-                  "image": "https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?q=80&w=2885&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                  "comments": "I'm glad you liked them!",
-                  "likes": 4,
-                  "dislike": 0
-                }]
-            }
-          ]
-        }
       ]
     }
   ],
