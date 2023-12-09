@@ -10,12 +10,15 @@ import Sales from './Pages/Sales'
 import Kids from './Pages/Kids'
 import Card from './Components/Cards/Card'
 import BottomNavBar from './Components/BottomNavBar'
-
+import { useSelector, useDispatch } from 'react-redux'
+import {decrement,increment} from './redux/Slices/counter/counterSlice'
 const App = () => {
+  const count = useSelector((state) => state.counter.value)
+  const dispatch = useDispatch()
   return (
     <>
-    <NavBar/>
-    <Routes>
+      <NavBar />
+      {/* <Routes>
       <Route path='/' element={<Body/>} />
       <Route path='/men' element={<Men/>} />
       <Route path='/women' element={<Women/>} />
@@ -30,10 +33,18 @@ const App = () => {
 
 
 
-    </Routes>
-    {/* <BottomNavBar/> */}
+    </Routes> */}
+      {/* <BottomNavBar/> */}
+      <div className="w-full h-screen  text-3xl  ">
+        <div className="flex gap-10 justify-center items-center mt-10 ">
+          <button className='bg-purple-600 text-white font-Poppins p-3 rounded-lg' onClick={()=>dispatch(decrement())}>Decrement</button>
+
+          <div>Count is {count}</div>
+          <button className='bg-purple-600 text-white font-Poppins p-3 rounded-lg' onClick={()=>dispatch(increment())}>Increment</button>
+        </div>{" "}
+      </div>
     </>
-  )
+  );
 }
 
 export default App
