@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import EachCard from './EachCard';
 
-const Swiper = ({products}) => {
+const Swiper = ({products,title}) => {
     const sliderRef = useRef(null);
     const slideLeft = () => {
       if (sliderRef.current) {
@@ -18,7 +18,7 @@ const Swiper = ({products}) => {
   return (
     <>
       <div className="text-[1.7rem]  font-medium font-Poppins mb-4 mt-10">
-        Popular Right Now
+       {title}
       </div>
       <div className="flex items-center relative group">
         <MdChevronLeft

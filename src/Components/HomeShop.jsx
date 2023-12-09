@@ -38,9 +38,8 @@ const HomeShop = () => {
       <div className="w-11/12">
        
 
-        <Swiper products={products} />
-        <Swiper products={products2} />
-        <Swiper products={products3} />
+        <Swiper products={products} title={'Popular right now'}/>
+        <Swiper products={products2}  title={'Best sales'}/>
       </div>
     </div>
   );

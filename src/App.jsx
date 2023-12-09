@@ -9,6 +9,7 @@ import New from './Pages/New'
 import Sales from './Pages/Sales'
 import Kids from './Pages/Kids'
 import Card from './Components/Card'
+import BottomNavBar from './Components/BottomNavBar'
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
 
 
     </Routes>
+    <BottomNavBar/>
     </>
   )
 }

@@ -32,11 +32,14 @@ const Card = () => {
   }
 
   useEffect(()=>{
+    window.scrollTo({behavior:'smooth',left:0, top:0})
     fetchData();
       
 
 
   },[])
+  
+  console.log(product.imgsides)
   return (
     <div className="flex flex-col w-full h-full justify-center items-center gap-20  ">
       <div className="w-11/12 h-full flex ">
@@ -70,7 +73,7 @@ const Card = () => {
             className="w-11/12 bg-orange-400 rounded-md h-[30rem] object-cover"
           />
           <div className=" flex w-11/12 justify-between gap-5 flex-wrap">
-            {ShoeViews.slice(0,5).map((shoe)=>{
+            {product?.imgsides?.slice(0,5).map((shoe)=>{
               return  <img
               src={shoe}
               alt=""
