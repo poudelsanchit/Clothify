@@ -8,6 +8,7 @@ import { Button } from '@chakra-ui/react'
 import { CiShoppingCart,CiHeart  } from "react-icons/ci";
 import { IconButton } from '@chakra-ui/react'
 import { FaStar } from "react-icons/fa";
+import { BsTruck } from "react-icons/bs";
 import {Jordan1,Jordan2,Jordan3,Jordan4,Jordan5,Jordan6 } from '../assets/index'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -162,7 +163,7 @@ const Card = () => {
                 icon={<CiHeart className="text-2xl" />}
               />
             </Stack>
-            <div>Free delivery on orders over $30.0</div>
+            <div className='flex gap-2 items-center'> <BsTruck /> Free delivery on orders over $30.0</div>
           </div>
         </div>
         
