@@ -2,21 +2,15 @@ import React, { useEffect, useState } from 'react'
 import { Avatar, Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Stack } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { BsDot } from "react-icons/bs";
-import Jordan from '../assets/jordan.png'
-import whiteJordan from '../assets/whiteJordan.png'
 import { Button } from '@chakra-ui/react'
 import { CiShoppingCart,CiHeart  } from "react-icons/ci";
 import { IconButton } from '@chakra-ui/react'
 import { FaStar } from "react-icons/fa";
 import { BsTruck } from "react-icons/bs";
-import {Jordan1,Jordan2,Jordan3,Jordan4,Jordan5,Jordan6 } from '../assets/index'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import Reviews from './Reviews';
+import Reviews from '../ReviewsSection/Reviews';
 const Card = () => {
-  const Sizes = [40.5,41,42,43,43.5,44,44.5,45,46];
-  const ShoesColor=[Jordan,whiteJordan];
-  const ShoeViews=[Jordan,Jordan1,Jordan2,Jordan3,Jordan4,Jordan5,Jordan6];
   const id= useParams()
   const [product,setProducts]= useState([])
   const fetchData=async()=>{
@@ -40,7 +34,6 @@ const Card = () => {
 
   },[])
   
-  console.log(product.imgsides)
   return (
     <div className="flex flex-col w-full h-full justify-center items-center gap-20  ">
       <div className="w-11/12 h-full flex ">

@@ -1,8 +1,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination,  Scrollbar, A11y,Autoplay } from 'swiper/modules';
-import {SwiperImage1,SwiperImage2,SwiperImage3,SwiperImage4} from '../assets/index'
-
+import {SwiperImage1,SwiperImage2,SwiperImage3,SwiperImage4} from '../../assets/index'
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';

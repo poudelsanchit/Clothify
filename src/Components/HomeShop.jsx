@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
-import shoedata from './shoedata'; 
 import axios from 'axios';
-import EachCard from './EachCard';
-import Swiper from '../Components/Swiper';
+import EachCard from './Cards/EachCard';
+import Swiper from './Swipers/Swiper';
 
 const HomeShop = () => {
   const [products,setProducts]= useState([])

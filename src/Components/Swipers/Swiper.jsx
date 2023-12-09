@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
-import EachCard from './EachCard';
+import EachCard from '../Cards/EachCard';
 
 const Swiper = ({products,title}) => {
     const sliderRef = useRef(null);

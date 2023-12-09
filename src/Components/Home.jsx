@@ -1,7 +1,7 @@
 import React from 'react'
 import { TbShoppingBag } from "react-icons/tb";
 import { Button, Stack } from '@chakra-ui/react'
-import Swiper from './AutoSwiper.jsx';
+import Swiper from './Swipers/AutoSwiper.jsx';
 
 
 function Home() {

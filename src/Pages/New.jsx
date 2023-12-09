@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import Card from '../Components/Card';
+import Card from '../Components/Cards/Card';
 const New = () => {
   const [data,setData]= useState([])
   const fetchData=async()=>{

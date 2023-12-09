@@ -8,7 +8,7 @@ import Sports from './Pages/Sports'
 import New from './Pages/New'
 import Sales from './Pages/Sales'
 import Kids from './Pages/Kids'
-import Card from './Components/Card'
+import Card from './Components/Cards/Card'
 import BottomNavBar from './Components/BottomNavBar'
 
 const App = () => {
