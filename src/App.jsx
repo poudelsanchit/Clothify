@@ -18,7 +18,7 @@ const App = () => {
   return (
     <>
       <NavBar />
-      {/* <Routes>
+     <Routes>
       <Route path='/' element={<Body/>} />
       <Route path='/men' element={<Men/>} />
       <Route path='/women' element={<Women/>} />
@@ -33,7 +33,7 @@ const App = () => {
 
 
 
-    </Routes> */}
+    </Routes> 
       {/* <BottomNavBar/> */}
       <div className="w-full h-screen  text-3xl  ">
         <div className="flex gap-10 justify-center items-center mt-10 ">
