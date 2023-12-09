@@ -31,7 +31,7 @@ const App = () => {
 
 
     </Routes>
-    <BottomNavBar/>
+    {/* <BottomNavBar/> */}
     </>
   )
 }
