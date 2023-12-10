@@ -3,7 +3,8 @@ import { Route, Routes } from 'react-router-dom'
 import { Link, NavLink } from 'react-router-dom';
 import ReviewComment from './ReviewComment';
 import ReviewDetails from './ReviewDetails';
-const Reviews = () => {
+const Reviews = ({data}) => {
+  console.log(data)
   const [togglePage,setTogglePage]= useState(1);
 
   
@@ -34,8 +35,8 @@ const Reviews = () => {
                 <option value="1">Top</option>
               </select>
             </div>
-            <ReviewComment />
-            <ReviewComment reply={true} />
+            {data.map((reviews)=>{return <ReviewComment data={reviews}/> })}
+           
           </div>
           {/* rateing and offer */}
           <div>

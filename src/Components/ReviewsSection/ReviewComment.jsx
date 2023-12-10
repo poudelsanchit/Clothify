@@ -2,9 +2,9 @@ import React from 'react';
 import { GoStarFill } from 'react-icons/go';
 import { SlLike, SlDislike } from 'react-icons/sl';
 import ReviewReply from './ReviewReply';
-function ReviewComment({reply}) {
-  console.log();
-
+function ReviewComment({data}) {
+  console.log(data);
+console.log(data?.replies)
   return (
     <div>
       <div className='flex mt-6 py-1'>
@@ -19,23 +19,30 @@ function ReviewComment({reply}) {
         {/* contain */}
         <div>
           <div className='font-bold text-base'>
-            {data.user.name}
-            <span className='font-normal text-sm text-gray-600'>{data.date}</span>
+            {data?.name}
+            <span className='font-normal text-sm text-gray-600'>{data?.date}</span>
           </div>
-          <div className='flex gap-1 py-1 pb-3'>
-            {Array.from({ length: data.rating }, (_, index) => (
+          <div className='flex gap-1 py-1 pb-1'>
+            {/* {Array.from({ length: data.rating }, (_, index) => (
               <GoStarFill key={index} color='#facc15' />
-            ))}
+            ))} */}
+                          <GoStarFill  color='#facc15' />
+                          <GoStarFill  color='#facc15' />
+                          <GoStarFill  color='#facc15' />
+                          <GoStarFill  color='#facc15' />
+
           </div>
           <div>
-            <p className='pb-1 font-semibold text-sm'>{data.comment}</p>
+            <p className='pb-1 font-semibold text-sm'>{data?.comments}</p>
           </div>
           <div className='flex items-center gap-2 text-xs mb-3'>
             <p>Reply</p>
             <SlLike />
-            {data.likes} <SlDislike /> {data.dislikes}
+            {data?.likes} <SlDislike /> {data?.dislike}
           </div>
-              {reply?  <ReviewReply data={data} /> : null  }
+             
+          {data?.replies.map((replies)=>{return <ReviewReply data={replies} />})}              
+              
           
           <hr className='w-[740px]' />
         </div>
