@@ -6,7 +6,8 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { extendTheme } from '@chakra-ui/react'
 import { BrowserRouter } from 'react-router-dom'
 import { Auth0Provider } from '@auth0/auth0-react';
-
+import { store } from './redux/store.js'
+import { Provider } from 'react-redux'
 const colors = {
   brand: {
     900: '#1a365d',
@@ -31,9 +32,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     redirect_uri: window.location.origin
   }}>
       <BrowserRouter>
+      <Provider store={store}>
       <ChakraProvider  theme={theme}>
       <App />
       </ChakraProvider>
+      </Provider>
       </BrowserRouter>
   </Auth0Provider>
 )
