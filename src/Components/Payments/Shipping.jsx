@@ -1,8 +1,28 @@
 import React from 'react'
-
+import {
+ 
+  Button,
+  HStack,
+  Input,
+  useNumberInput,
+} from '@chakra-ui/react'
 const Shipping = () => {
+  const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
+    useNumberInput({
+      step: 0.01,
+      defaultValue: 1.53,
+      min: 1,
+      max: 6,
+      precision: 2,
+    });
+
+  const inc = getIncrementButtonProps()
+  const dec = getDecrementButtonProps()
+  const input = getInputProps()
+
+
   return (
-    <div className=" w-11/12 font-Poppins flex flex-col">
+    <div className=" w-11/12 font-Poppins flex flex-col gap-5">
       <div className="text-2xl font-medium">Your Orders</div>
       <div className="flex">
         <div className=" flex h-32 w-8/12 border-2 rounded-t-md  p-1 gap-5">
@@ -18,10 +38,22 @@ const Shipping = () => {
             </div>
 
             <div className="  text-base flex justify-start gap-32 items-start">
-              <div><span className='font-normal'>Size:</span> 42</div>
-              <div><span className='font-normal'>Color:</span>  Blue</div>
+              <div>
+                <span className="font-medium">Size:</span>
+                <HStack maxW="170px">
+                  <Button {...inc}>+</Button>
+                  <Input {...input} />
+                  <Button {...dec}>-</Button>
+                </HStack>
+              </div>
+              <div>
+                <span className="font-medium">Color:</span> Blue
+              </div>
             </div>
-            <div className="font-normal  text-base"> Type : Fashion</div>
+          </div>
+          <div className="flex justify-center items-center h-full ml-auto font-bold mr-10 ">
+            {" "}
+            150 $
           </div>
         </div>
         <div className="h-28 w-4/12 "></div>
