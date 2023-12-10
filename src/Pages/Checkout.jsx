@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Shipping from '../Components/Payments/Shipping';
+import Shipping from '../Components/Payments/Shipping/Shipping';
 import Billing from '../Components/Payments/Billing';
 
 const Checkout = () => {
