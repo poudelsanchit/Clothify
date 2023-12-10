@@ -2,7 +2,7 @@ import React from 'react'
 
 const Billing = () => {
   return (
-    <div>Billing</div>
+    <div>Billing Nabin</div>
   )
 }
 
