@@ -12,8 +12,11 @@ import Card from './Components/Cards/Card'
 import BottomNavBar from './Components/BottomNavBar'
 import { useSelector, useDispatch } from 'react-redux'
 import {decrement,increment} from './redux/Slices/counter/counterSlice'
+import { addItemToCart, removeItemFromCart, clearCart } from './redux/Slices/Cart/cartSlice';
+
 const App = () => {
   const count = useSelector((state) => state.counter.value)
+  const cartItems = useSelector(state => state.cart.items);
   const dispatch = useDispatch()
   return (
     <>
@@ -37,10 +40,8 @@ const App = () => {
       {/* <BottomNavBar/> */}
       <div className="w-full h-screen  text-3xl  ">
         <div className="flex gap-10 justify-center items-center mt-10 ">
-          <button className='bg-purple-600 text-white font-Poppins p-3 rounded-lg' onClick={()=>dispatch(decrement())}>Decrement</button>
 
-          <div>Count is {count}</div>
-          <button className='bg-purple-600 text-white font-Poppins p-3 rounded-lg' onClick={()=>dispatch(increment())}>Increment</button>
+          <div > <div className='font-bold text-4xl pb-5'>Products Added :</div>  {cartItems.map((items)=>(<div className='text-md font-Poppins'>{items.name}</div>))}</div>
         </div>{" "}
       </div>
     </>

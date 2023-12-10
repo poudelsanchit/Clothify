@@ -6,9 +6,10 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { extendTheme } from '@chakra-ui/react'
 import { BrowserRouter } from 'react-router-dom'
 import { Auth0Provider } from '@auth0/auth0-react';
-import { store } from './redux/store.js'
 import { Provider } from 'react-redux'
-const colors = {
+import { PersistGate } from 'redux-persist/integration/react';
+import { store, persistor } from './redux/store.js';
+const colors = { 
   brand: {
     900: '#1a365d',
     800: '#153e75',
@@ -34,7 +35,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <BrowserRouter>
       <Provider store={store}>
       <ChakraProvider  theme={theme}>
+      <PersistGate loading={null} persistor={persistor}>
       <App />
+      </PersistGate>
       </ChakraProvider>
       </Provider>
       </BrowserRouter>

@@ -10,10 +10,16 @@ import { BsTruck } from "react-icons/bs";
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Reviews from '../ReviewsSection/Reviews';
+import { useSelector, useDispatch } from 'react-redux'
+import { addItemToCart} from '../../redux/Slices/Cart/cartSlice';
+
 const Card = () => {
+
+  const dispatch = useDispatch();
   const id= useParams()
   const [product,setProducts]= useState([])
   const fetchData=async()=>{
+
     const response = await axios.get('http://localhost:3000/products')
     const products = response.data;
     const foundProduct = products.find(product => product.productId === id.id);
@@ -33,7 +39,7 @@ const Card = () => {
 
 
   },[])
-  
+
   return (
     <div className="flex flex-col w-full h-full justify-center items-center gap-20  ">
       <div className="w-11/12 h-full flex ">
@@ -143,7 +149,7 @@ const Card = () => {
                 colorScheme="#ffffff"
                 width={96}
                 height={12}
-                _hover={{ bgColor: "#4F5054", color: "white" }}
+                _hover={{ bgColor: "#4F5054", color: "white" }} onClick={()=>dispatch(addItemToCart(product))}
               >
                 <CiShoppingCart />
                 Add to cart
