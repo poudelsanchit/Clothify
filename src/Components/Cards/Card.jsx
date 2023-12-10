@@ -20,7 +20,7 @@ const Card = () => {
   const [product,setProducts]= useState([])
   const fetchData=async()=>{
 
-    const response = await axios.get('https://done-hejj.onrender.com/products')
+    const response = await axios.get('https://dataec.onrender.com/products')
     const products = response.data;
     const foundProduct = products.find(product => product.productId === id.id);
     if (foundProduct) {
