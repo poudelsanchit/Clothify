@@ -94,12 +94,14 @@ const NavBar = () => {
         </div>
         <div>
           <div className="flex  justify-center items-center gap-5">
-            <div className="relative cursor-pointer">
+            <Link to={'/checkout'}>
+            <div className="relative cursor-pointer" > 
               <CiShoppingCart className="text-3xl hover:scale-[1.01] " />
               <div className=" absolute h-4 w-4 rounded-full bg-yellow-400 top-0 right-0 flex justify-center items-center text-xs font-Chakra">
                 4
               </div>
             </div>
+            </Link>
 
             <CiHeart className="text-3xl hover:scale-[1.01] cursor-pointer " />
           </div>

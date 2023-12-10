@@ -13,6 +13,7 @@ import BottomNavBar from './Components/BottomNavBar'
 import { useSelector, useDispatch } from 'react-redux'
 import {decrement,increment} from './redux/Slices/counter/counterSlice'
 import { addItemToCart, removeItemFromCart, clearCart } from './redux/Slices/Cart/cartSlice';
+import Checkout from './Pages/Checkout'
 
 const App = () => {
   const count = useSelector((state) => state.counter.value)
@@ -31,6 +32,8 @@ const App = () => {
       <Route path='/sales' element={<Sales/>} />
       <Route path='/shoes/:id' element={<Card />} />
       <Route path='/test' element={<New />} />
+      <Route path='/checkout' element={<Checkout />} />
+
 
 
 
@@ -38,12 +41,12 @@ const App = () => {
 
     </Routes> 
       {/* <BottomNavBar/> */}
-      <div className="w-full h-screen  text-3xl  ">
+      {/* <div className="w-full h-screen  text-3xl  ">
         <div className="flex gap-10 justify-center items-center mt-10 ">
 
           <div > <div className='font-bold text-4xl pb-5'>Products Added :</div>  {cartItems.map((items)=>(<div className='text-md font-Poppins'>{items.name}</div>))}</div>
         </div>{" "}
-      </div>
+      </div> */}
     </>
   );
 }

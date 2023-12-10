@@ -2,7 +2,6 @@ import React from 'react';
 import { GoStarFill } from 'react-icons/go';
 import { SlLike, SlDislike } from 'react-icons/sl';
 import ReviewReply from './ReviewReply';
-import { reviewData as data } from '../../backend/reviewdata';
 function ReviewComment({reply}) {
   console.log();
 
