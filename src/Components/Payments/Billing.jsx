@@ -28,7 +28,7 @@ const Billing = () => {
                 </div>
               </div>
               <div> 
-              <div className=' py-8 px-8 flex items-center gap-8 h-16  bg-gray-50 rounded-md    '>
+              <div className=' py-8 px-8 flex items-center gap-8 h-16  bg-gray-100 rounded-md    '>
                     <div className=' border rounded-full px-2 items-center justify-center font-normal text-base bg-slate-900 text-white'>b</div>
                         <div className=' flex mx-8 text-black text-sm font-medium '>PAYMENT METHOD</div>
                 </div>
@@ -55,8 +55,44 @@ const Billing = () => {
 
 
 
+{/*  */}
+          <div className=' border h-fit rounded-lg grid gap-3 mt-24'>
+<div className=' grid gap-4 px-6 pt-6'>
+<div className=''><p className=' text-xl font-bold'>Your Order</p></div>
+            <hr/>
+            <div className=' flex gap-4'>
+                  <div className=' h-32 w-24 bg-orange-400 rounded-md'></div>
+                  <div className=' grid justify-start  pl-2  m-1'>
+                    <div className=' font-bold'>Blue Shoe Jorden</div>
+                    <div> <span className='font-medium'>Size: </span>  XL <span className=' ml-6 font-medium'> color: </span>Blue</div>
+                    <div className=' font-semibold'>$39,00 x 02</div>
+                  </div>
+            </div>
+            <hr/>
+            <div className=' flex gap-4'>
+                  <div className=' h-32 w-24 bg-orange-400 rounded-md'></div>
+                  <div className=' grid justify-start  pl-2  m-1'>
+                    <div className=' font-bold'>Black  Jorden</div>
+                    <div> <span className='font-medium'>Size: </span>  XL <span className=' ml-6 font-medium'> color: </span>Blue</div>
+                    <div className=' font-semibold'>$39,00 x 02</div>
+                  </div>
+            </div>
+            <hr/>
+            <div className=' flex justify-between'>
+            <div>Delivery</div>
+            <div className=' text-gray-500'><span className=' text-black font-bold'>$20</span> {`(Express)`}</div>
+             </div>
+             <div className=' flex justify-between'>
+            <div>Discount</div>
+            <div className=' text-gray-500'><span className=' text-black font-bold mr-[4.4rem]'>- $20</span> {``}</div>
+             </div>
+            
+</div>
+            
+            <div className=' mx-3 mb-2 py-8 w-46 bg-gray-100  rounded-lg text-3xl font-semibold px-3'>Total <span className=' ml-14'>$177,00</span></div>
 
-          <div>Your Order</div>
+
+          </div>
 
          </div>
 
