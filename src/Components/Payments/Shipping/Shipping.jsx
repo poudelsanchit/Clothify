@@ -1,8 +1,16 @@
 import { Button, IconButton, Stack } from '@chakra-ui/react';
 import EachCard from './EachCard';
 import { CiHeart, CiShoppingCart } from 'react-icons/ci';
+import { useSelector } from 'react-redux';
+import { getTotalPrice } from '../../../redux/Slices/Cart/cartSlice';
 
 const Shipping = () => {
+  const cartItems = useSelector(state=>state.cart.items)
+  console.log(cartItems)
+  const subTotal = useSelector(getTotalPrice);
+  const tax= 2;
+  const totalPrice = subTotal+ tax;
+
  
 
 
@@ -12,8 +20,10 @@ const Shipping = () => {
         <div className=" w-8/12 font-Poppins flex flex-col gap-5">
           <div className="text-2xl font-medium">Your Orders</div>
           <div className="flex flex-col gap-2 w-full">
-            <EachCard />
-            <EachCard />
+            {cartItems.map((items)=>{
+              return <EachCard items={items}/>
+            })}
+          
           </div>
         </div>
         <div className="h-max w-4/12 pb-5  mt-12  rounded-md border-2 hover:shadow-xl transition-all flex flex-col pl-5 pr-5">
@@ -22,15 +32,15 @@ const Shipping = () => {
           </div>
           <div className=" text-xl font-Poppins flex pb-2">
             {" "}
-            <div>Subtotal:</div> <div className="ml-auto ">$ 149</div>{" "}
+            <div>Subtotal:</div> <div className="ml-auto ">$ {subTotal}</div>{" "}
           </div>
           <div className=" text-xl font-Poppins flex pb-2">
             {" "}
-            <div>Shipping Fee:</div> <div className="ml-auto "> $ 2</div>{" "}
+            <div>Shipping Fee:</div> <div className="ml-auto "> $ {tax}</div>{" "}
           </div>
           <div className=" text-xl font-Poppins flex pb-2">
             {" "}
-            <div>Total :</div> <div className="ml-auto  text-red-600 font-semibold"> $ 151</div>{" "}
+            <div>Total :</div> <div className="ml-auto  text-red-600 font-semibold"> $ {totalPrice}</div>{" "}
             
           </div>
               <Button
