@@ -14,13 +14,17 @@ import { useSelector, useDispatch } from 'react-redux'
 import { addItemToCart} from '../../redux/Slices/Cart/cartSlice';
 
 const Card = () => {
+  const cartItems = useSelector(state=>state.cart.items)
+  const cartItemsLen = cartItems.length
+
+  console.log(cartItems.length)
 
   const dispatch = useDispatch();
   const id= useParams()
   const [product,setProducts]= useState([])
   const fetchData=async()=>{
 
-    const response = await axios.get('https://done-hejj.onrender.com/products')
+    const response = await axios.get('https://dataec.onrender.com/products')
     const products = response.data;
     const foundProduct = products.find(product => product.productId === id.id);
     if (foundProduct) {
@@ -31,7 +35,20 @@ const Card = () => {
 
 
   }
+const handleAddToCart=()=>{
+  if(cartItemsLen<5)
+  {
+    
+    dispatch(addItemToCart(product));
+    console.log('data added')
 
+  }
+  else{
+    alert('Can add more data' )
+
+  }
+
+}
   useEffect(()=>{
     window.scrollTo({behavior:'smooth',left:0, top:0})
     fetchData();
@@ -149,7 +166,7 @@ const Card = () => {
                 colorScheme="#ffffff"
                 width={96}
                 height={12}
-                _hover={{ bgColor: "#4F5054", color: "white" }} onClick={()=>dispatch(addItemToCart(product))}
+                _hover={{ bgColor: "#4F5054", color: "white" }} onClick={handleAddToCart}
               >
                 <CiShoppingCart />
                 Add to cart
