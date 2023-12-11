@@ -7,19 +7,19 @@ import Swiper from './Swipers/Swiper';
 const HomeShop = () => {
   const [products,setProducts]= useState([])
   const fetchData=async()=>{
-    const ProductsData = await axios.get('https://dataec.onrender.com/products')
+    const ProductsData = await axios.get('http://localhost:3000/products')
     setProducts(ProductsData.data)
 
   }
   const [products2,setProducts2]= useState([])
   const fetchProducts2=async()=>{
-    const ProductsData = await axios.get('https://dataec.onrender.com/products2')
+    const ProductsData = await axios.get('http://localhost:3000/products2')
     setProducts2(ProductsData.data)
 
   }
   const [products3,setProducts3]= useState([])
   const fetchProducts3=async()=>{
-    const ProductsData = await axios.get('https://dataec.onrender.com/products3')
+    const ProductsData = await axios.get('http://localhost:3000/products3')
     setProducts3(ProductsData.data)
 
   }

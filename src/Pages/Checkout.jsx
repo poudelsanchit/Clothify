@@ -1,17 +1,18 @@
 import React, { useState } from 'react'
 import Shipping from '../Components/Payments/Shipping/Shipping';
 import Billing from '../Components/Payments/Billing';
+import  Steppers  from '../Components/Steppers';
 
 const Checkout = () => {
     const[tooglePage,setTogglePage] = useState(1);
-  
+   const handleToggle=(data)=>{
+    setTogglePage(data)
+   }
   return (
     <div className='flex flex-col w-full items-center justify-center'>
-        <div className='w-11/12  flex justify-evenly text-3xl font-bold font-Poppins  '>
-            <div onClick={()=>setTogglePage(1)} className='cursor-pointer'>Shipping</div>
-            <div  onClick={()=>setTogglePage(2)} className='cursor-pointer'> Billing</div>
-        </div>
-        {tooglePage===1? <Shipping/> : <Billing/>}
+        
+       
+        {tooglePage===1? <Shipping handleToggle={handleToggle}/> : <Billing handleToggle={handleToggle}/>}
         
     </div>
   )
