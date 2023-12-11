@@ -2,13 +2,20 @@ import React from 'react'
 import { FaCheck } from "react-icons/fa6";
 import { CiCreditCard1 } from "react-icons/ci";
 import { Input } from '@chakra-ui/react'
-const Billing = () => {
+import { IoIosArrowBack } from "react-icons/io";
+
+const Billing = ({handleToggle}) => {
+  const handleCheckout=()=>{
+    handleToggle(1);
+  }
+  
   return (
     <div className=' flex gap-4 w-full justify-center items-center '>
          <div className=' p-2 flex gap-4 justify-around w-11/12 '>
 
          <div className='grid  gap-4  '>
-          <div className=' font-bold text-4xl'>Shopping cart</div>
+
+          <div className=' flex items-center font-bold text-4xl gap-2'><IoIosArrowBack className='bg-[#3182ce] cursor-pointer text-white rounded-md' onClick={handleCheckout}/><div>Shopping cart</div></div>
           <div><p>HomePage / Clothing Catagories / <span className=' underline'>My Shopping</span></p></div>
           <div className=' grid gap-4'>
             <div className=' py-10 pl-8 flex items-center gap-8 h-16 border border-gray-300 rounded-md    '>
