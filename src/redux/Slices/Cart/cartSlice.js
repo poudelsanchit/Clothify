@@ -7,13 +7,15 @@ const initialState = {
 };
 
 const itemsSlice = createSlice({
-  name: 'cart',
+  name: "cart",
   initialState,
   reducers: {
     addItemToCart: (state, action) => {
       const newItem = action.payload;
-      const existingItem = state.items.find(item => item.productId === newItem.productId);
-      
+      const existingItem = state.items.find(
+        (item) => item.productId === newItem.productId
+      );
+
       if (existingItem) {
         // If the product with the same productId already exists, increment the quantity
         existingItem.qty += newItem.qty || 1; // Assuming quantity is present in newItem
@@ -24,15 +26,27 @@ const itemsSlice = createSlice({
     },
     removeItemFromCart: (state, action) => {
       const itemIdToRemove = action.payload;
-      state.items = state.items.filter(item => item.id !== itemIdToRemove);
+      state.items = state.items.filter((item) => item.id !== itemIdToRemove);
     },
-    clearCart: state => {
+    // Action to update the quantity of an item in the cart
+    updateCartItemQty: (state, action) => {
+      const { productId, qty } = action.payload;
+      const itemToUpdate = state.items.find(
+        (item) => item.productId === productId
+      );
+      if(itemToUpdate)
+      {
+        itemToUpdate.qty= qty
+      }
+
+    },
+    clearCart: (state) => {
       state.items = [];
     },
   },
 });
 
-export const { addItemToCart, removeItemFromCart, clearCart } = itemsSlice.actions;
+export const { addItemToCart, removeItemFromCart, clearCart,updateCartItemQty } = itemsSlice.actions;
 
 export default itemsSlice.reducer;
 export const getTotalPrice = state => {
