@@ -50,7 +50,6 @@ export const { addItemToCart, removeItemFromCart, clearCart,updateCartItemQty } 
 
 export default itemsSlice.reducer;
 export const getTotalPrice = state => {
-  console.log(state.cart)
   return state?.cart?.items?.reduce((total, item) => {
     // Extract the numeric value from the price string
     const numericPrice = Number(item.price.replace(/[^0-9.-]+/g, ''));
@@ -61,6 +60,12 @@ export const getTotalPrice = state => {
 };
 
 export const getProductsCount = state => {
-  console.log(state.cart)
   return state.cart.items.length
+};
+// New selector to get the sum of all products with quantities
+export const getSumOfProducts = state => {
+  return state.cart.items.reduce((total, item) => {
+    const numericPrice = Number(item.price.replace(/[^0-9.-]+/g, ''));
+    return total + (item.qty || 1) * numericPrice;
+  }, 0);
 };
