@@ -21,7 +21,7 @@ const Billing = ({handleToggle}) => {
             <div className=' py-10 pl-8 flex items-center gap-8 h-16 border border-gray-300 rounded-md    '>
               <div className=' border rounded-full px-2 items-center justify-center font-bold'>a</div>
               <div className='   pr-44'><div className='flex  gap-3  text-sm font-medium  text-gray-600'>LOGIN <FaCheck /></div>
-                   <div className=' flex text-black text-sm font-medium '>Sumit Rana <span className=' ml-6'>+977-9860000044</span></div>
+                   <div className=' flex text-black text-sm font-medium '>Sumit Magar <span className=' ml-6'>+977-9860000044</span></div>
               </div>
               <div><button className=' px-6 py-2 bg-slate-100 rounded-md text-black text-sm'>CHANGE</button></div>
             </div>
