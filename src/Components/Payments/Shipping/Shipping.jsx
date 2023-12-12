@@ -14,6 +14,9 @@ const Shipping = ({handleToggle}) => {
 const handleCheckout=()=>{
   handleToggle(2);
 }
+cartItems.map((data)=>{
+  
+})
 
   return (
     <>
