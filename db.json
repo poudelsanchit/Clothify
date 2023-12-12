@@ -7,6 +7,7 @@
           "price": "$180",
           "productId": "fcdcc8df34543",
           "qty": 1,
+"defaultSize": 0,
           "sizes": [
               40.5,
               41,
@@ -86,6 +87,7 @@
           "price": "$135",
           "productId": "fcdcc8df03433",
           "qty": 1,
+"defaultSize": 0,
           "sizes": [
               40.5,
               41,
@@ -164,6 +166,7 @@
           "price": "$135",
           "productId": "fcdcc8df5324",
           "qty": 1,
+"defaultSize": 0,
           "sizes": [
               40.5,
               41,
@@ -237,6 +240,7 @@
           "category": "Men's Shoes",
           "price": "$200",
           "qty": 1,
+"defaultSize": 0,
           "sizes": [
               40.5,
               41,
@@ -310,6 +314,7 @@
           "category": "Women's Shoes",
           "price": "$150",
           "qty": 1,
+"defaultSize": 0,
           "sizes": [
               40.5,
               41,
@@ -383,6 +388,7 @@
           "category": "Men's Shoes",
           "price": "$160",
           "qty": 1,
+"defaultSize": 0,
           "sizes": [
               40.5,
               41,
@@ -456,6 +462,7 @@
           "category": "Women's Shoes",
           "price": "$170",
           "qty": 1,
+"defaultSize": 0,
           "sizes": [
               40.5,
               41,
@@ -529,6 +536,7 @@
           "category": "Men's Shoes",
           "price": "$190",
           "qty": 1,
+"defaultSize": 0,
           "sizes": [
               40.5,
               41,
@@ -602,6 +610,7 @@
           "category": "Men's Shoes",
           "price": "$180",
           "qty": 1,
+"defaultSize": 0,
           "sizes": [
               40.5,
               41,
@@ -675,6 +684,7 @@
           "category": "Men's Shoes",
           "price": "$190",
           "qty": 1,
+"defaultSize": 0,
           "sizes": [
               40.5,
               41,
@@ -748,6 +758,7 @@
           "category": "Big Kids' Shoes",
           "price": "$120",
           "qty": 1,
+"defaultSize": 0,
           "sizes": [
               40.5,
               41,
@@ -776,6 +787,7 @@
           "price": "$180",
           "productId": "fcdcc8df34543",
           "qty": 1,
+"defaultSize": 0,
           "sizes": [
               40.5,
               41,
@@ -984,6 +996,7 @@
           "price": "$180",
           "productId": "fcdcc8df34543",
           "qty": 1,
+"defaultSize": 0,
           "sizes": [
               40.5,
               41,
