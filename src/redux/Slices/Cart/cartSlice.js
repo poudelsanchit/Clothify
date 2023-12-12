@@ -59,3 +59,8 @@ export const getTotalPrice = state => {
     return total + numericPrice;
   }, 0);
 };
+
+export const getProductsCount = state => {
+  console.log(state.cart)
+  return state.cart.items.length
+};
