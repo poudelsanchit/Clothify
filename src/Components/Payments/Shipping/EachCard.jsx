@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import GetNumberRange from '../../GetNumberRange';
 import GetSizeRange from '../../GetSizeRange';
 const EachCard = ({items}) => {
-    const [qty,setQty]= useState(1)
+    const [qty,setQty]= useState(items?.qty)
     const handleValueChange = (newValue) => {
       setQty(newValue)
+      console.log('data changed')
+      
     };
     const priceWithoutDollarSign = parseInt(items?.price?.replace(/\D/g, ''), 10);
     const totalPrice = qty * priceWithoutDollarSign;
@@ -26,7 +28,7 @@ const EachCard = ({items}) => {
             <span className="font-medium text-base">Qty: </span>
             <GetNumberRange
               max={10}
-              defaultvalue={1}
+              defaultvalue={qty}
               min={1}
               maxw={"160px"}
               onValueChange={handleValueChange}

@@ -12,8 +12,11 @@ import axios from 'axios';
 import Reviews from '../ReviewsSection/Reviews';
 import { useSelector, useDispatch } from 'react-redux'
 import { addItemToCart} from '../../redux/Slices/Cart/cartSlice';
+import { useToast } from '@chakra-ui/react'
 
 const Card = () => {
+  const toast = useToast()
+
   const cartItems = useSelector(state=>state.cart.items)
   const cartItemsLen = cartItems.length
 
@@ -24,7 +27,7 @@ const Card = () => {
   const [product,setProducts]= useState([])
   const fetchData=async()=>{
 
-    const response = await axios.get('https://dataec.onrender.com/products')
+    const response = await axios.get('http://localhost:3000/products')
     const products = response.data;
     const foundProduct = products.find(product => product.productId === id.id);
     if (foundProduct) {
@@ -40,7 +43,14 @@ const handleAddToCart=()=>{
   {
     
     dispatch(addItemToCart(product));
-    console.log('data added')
+    toast({
+      
+      title: 'Product added to cart.',
+      status: 'success',
+      duration: 2000,
+      position: 'top-right',
+      isClosable: true,
+    })
 
   }
   else{

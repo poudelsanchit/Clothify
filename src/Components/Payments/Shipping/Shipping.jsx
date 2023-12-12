@@ -4,21 +4,22 @@ import { CiHeart, CiShoppingCart } from 'react-icons/ci';
 import { useSelector } from 'react-redux';
 import { getTotalPrice } from '../../../redux/Slices/Cart/cartSlice';
 
-const Shipping = () => {
+const Shipping = ({handleToggle}) => {
   const cartItems = useSelector(state=>state.cart.items)
-  console.log(cartItems)
   const subTotal = useSelector(getTotalPrice);
   const tax= 2;
   const totalPrice = subTotal+ tax;
 
  
-
+const handleCheckout=()=>{
+  handleToggle(2);
+}
 
   return (
     <>
       <div className="flex w-11/12 gap-10 ">
         <div className=" w-8/12 font-Poppins flex flex-col gap-5">
-          <div className="text-2xl font-medium">Your Orders</div>
+          <div className="text-3xl font-medium tracking-tighter">Prodcuts</div>
           <div className="flex flex-col gap-2 w-full">
             {cartItems.map((items)=>{
               return <EachCard items={items}/>
@@ -50,7 +51,7 @@ const Shipping = () => {
                 color="white"
                 colorScheme="#ffffff"
                 height={12}
-                _hover={{ bgColor: "#4F5054", color: "white" }} onClick={()=>dispatch(addItemToCart(product))}
+                _hover={{ bgColor: "#4F5054", color: "white" }} onClick={handleCheckout}
               >
                 <CiShoppingCart  className='text-2xl'/>
                 Proceed to checkout
