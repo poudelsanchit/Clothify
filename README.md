@@ -1,4 +1,15 @@
-![Webshot](https://github.com/nabinkdl/Ecommerce/assets/105159506/6ba3b0fb-fb48-4e24-8965-478bd1d03be9)
-json-server --watch db.json to start the json server
+# Ecommerce (Clothifyios)
 
-npm install --save @ramonak/react-progress-bar
+###  Installation
+
+```bash
+# clone the repo
+git clone https://github.com/poudelsanchit/Ecommerce.git
+
+# install dependencies
+npm i
+
+# Run
+npm run dev
+json-server --watch db.json
+
