@@ -7,8 +7,13 @@ import { BsDot } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { TfiWorld } from "react-icons/tfi";
 import { IoWalletOutline } from "react-icons/io5";
+import { useSelector } from 'react-redux';
+import { getSumOfProducts } from '../../redux/Slices/Cart/cartSlice';
 
 const Billing = ({handleToggle}) => {
+  const products= useSelector(state=> state.cart.items)
+  const total= useSelector(getSumOfProducts)
+
   const handleCheckout=()=>{
     handleToggle(1);
   }
@@ -213,55 +218,72 @@ const Billing = ({handleToggle}) => {
         </div>
 
         {/*  */}
-        <div className=" border h-fit rounded-lg grid gap-3 mt-24">
-          <div className=" grid gap-4 px-6 pt-6">
-            <div className="">
-              <p className=" text-xl font-bold">Your Order</p>
+        <div className=" border h-fit rounded-lg grid gap-3 mt-5 w-5/12 ">
+          <div className=" grid gap-2 px-6 pt-2">
+            <div className=" border-b-[1px]">
+              <p className=" text-xl font-bold font-Poppins">Your Products</p>
             </div>
-            <hr />
-            <div className=" flex gap-4">
-              <div className=" h-32 w-24 bg-orange-400 rounded-md"></div>
-              <div className=" grid justify-start  pl-2  m-1">
-                <div className=" font-bold">Blue Shoe Jorden</div>
-                <div>
-                  {" "}
-                  <span className="font-medium">Size: </span> XL{" "}
-                  <span className=" ml-6 font-medium"> color: </span>Blue
+            {
+              products.map((items)=> { return (
+                <div className=" flex gap-4 font-Poppins border-b-[1px] pb-2">
+                  <img
+                    src={items.image}
+                    alt=""
+                    className=" h-24 w-24 bg-orange-400 rounded-md object-cover"
+                  />
+                  <div className=" grid justify-start  pl-2  m-1">
+                    <div className=" font-bold">{items.name}</div>
+                    <div>
+                      <span className="font-medium">Size: </span> 42
+                      <span className=" ml-6 font-medium"> color: </span>Blue
+                    </div>
+                    <div>
+                      <span className=" font-medium">
+                        Price: {items.price}
+                      </span>
+                      <span className='ml-6 font-medium'>Qty: {items.qty}</span>
+                    </div>
+                  </div>
                 </div>
-                <div className=" font-semibold">$39,00 x 02</div>
-              </div>
-            </div>
-            <hr />
-            <div className=" flex gap-4">
-              <div className=" h-32 w-24 bg-orange-400 rounded-md"></div>
-              <div className=" grid justify-start  pl-2  m-1">
-                <div className=" font-bold">Black Jorden</div>
-                <div>
-                  {" "}
-                  <span className="font-medium">Size: </span> XL{" "}
-                  <span className=" ml-6 font-medium"> color: </span>Blue
-                </div>
-                <div className=" font-semibold">$39,00 x 02</div>
-              </div>
-            </div>
-            <hr />
+              );
+          
+              
+              })
+            }
+            
             <div className=" flex justify-between">
               <div>Delivery</div>
               <div className=" text-gray-500">
-                <span className=" text-black font-bold">$20</span> {`(Express)`}
+                <span className=" text-black font-bold">$20</span> 
               </div>
             </div>
             <div className=" flex justify-between">
               <div>Discount</div>
               <div className=" text-gray-500">
-                <span className=" text-black font-bold mr-[4.4rem]">- $20</span>{" "}
+                <span className=" text-black font-bold">- $20</span>{" "}
                 {``}
               </div>
             </div>
           </div>
 
-          <div className=" mx-3 mb-2 py-8 w-46 bg-gray-100  rounded-lg text-3xl font-semibold px-3">
-            Total <span className=" ml-14">$177,00</span>
+          <div className=" mx-3 mb-2 py-4 w-46 bg-gray-100  rounded-lg text-2xl font-semibold px-3 flex flex-col gap-10">
+            <div className='flex w-full'>
+            <div>Total</div>
+             <span className=" ml-auto">${total}</span>
+
+            </div>
+            <Button
+                  className=" gap-1 w-full  text-4xl ml-auto mr-10"
+                  variant="solid"
+                  bgColor="black"
+                  color="white"
+                  colorScheme="#ffffff"
+                  height={12}
+                  _hover={{ bgColor: "#4F5054", color: "white" }}
+                >
+                Pay $117.00
+                </Button>
+         
           </div>
         </div>
       </div>
