@@ -14,6 +14,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import {decrement,increment} from './redux/Slices/counter/counterSlice'
 import { addItemToCart, removeItemFromCart, clearCart } from './redux/Slices/Cart/cartSlice';
 import Checkout from './Pages/Checkout'
+import {Footer} from './Components/Footer/Footer'
+
 
 const App = () => {
   const count = useSelector((state) => state.counter.value)
@@ -34,12 +36,8 @@ const App = () => {
       <Route path='/test' element={<New />} />
       <Route path='/checkout' element={<Checkout />} />
 
-
-
-
-
-
     </Routes> 
+    <Footer/>
       {/* <BottomNavBar/> */}
       {/* <div className="w-full h-screen  text-3xl  ">
         <div className="flex gap-10 justify-center items-center mt-10 ">
