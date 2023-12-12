@@ -15,7 +15,7 @@ const GetNumberRange = ({max,defaultvalue,min,maxw,onValueChange }) => {
       step: 1,
       defaultValue: defaultvalue,
       min: min,
-      max: max,
+      max: 999,
       onChange: (valueString) => {
         // Parse the valueString to a number if needed
         const newValue = parseInt(valueString, 10);

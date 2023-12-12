@@ -4,10 +4,11 @@ import { IoFingerPrintOutline,IoSearch  } from "react-icons/io5";
 import { CiHeart,CiShoppingCart  } from "react-icons/ci";
 import { Link, NavLink } from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
-
+import { useSelector } from 'react-redux';
+import { getProductsCount } from '../redux/Slices/Cart/cartSlice';
 const NavBar = () => {
   const { loginWithRedirect, logout,user, isAuthenticated, } = useAuth0();
-
+  const productsCount = useSelector(getProductsCount);
   return (
     <div className="sticky bg-white py-1 top-0  z-50 w-full font-Poppins text-black flex flex-col items-center">
       <div className="flex justify-between items-center  text-lg font-medium h-16 w-11/12 ">
@@ -98,7 +99,7 @@ const NavBar = () => {
             <div className="relative cursor-pointer" > 
               <CiShoppingCart className="text-3xl hover:scale-[1.01] " />
               <div className=" absolute h-4 w-4 rounded-full bg-yellow-400 top-0 right-0 flex justify-center items-center text-xs font-Chakra">
-                4
+                {productsCount}
               </div>
             </div>
             </Link>

@@ -3,14 +3,14 @@ import EachCard from './EachCard';
 import { CiHeart, CiShoppingCart } from 'react-icons/ci';
 import { useSelector } from 'react-redux';
 import { getTotalPrice } from '../../../redux/Slices/Cart/cartSlice';
+import { getSumOfProducts } from '../../../redux/Slices/Cart/cartSlice';
 
 const Shipping = ({handleToggle}) => {
   const cartItems = useSelector(state=>state.cart.items)
   const subTotal = useSelector(getTotalPrice);
   const tax= 2;
-  const totalPrice = subTotal+ tax;
+const total= useSelector(getSumOfProducts)
 
- 
 const handleCheckout=()=>{
   handleToggle(2);
 }
@@ -36,7 +36,7 @@ cartItems.map((data)=>{
           </div>
           <div className=" text-xl font-Poppins flex pb-2">
             {" "}
-            <div>Subtotal:</div> <div className="ml-auto ">$ {subTotal}</div>{" "}
+            <div>Subtotal:</div> <div className="ml-auto ">$ {total}</div>{" "}
           </div>
           <div className=" text-xl font-Poppins flex pb-2">
             {" "}
@@ -44,7 +44,7 @@ cartItems.map((data)=>{
           </div>
           <div className=" text-xl font-Poppins flex pb-2">
             {" "}
-            <div>Total :</div> <div className="ml-auto  text-red-600 font-semibold"> $ {totalPrice}</div>{" "}
+            <div>Total :</div> <div className="ml-auto  text-red-600 font-semibold"> $ {total+2}</div>{" "}
             
           </div>
               <Button
