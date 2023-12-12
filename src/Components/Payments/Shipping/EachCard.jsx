@@ -9,13 +9,11 @@ const EachCard = ({items}) => {
     const [qty,setQty]= useState(items?.qty)
     const handleValueChange = (newValue) => {
       setQty(newValue)
-      console.log('data changed')
       dispatch(updateCartItemQty({ productId: items.productId, qty: newValue }));
     };
     const priceWithoutDollarSign = parseInt(items?.price?.replace(/\D/g, ''), 10);
     const totalPrice = qty * priceWithoutDollarSign;
 
-    console.log(totalPrice)
   return (
     <div className=" flex h-32 w-full border-2 rounded-md  p-1 gap-5">
       <img
