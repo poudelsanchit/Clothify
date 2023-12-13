@@ -18,7 +18,8 @@ const itemsSlice = createSlice({
 
       if (existingItem) {
         // If the product with the same productId already exists, increment the quantity
-        existingItem.qty += newItem.qty || 1; // Assuming quantity is present in newItem
+        existingItem.qty += newItem.qty || 1; // Assuming quantity is present in newItem4
+        existingItem.defaultSize = newItem.defaultSize || 0;
       } else {
         // Otherwise, add the new item to the cart
         state.items.push(newItem);

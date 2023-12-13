@@ -15,12 +15,12 @@ import { addItemToCart} from '../../redux/Slices/Cart/cartSlice';
 import { useToast } from '@chakra-ui/react'
 
 const Card = () => {
+
   const toast = useToast()
 
   const cartItems = useSelector(state=>state.cart.items)
   const cartItemsLen = cartItems.length
 
-  console.log(cartItems.length)
 
   const dispatch = useDispatch();
   const id= useParams()
@@ -30,6 +30,8 @@ const Card = () => {
     const response = await axios.get('http://localhost:3000/products')
     const products = response.data;
     const foundProduct = products.find(product => product.productId === id.id);
+    setSelectedSize(foundProduct.sizes[0]);
+
     if (foundProduct) {
       setProducts(foundProduct);
     } else {
@@ -38,11 +40,12 @@ const Card = () => {
 
 
   }
+  const [defaultSize, setSelectedSize] = useState(0);
 const handleAddToCart=()=>{
   if(cartItemsLen<5)
   {
     
-    dispatch(addItemToCart(product));
+    dispatch(addItemToCart({ ...product, defaultSize }));
     toast({
       
       title: 'Product added to cart.',
@@ -59,10 +62,14 @@ const handleAddToCart=()=>{
   }
 
 }
+const handleSizeSelection = (size) => {
+  console.log('first')
+  setSelectedSize(size);
+};
   useEffect(()=>{
     window.scrollTo({behavior:'smooth',left:0, top:0})
     fetchData();
-      
+   
 
 
   },[])
@@ -160,7 +167,11 @@ const handleAddToCart=()=>{
               <div className=" flex gap-2 flex-wrap  w-5/6">
                 {product?.sizes?.map((sizes) => {
                   return (
-                    <div className="h-16 w-16 rounded-md  border-2 flex justify-center items-center text-sm font-Poppins font-bold">
+                    <div
+                      key={sizes} // Added key for React performance
+                      className={defaultSize===sizes ? "h-16 w-16 rounded-md  border-2 border-[#000000] cursor-pointer  flex justify-center items-center text-sm font-Poppins font-bold" : " cursor-pointer h-16 w-16 rounded-md  border-2 flex justify-center items-center text-sm font-Poppins font-bold"}
+                      onClick={() => handleSizeSelection(sizes)}
+                    >
                       {sizes}
                     </div>
                   );
