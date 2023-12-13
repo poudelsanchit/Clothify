@@ -6,6 +6,8 @@ import { Link, NavLink } from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
 import { useSelector } from 'react-redux';
 import { getProductsCount } from '../redux/Slices/Cart/cartSlice';
+import { PiGithubLogoThin } from "react-icons/pi";
+
 const NavBar = () => {
   const { loginWithRedirect, logout,user, isAuthenticated, } = useAuth0();
   const productsCount = useSelector(getProductsCount);
@@ -30,27 +32,40 @@ const NavBar = () => {
           />
         </div>
         <div className="flex justify-center items-center gap-2 cursor-pointer ">
-
           {/* Auth0 */}
 
-          {isAuthenticated?  (<>
-          <img src={user.picture} className=' w-12 rounded-full border-solid border-2  border-black' /> 
-          <button className='flex gap-2 items-center' onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
-          <div>Logout</div>
-           </button>  
-          </>) :  
-          (<>
-          <button className='flex gap-2' onClick={() => loginWithRedirect()}> <IoFingerPrintOutline className="text-2xl hover:scale-[1.01]" />Log In</button></>) }
-
-         
-
-
-
+          {isAuthenticated ? (
+            <>
+              <img
+                src={user.picture}
+                className=" w-12 rounded-full border-solid border-2  border-black"
+              />
+              <button
+                className="flex gap-2 items-center"
+                onClick={() =>
+                  logout({ logoutParams: { returnTo: window.location.origin } })
+                }
+              >
+                <div>Logout</div>
+              </button>
+            </>
+          ) : (
+            <>
+              <button
+                className="flex gap-2"
+                onClick={() => loginWithRedirect()}
+              >
+                {" "}
+                <IoFingerPrintOutline className="text-2xl hover:scale-[1.01]" />
+                Log In
+              </button>
+            </>
+          )}
         </div>
       </div>
       <div className="flex justify-between w-11/12   font-medium tracking-tighter py-3  border-b-[0.1px] border-[#f4f4f4]">
         <div className="flex gap-10 ">
-        <NavLink
+          <NavLink
             className={({ isActive }) => (isActive ? "text-active" : "")}
             to={"/"}
           >
@@ -92,20 +107,27 @@ const NavBar = () => {
           >
             Sales
           </NavLink>
-         
         </div>
         <div>
           <div className="flex  justify-center items-center gap-5">
-            <Link to={'/shipping'}>
-            <div className="relative cursor-pointer" > 
-              <CiShoppingCart className="text-3xl hover:scale-[1.01] " />
-              <div className=" absolute h-4 w-4 rounded-full bg-yellow-400 top-0 right-0 flex justify-center items-center text-xs font-Chakra">
-                {productsCount}
+          <a  href="https://github.com/poudelsanchit/Ecommerce" target='blank'>
+              {" "}
+              <PiGithubLogoThin
+                className="text-3xl hover:scale-[1.01] cursor-pointer "
+               
+              />
+            </a>
+            <Link to={"/shipping"}>
+              <div className="relative cursor-pointer">
+                <CiShoppingCart className="text-3xl hover:scale-[1.01] " />
+                <div className=" absolute h-4 w-4 rounded-full bg-yellow-400 top-0 right-0 flex justify-center items-center text-xs font-Chakra">
+                  {productsCount}
+                </div>
               </div>
-            </div>
             </Link>
 
             <CiHeart className="text-3xl hover:scale-[1.01] cursor-pointer " />
+           
           </div>
         </div>
       </div>

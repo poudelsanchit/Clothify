@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { BsDot } from "react-icons/bs";
 import { Button } from '@chakra-ui/react'
 import { CiShoppingCart,CiHeart  } from "react-icons/ci";
+import { FaHeart } from "react-icons/fa6";
+
 import { IconButton } from '@chakra-ui/react'
 import { FaStar } from "react-icons/fa";
 import { BsTruck } from "react-icons/bs";
@@ -15,15 +17,12 @@ import { addItemToCart} from '../../redux/Slices/Cart/cartSlice';
 import { useToast } from '@chakra-ui/react'
 
 const Card = () => {
-
   const toast = useToast()
-
   const cartItems = useSelector(state=>state.cart.items)
   const cartItemsLen = cartItems.length
-
-
   const dispatch = useDispatch();
   const id= useParams()
+  const [isFavourite,setIsFavourite] = useState(false);
   const [product,setProducts]= useState([])
   const fetchData=async()=>{
 
@@ -197,7 +196,8 @@ const handleSizeSelection = (size) => {
                 width={12}
                 colorScheme="blue"
                 aria-label="Search database"
-                icon={<CiHeart className="text-2xl" />}
+                icon={isFavourite? <FaHeart className="text-2xl text-red-400" /> : <CiHeart className="text-2xl "/>}
+                onClick={()=>setIsFavourite(prev=>!prev)}
               />
             </Stack>
             <div className='flex gap-2 items-center'> <BsTruck /> Free delivery on orders over $30.0</div>
