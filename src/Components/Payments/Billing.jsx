@@ -14,9 +14,10 @@ const Billing = ({handleToggle}) => {
   const navigate = useNavigate();
   const products= useSelector(state=> state.cart.items)
   const total= useSelector(getSumOfProducts)
+  console.log(products[0]?.defaultsize)
 
   const handleBack=()=>{
-   navigate('/')
+   navigate(-1)
   }
   
   return (
@@ -237,7 +238,7 @@ const Billing = ({handleToggle}) => {
                   <div className=" grid justify-start  pl-2  m-1">
                     <div className=" font-bold">{items.name}</div>
                     <div>
-                      <span className="font-medium">Size: </span> 42
+                      <span className="font-medium">Size: </span> {items?.defaultSize}
                       <span className=" ml-6 font-medium"> color: </span>Blue
                     </div>
                     <div>

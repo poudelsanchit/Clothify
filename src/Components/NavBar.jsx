@@ -50,6 +50,12 @@ const NavBar = () => {
       </div>
       <div className="flex justify-between w-11/12   font-medium tracking-tighter py-3  border-b-[0.1px] border-[#f4f4f4]">
         <div className="flex gap-10 ">
+        <NavLink
+            className={({ isActive }) => (isActive ? "text-active" : "")}
+            to={"/"}
+          >
+            Home
+          </NavLink>
           <NavLink
             className={({ isActive }) => (isActive ? "text-active" : "")}
             to={"/men"}
@@ -86,12 +92,7 @@ const NavBar = () => {
           >
             Sales
           </NavLink>
-          <NavLink
-            className={({ isActive }) => (isActive ? "text-active" : "")}
-            to={"/shoe"}
-          >
-            Test
-          </NavLink>
+         
         </div>
         <div>
           <div className="flex  justify-center items-center gap-5">
