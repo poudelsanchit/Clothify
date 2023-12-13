@@ -31,7 +31,7 @@ const Reviews = ({data}) => {
                 <option value="1">Top</option>
               </select>
             </div>
-            {data.map((reviews)=>{return <ReviewComment data={reviews}/> })}
+            {data?.map((reviews)=>{return <ReviewComment data={reviews}/> })}
            
           </div>
           {/* rateing and offer */}
