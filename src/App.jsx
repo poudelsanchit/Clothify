@@ -9,7 +9,6 @@ import New from './Pages/New'
 import Sales from './Pages/Sales'
 import Kids from './Pages/Kids'
 import Card from './Components/Cards/Card'
-import BottomNavBar from './Components/BottomNavBar'
 import { useSelector, useDispatch } from 'react-redux'
 import {decrement,increment} from './redux/Slices/counter/counterSlice'
 import { addItemToCart, removeItemFromCart, clearCart } from './redux/Slices/Cart/cartSlice';
