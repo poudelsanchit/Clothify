@@ -37,7 +37,7 @@ const App = () => {
       <Route path='/checkout' element={<Checkout />} />
 
     </Routes> 
-    <Footer/>
+    {/* <Footer/> */}
       {/* <BottomNavBar/> */}
       {/* <div className="w-full h-screen  text-3xl  ">
         <div className="flex gap-10 justify-center items-center mt-10 ">
