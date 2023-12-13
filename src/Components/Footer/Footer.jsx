@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom';
-import { ChevronRight } from 'lucide-react'
+import { FaChevronRight } from "react-icons/fa6";
 import Nike from './nike.png'
 
 export function Footer() {
@@ -20,7 +20,7 @@ export function Footer() {
               type="button"
               className="ml-4 rounded-full bg-black px-3 py-3 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
             >
-              <ChevronRight className="h-4 w-4" />
+              <FaChevronRight className="h-4 w-4" />
             </button>
           </form>
         </div> 
