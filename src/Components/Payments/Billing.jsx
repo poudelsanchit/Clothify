@@ -4,28 +4,31 @@ import { CiCreditCard1, CiShoppingCart } from "react-icons/ci";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Button, Input } from '@chakra-ui/react'
 import { IoIosArrowBack } from "react-icons/io";
 import { BsDot } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { TfiWorld } from "react-icons/tfi";
 import { IoWalletOutline } from "react-icons/io5";
 import { useSelector } from 'react-redux';
 import { getSumOfProducts } from '../../redux/Slices/Cart/cartSlice';
 
 const Billing = ({handleToggle}) => {
+  const navigate = useNavigate();
   const products= useSelector(state=> state.cart.items)
   const total= useSelector(getSumOfProducts)
 
-  const handleCheckout=()=>{
-    handleToggle(1);
+  const handleBack=()=>{
+   navigate('/')
   }
   
   return (
+    <div className='flex flex-col w-full items-center justify-center'>
+
     <div className=" flex gap-4 w-full justify-center items-center ">
       <div className="flex gap-4 justify-between w-11/12 ">
         <div className="flex flex-col  gap-4  w-7/12 ">
           <div className=" flex items-center gap-5">
             <IoIosArrowBack
               className="bg-[#3182ce] cursor-pointer text-white text-3xl rounded-md"
-              onClick={handleCheckout}
+              onClick={handleBack}
             />
             <div className=" font-bold text-4xl">Shopping cart</div>
           </div>
@@ -287,6 +290,7 @@ const Billing = ({handleToggle}) => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

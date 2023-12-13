@@ -6,19 +6,26 @@ import {
     Input,
     useNumberInput,
   } from '@chakra-ui/react'
-const GetSizeRange = ({max,defaultvalue,min,maxw}) => {
+const GetSizeRange = ({max,defaultvalue,min,maxw,onValueChange}) => {
     const [currentValue, setCurrentValue] = useState(defaultvalue);
 
-    const { getInputProps, getIncrementButtonProps, getDecrementButtonProps,value} =
-    useNumberInput({
+    const {
+      getInputProps,
+      getIncrementButtonProps,
+      getDecrementButtonProps,
+      value,
+    } = useNumberInput({
       step: 1,
       defaultValue: defaultvalue,
       min: min,
-      max: max,
+      max: 999,
       onChange: (valueString) => {
         // Parse the valueString to a number if needed
         const newValue = parseInt(valueString, 10);
         setCurrentValue(newValue);
+        if (onValueChange) {
+          onValueChange(newValue);
+        }
       },
     });
   const inc = getIncrementButtonProps()

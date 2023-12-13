@@ -28,6 +28,16 @@ const itemsSlice = createSlice({
       const itemIdToRemove = action.payload;
       state.items = state.items.filter((item) => item.id !== itemIdToRemove);
     },
+    updateCartItemSize: (state,action)=>{
+      const { productId, size } = action.payload;
+      const itemToUpdate = state.items.find(
+        (item) => item.productId === productId
+      );
+      if(itemToUpdate)
+      {
+        itemToUpdate.defaultSize= size
+      }
+    },
     // Action to update the quantity of an item in the cart
     updateCartItemQty: (state, action) => {
       const { productId, qty } = action.payload;
@@ -46,7 +56,14 @@ const itemsSlice = createSlice({
   },
 });
 
-export const { addItemToCart, removeItemFromCart, clearCart,updateCartItemQty } = itemsSlice.actions;
+
+export const {
+  addItemToCart,
+  removeItemFromCart,
+  clearCart,
+  updateCartItemQty,
+  updateCartItemSize
+} = itemsSlice.actions;
 
 export default itemsSlice.reducer;
 export const getTotalPrice = state => {

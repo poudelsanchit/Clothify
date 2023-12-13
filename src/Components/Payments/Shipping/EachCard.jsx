@@ -2,15 +2,22 @@ import React, { useState } from 'react'
 import GetNumberRange from '../../GetNumberRange';
 import GetSizeRange from '../../GetSizeRange';
 import {  useDispatch } from 'react-redux'
-import { updateCartItemQty } from '../../../redux/Slices/Cart/cartSlice';
+import { updateCartItemQty, updateCartItemSize } from '../../../redux/Slices/Cart/cartSlice';
 
 const EachCard = ({items}) => {
   const dispatch = useDispatch()
     const [qty,setQty]= useState(items?.qty)
-    const handleValueChange = (newValue) => {
+    const [size,setSize]= useState(items?.defaultSize)
+
+    const handleQtyChange = (newValue) => {
       setQty(newValue)
       dispatch(updateCartItemQty({ productId: items.productId, qty: newValue }));
     };
+    const handleSizeChange=(newValue)=>{
+      console.log(newValue)
+      dispatch(updateCartItemSize({ productId: items.productId, size: newValue }));
+
+    }
     const priceWithoutDollarSign = parseInt(items?.price?.replace(/\D/g, ''), 10);
     const totalPrice = qty * priceWithoutDollarSign;
 
@@ -33,12 +40,12 @@ const EachCard = ({items}) => {
               defaultvalue={qty}
               min={1}
               maxw={"160px"}
-              onValueChange={handleValueChange}
+              onValueChange={handleQtyChange}
             />
           </div>
           <div className="flex items-center gap-2">
             <span className="font-medium text-base">Size: </span>
-            <GetSizeRange max={44} defaultvalue={40} min={38} maxw={"180px"} />
+            <GetSizeRange max={44} defaultvalue={size} min={1} maxw={"180px"}   onValueChange={handleSizeChange}/>
           </div>
           <div className="flex gap-2 items-center">
             <span className="font-medium">Color:</span>

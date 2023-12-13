@@ -4,15 +4,17 @@ import { CiHeart, CiShoppingCart } from 'react-icons/ci';
 import { useSelector } from 'react-redux';
 import { getTotalPrice } from '../../../redux/Slices/Cart/cartSlice';
 import { getSumOfProducts } from '../../../redux/Slices/Cart/cartSlice';
+import { useNavigate } from 'react-router-dom';
 
 const Shipping = ({handleToggle}) => {
+  const navigate = useNavigate();
   const cartItems = useSelector(state=>state.cart.items)
   const subTotal = useSelector(getTotalPrice);
   const tax= 2;
 const total= useSelector(getSumOfProducts)
 
 const handleCheckout=()=>{
-  handleToggle(2);
+  navigate('/billing')
 }
 cartItems.map((data)=>{
   
@@ -20,6 +22,8 @@ cartItems.map((data)=>{
 
   return (
     <>
+        <div className='flex flex-col w-full items-center justify-center'>
+
       <div className="flex w-11/12 gap-10 ">
         <div className=" w-8/12 font-Poppins flex flex-col gap-5">
           <div className="text-3xl font-medium tracking-tighter">Prodcuts</div>
@@ -30,7 +34,7 @@ cartItems.map((data)=>{
           
           </div>
         </div>
-        <div className="h-max w-4/12 pb-5  mt-12  rounded-md border-2 hover:shadow-xl transition-all flex flex-col pl-5 pr-5">
+        <div className="h-max w-4/12 pb-5  mt-12  rounded-md border-2 transition-all flex flex-col pl-5 pr-5">
           <div className="font-semibold text-xl font-Poppins pb-2 border-b-2 pt-2">
             Order Summary
           </div>
@@ -61,6 +65,7 @@ cartItems.map((data)=>{
               </Button>
             
         </div>
+      </div>
       </div>
     </>
   );

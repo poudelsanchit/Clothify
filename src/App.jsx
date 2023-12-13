@@ -13,8 +13,9 @@ import BottomNavBar from './Components/BottomNavBar'
 import { useSelector, useDispatch } from 'react-redux'
 import {decrement,increment} from './redux/Slices/counter/counterSlice'
 import { addItemToCart, removeItemFromCart, clearCart } from './redux/Slices/Cart/cartSlice';
-import Checkout from './Pages/Checkout'
+import Shipping from './Components/Payments/Shipping/Shipping.jsx'
 import {Footer} from './Components/Footer/Footer'
+import Billing from './Components/Payments/Billing.jsx'
 
 
 const App = () => {
@@ -34,7 +35,9 @@ const App = () => {
       <Route path='/sales' element={<Sales/>} />
       <Route path='/shoes/:id' element={<Card />} />
       <Route path='/test' element={<New />} />
-      <Route path='/checkout' element={<Checkout />} />
+      <Route path='/shipping' element={<Shipping />} />
+      <Route path='/billing' element={<Billing />} />
+
 
     </Routes> 
     {/* <Footer/> */}
