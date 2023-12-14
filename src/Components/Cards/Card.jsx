@@ -40,11 +40,13 @@ const Card = () => {
 
   }
   const [defaultSize, setSelectedSize] = useState(0);
+  const [defaultColor, setSelectedColor] = useState(0);
+
 const handleAddToCart=()=>{
   if(cartItemsLen<5)
   {
     
-    dispatch(addItemToCart({ ...product, defaultSize }));
+    dispatch(addItemToCart({ ...product, defaultSize,defaultColor }));
     toast({
       
       title: 'Product added to cart.',
@@ -62,9 +64,13 @@ const handleAddToCart=()=>{
 
 }
 const handleSizeSelection = (size) => {
-  console.log('first')
   setSelectedSize(size);
 };
+const handleSelectColor=(color)=>{
+  setSelectedColor(color);
+  console.log(color)
+
+}
   useEffect(()=>{
     window.scrollTo({behavior:'smooth',left:0, top:0})
     fetchData();
@@ -149,9 +155,10 @@ const handleSizeSelection = (size) => {
                 {product?.color?.map((shoeColor) => {
                   return (
                     <img
-                      src={shoeColor}
+                      src={shoeColor.url}
                       alt=""
                       className="h-14 w-12 rounded-md object-cover "
+                      onClick={()=>handleSelectColor(shoeColor.color)}
                     />
                   );
                 })}

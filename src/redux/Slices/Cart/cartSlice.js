@@ -51,6 +51,14 @@ const itemsSlice = createSlice({
       }
 
     },
+    updateCartItemColor: (state,action)=>{
+      const { productId, color } = action.payload;
+      const itemToUpdate = state.items.find((item)=> item.productId=== productId)
+      if(itemToUpdate)
+      {
+        itemToUpdate.defaultColor= color
+      }
+    },
     clearCart: (state) => {
       state.items = [];
     },

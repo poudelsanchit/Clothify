@@ -16,9 +16,7 @@ const total= useSelector(getSumOfProducts)
 const handleCheckout=()=>{
   navigate('/billing')
 }
-cartItems.map((data)=>{
-  
-})
+
 
   return (
     <>

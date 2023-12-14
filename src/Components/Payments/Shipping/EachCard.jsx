@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import GetNumberRange from '../../GetNumberRange';
 import GetSizeRange from '../../GetSizeRange';
 import {  useDispatch } from 'react-redux'
@@ -8,6 +8,8 @@ const EachCard = ({items}) => {
   const dispatch = useDispatch()
     const [qty,setQty]= useState(items?.qty)
     const [size,setSize]= useState(items?.defaultSize)
+    const [color,setColor]= useState(items?.defaultColor)
+
 
     const handleQtyChange = (newValue) => {
       setQty(newValue)
@@ -18,8 +20,22 @@ const EachCard = ({items}) => {
       dispatch(updateCartItemSize({ productId: items.productId, size: newValue }));
 
     }
+     
     const priceWithoutDollarSign = parseInt(items?.price?.replace(/\D/g, ''), 10);
     const totalPrice = qty * priceWithoutDollarSign;
+    const options = [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Redux",
+  ];
+  
+const onOptionChangeHandler=(event)=>{
+  setColor(event.target.value)
+}
+
+console.log(color)
 
   return (
     <div className=" flex h-32 w-full border-2 rounded-md  p-1 gap-5">
@@ -45,17 +61,27 @@ const EachCard = ({items}) => {
           </div>
           <div className="flex items-center gap-2">
             <span className="font-medium text-base">Size: </span>
-            <GetSizeRange max={44} defaultvalue={size} min={1} maxw={"180px"}   onValueChange={handleSizeChange}/>
+            <GetSizeRange
+              max={44}
+              defaultvalue={size}
+              min={1}
+              maxw={"180px"}
+              onValueChange={handleSizeChange}
+            />
           </div>
           <div className="flex gap-2 items-center">
             <span className="font-medium">Color:</span>
             <select
-              name=""
-              id=""
-              className="focus:outline-none border-[1px] rounded-md px-2 py-2 backdrop:bg-red-500"
+              onChange={(e) => setColor(e.target.value)}
+              value={color}
             >
-              <option value="">Blue</option>
-              <option value="">White</option>
+              {items?.color?.map((option, index) => {
+                return (
+                  <option key={index} value={option.color}>
+                    {option.color}
+                  </option>
+                );
+              })}
             </select>
           </div>
         </div>
