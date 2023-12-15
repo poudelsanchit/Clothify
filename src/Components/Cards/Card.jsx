@@ -1,27 +1,22 @@
 import React, { useEffect, useState } from 'react'
-import { Avatar, Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Stack } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
-import { BsDot } from "react-icons/bs";
-import { Button } from '@chakra-ui/react'
+import axios from 'axios';
+import { Avatar, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Stack,IconButton ,useToast,Button } from '@chakra-ui/react';
+import { Link ,useParams} from 'react-router-dom';
 import { CiShoppingCart,CiHeart  } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa6";
-
-import { IconButton } from '@chakra-ui/react'
 import { FaStar } from "react-icons/fa";
-import { BsTruck } from "react-icons/bs";
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import { BsDot,BsTruck } from "react-icons/bs";
 import Reviews from '../ReviewsSection/Reviews';
+
 import { useSelector, useDispatch } from 'react-redux'
 import { addItemToCart} from '../../redux/Slices/Cart/cartSlice';
-import { useToast } from '@chakra-ui/react'
 
 const Card = () => {
   const toast = useToast()
   const cartItems = useSelector(state=>state.cart.items)
   const cartItemsLen = cartItems.length
   const dispatch = useDispatch();
-  const id= useParams()
+  const id= useParams();
   const [isFavourite,setIsFavourite] = useState(false);
   const [product,setProducts]= useState([])
   const fetchData=async()=>{
@@ -30,6 +25,7 @@ const Card = () => {
     const products = response.data;
     const foundProduct = products.find(product => product.productId === id.id);
     setSelectedSize(foundProduct.sizes[0]);
+    setSelectedColor(foundProduct.color[0].color)
 
     if (foundProduct) {
       setProducts(foundProduct);
@@ -42,33 +38,21 @@ const Card = () => {
   const [defaultColor, setSelectedColor] = useState(0);
 
 const handleAddToCart=()=>{
-  if(cartItemsLen<5)
-  {
-    
-    dispatch(addItemToCart({ ...product, defaultSize,defaultColor }));
-    toast({
-      
-      title: 'Product added to cart.',
-      status: 'success',
-      duration: 2000,
-      position: 'top-right',
-      isClosable: true,
-    })
-
-  }
-  else{
-    alert('Can add more data' )
-
-  }
-
+  console.log(defaultColor)
+  dispatch(addItemToCart({ ...product, defaultSize, defaultColor }));
+  toast({
+    title: "Product added to cart.",
+    status: "success",
+    duration: 2000,
+    position: "top-right",
+    isClosable: true,
+  });
 }
 const handleSizeSelection = (size) => {
   setSelectedSize(size);
 };
 const handleSelectColor=(color)=>{
   setSelectedColor(color);
-  console.log(color)
-
 }
   useEffect(()=>{
     window.scrollTo({behavior:'smooth',left:0, top:0})
@@ -148,17 +132,20 @@ const handleSelectColor=(color)=>{
             <div className="flex flex-col ">
               <div className="flex font-Poppins text-sm items-center">
                 <div>Color</div> <BsDot className="text-[#a6a6a6] text-3xl" />
-                <div className="text-secondary-text">Blue</div>
+                <div className="text-secondary-text">{defaultColor}</div>
               </div>
               <div className=" flex gap-2 flex-wrap">
                 {product?.color?.map((shoeColor) => {
                   return (
-                    <img
-                      src={shoeColor.url}
-                      alt=""
-                      className="h-14 w-12 rounded-md object-cover "
-                      onClick={()=>handleSelectColor(shoeColor.color)}
-                    />
+                    <div className={defaultColor===shoeColor.color? 'border-[1.7px] border-[#433b3b] rounded-lg h-16 w-16 ' : 'rounded-lg h-16 w-16 ' }>
+                      {" "}
+                      <img
+                        src={shoeColor.url}
+                        alt=""
+                        className='object-cover h-full w-full rounded-md  cursor-pointer '
+                        onClick={() => handleSelectColor(shoeColor.color)}
+                      />
+                    </div>
                   );
                 })}
               </div>
@@ -173,7 +160,7 @@ const handleSelectColor=(color)=>{
                 {product?.sizes?.map((sizes) => {
                   return (
                     <div
-                      key={sizes} // Added key for React performance
+                      key={sizes} 
                       className={defaultSize===sizes ? "h-16 w-16 rounded-md  border-2 border-[#000000] cursor-pointer  flex justify-center items-center text-sm font-Poppins font-bold" : " cursor-pointer h-16 w-16 rounded-md  border-2 flex justify-center items-center text-sm font-Poppins font-bold"}
                       onClick={() => handleSizeSelection(sizes)}
                     >

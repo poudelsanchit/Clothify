@@ -20,6 +20,8 @@ const itemsSlice = createSlice({
         // If the product with the same productId already exists, increment the quantity
         existingItem.qty += newItem.qty || 1; // Assuming quantity is present in newItem4
         existingItem.defaultSize = newItem.defaultSize || 0;
+        existingItem.defaultColor = newItem.defaultColor || 0;
+
       } else {
         // Otherwise, add the new item to the cart
         state.items.push(newItem);
@@ -71,7 +73,8 @@ export const {
   removeItemFromCart,
   clearCart,
   updateCartItemQty,
-  updateCartItemSize
+  updateCartItemSize,
+  updateCartItemColor
 } = itemsSlice.actions;
 
 export default itemsSlice.reducer;

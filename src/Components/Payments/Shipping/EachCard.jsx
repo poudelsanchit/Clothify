@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react'
 import GetNumberRange from '../../GetNumberRange';
 import GetSizeRange from '../../GetSizeRange';
 import {  useDispatch } from 'react-redux'
-import { updateCartItemQty, updateCartItemSize } from '../../../redux/Slices/Cart/cartSlice';
+import { updateCartItemColor, updateCartItemQty, updateCartItemSize } from '../../../redux/Slices/Cart/cartSlice';
 
 const EachCard = ({items}) => {
+
   const dispatch = useDispatch()
     const [qty,setQty]= useState(items?.qty)
     const [size,setSize]= useState(items?.defaultSize)
@@ -32,8 +33,14 @@ const EachCard = ({items}) => {
   ];
   
 const onOptionChangeHandler=(event)=>{
-  setColor(event.target.value)
-}
+  const newColor = event.target.value;
+
+  // Update local state
+  setColor(newColor);
+
+  // Dispatch action to update Redux state
+  dispatch(updateCartItemColor({ productId: items.productId, color: newColor }));
+};
 
 console.log(color)
 
@@ -72,7 +79,7 @@ console.log(color)
           <div className="flex gap-2 items-center">
             <span className="font-medium">Color:</span>
             <select
-              onChange={(e) => setColor(e.target.value)}
+              onChange={onOptionChangeHandler}
               value={color}
             >
               {items?.color?.map((option, index) => {
@@ -83,6 +90,7 @@ console.log(color)
                 );
               })}
             </select>
+
           </div>
         </div>
       </div>
