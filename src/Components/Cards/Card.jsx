@@ -34,7 +34,6 @@ const Card = () => {
     if (foundProduct) {
       setProducts(foundProduct);
     } else {
-      console.log('Product not found');
     }
 
 
