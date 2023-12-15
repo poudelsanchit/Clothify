@@ -24,7 +24,7 @@ const App = () => {
   return (
     <>
       <NavBar />
-     {/* <Routes>
+      <Routes>
       <Route path='/' element={<Body/>} />
       <Route path='/men' element={<Men/>} />
       <Route path='/women' element={<Women/>} />
@@ -38,7 +38,7 @@ const App = () => {
       <Route path='/billing' element={<Billing />} />
 
 
-    </Routes>  */}
+    </Routes>  
     {/* <Footer/> */}
       {/* <BottomNavBar/> */}
       {/* <div className="w-full h-screen  text-3xl  ">
