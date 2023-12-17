@@ -13,7 +13,7 @@ const NavBar = () => {
   const { loginWithRedirect, logout,user, isAuthenticated, } = useAuth0();
   const productsCount = useSelector(getProductsCount);
   return (
-    <div className="sticky bg-white py-1 top-0  z-50 w-full font-Poppins text-black flex flex-col items-center">
+    <div className="sticky bg-white py-1 top-0  z-50 w-full font-Poppins text-black flex flex-col items-center bg-red">
       <div className="flex justify-between items-center  text-lg font-medium sm:h-16 h-14 w-11/12 ">
         <Link to={"/"}>
           <img
