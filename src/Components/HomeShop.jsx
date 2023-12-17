@@ -3,6 +3,7 @@ import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import axios from 'axios';
 import EachCard from './Cards/EachCard';
 import Swiper from './Swipers/Swiper';
+import ProductsSwiper from './Swipers/ProductsSwiper';
 
 const HomeShop = () => {
   const [products,setProducts]= useState([])
@@ -37,8 +38,9 @@ const HomeShop = () => {
       <div className="w-11/12">
        
 
-        <Swiper products={products} title={'Popular right now'}/>
-        <Swiper products={products2}  title={'Best sales'}/>
+        <ProductsSwiper products={products} title={'Popular right now'}/>
+        <ProductsSwiper products={products2}  title={'Best sales'}/>
+        <ProductsSwiper products={products} title={'Best Choices'} />
       </div>
     </div>
   );

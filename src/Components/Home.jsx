@@ -43,7 +43,7 @@ function Home() {
           </Stack>
         </div>
 
-        <Swiper className=" h-[40rem] bg-pink-100" />
+        <Swiper/>
       </div>
 
   );

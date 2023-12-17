@@ -11,11 +11,10 @@ function SwiperTool() {
 
   return (
     <>
-    <div className='sm:w-3/6 w-full '>
+    <div className='w-11/12 sm:w-[20rem]  '>
     <Swiper
         // install Swiper modules
         modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
-        className="h-[40rem] sm:w-[29rem] w-11/12 object-cover hidden sm:block"
         spaceBetween={0}
         slidesPerView={1}
         autoplay={{
@@ -30,9 +29,8 @@ function SwiperTool() {
           return (
             <SwiperSlide>
               <img
-                className="h-[40rem] object-cover"
+                className="h-[40rem] w-full sm:w-[40rem] object-cover"
                 src={images}
-                alt="hero-image"
               />
             </SwiperSlide>
           );
