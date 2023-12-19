@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { forwardRef, useEffect, useState } from 'react'
 import axios from 'axios';
 import { Avatar, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Stack,IconButton ,useToast,Button } from '@chakra-ui/react';
 import { Link ,useParams} from 'react-router-dom';
@@ -63,9 +63,9 @@ const handleSelectColor=(color)=>{
   },[])
 
   return (
-    <div className="flex flex-col w-full h-full justify-center items-center gap-20  ">
-      <div className="w-11/12 h-full flex ">
-        <div className=" w-1/2  flex flex-col gap-2 mt-2">
+    <div className="flex flex-col w-full h-auto justify-center items-center gap-20  ">
+      <div className="w-11/12 h-full flex sm:flex-row flex-col ">
+        <div className=" w-full sm:w-1/2   flex flex-col gap-2 mt-2">
           <Breadcrumb
             spacing="2px"
             separator={<BsDot className="text-3xl text-[#a6a6a6] " />}
@@ -89,35 +89,14 @@ const handleSelectColor=(color)=>{
               </BreadcrumbLink>
             </BreadcrumbItem>
           </Breadcrumb>
-          <img
-            src={product?.image}
-            alt=""
-            className="w-11/12 bg-orange-400 rounded-md h-[30rem] object-cover"
-          />
-          <div className=" flex w-11/12 justify-between gap-5 flex-wrap">
-            {product?.imgsides?.slice(0,5).map((shoe)=>{
-              return  <img
-              src={shoe}
-              alt=""
-              className="h-[5.2rem] w-[5.2rem] rounded-md object-cover "
-            />
-            })}
-           
-            <div className="h-[5.2rem] w-[5.2rem] border-[0.1px] border-[#ece9e9] rounded-md flex justify-center items-center text-xs font-medium text-secondary-text cursor-pointer">
-              +2 more
-            </div>
-          </div>
-        </div>
-        <div className=" w-1/2 flex mt-12 justify-center ">
-          <div className="flex flex-col gap-5 w-5/6">
-            <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2  sm:hidden ">
               <Avatar src="https://i.pinimg.com/564x/1b/99/35/1b993547a8a3d69870d1a5d55a5cccc2.jpg" />
               <div className="font-medium text-xl font-Poppins">Nike</div>
             </div>
-            <div className="font-bold font-Poppins text-3xl">
+            <div className="font-bold font-Poppins text-2xl  sm:hidden block">
              {product?.name}
             </div>
-            <div className="flex gap-2 items-center ">
+            <div className="flex gap-2 items-center  sm:hidden  ">
               <FaStar className="text-yellow-500" />
               <FaStar className="text-yellow-500" />
               <FaStar className="text-yellow-500" />
@@ -128,8 +107,50 @@ const handleSelectColor=(color)=>{
                 69 Reviews
               </div>
             </div>
-            <div className="font-bold font-Poppins text-4xl">{product?.price}</div>
-            <div className="flex flex-col ">
+            <div className="font-bold font-Poppins text-4xl sm:hidden block">{product?.price}</div>
+
+            
+          <img
+            src={product?.image}
+            alt=""
+            className="w-full sm:w-11/12 bg-orange-400 rounded-md h-[30rem] object-cover"
+          />
+          <div className=" flex w-11/12 justify-between gap-2 sm:gap-5 flex-wrap">
+            {product?.imgsides?.slice(0,5).map((shoe)=>{
+              return  <img
+              src={shoe}
+              alt=""
+              className="h-[5.2rem] w-[5.2rem] rounded-md object-cover "
+            />
+            })}
+           
+            <div className=" mr-auto h-[5.2rem] w-[5.2rem] border-[0.1px] border-[#ece9e9] rounded-md flex justify-center items-center text-xs font-medium text-secondary-text cursor-pointer">
+              +2 more
+            </div>
+          </div>
+        </div>
+        <div className=" w-full sm:w-1/2 flex mt-12 justify-center ">
+          <div className="flex flex-col gap-5 sm:w-5/6 w-full ">
+            <div className="sm:flex items-center gap-2  hidden ">
+              <Avatar src="https://i.pinimg.com/564x/1b/99/35/1b993547a8a3d69870d1a5d55a5cccc2.jpg" />
+              <div className="font-medium text-xl font-Poppins">Nike</div>
+            </div>
+            <div className="font-bold font-Poppins text-3xl  hidden sm:block">
+             {product?.name}
+            </div>
+            <div className="sm:flex gap-2 items-center  hidden  ">
+              <FaStar className="text-yellow-500" />
+              <FaStar className="text-yellow-500" />
+              <FaStar className="text-yellow-500" />
+              <FaStar className="text-yellow-500" />
+              <FaStar className="text-gray-300" />
+              <div className="text-secondary-text font-Poppins text-xs">
+                {" "}
+                69 Reviews
+              </div>
+            </div>
+            <div className="font-bold font-Poppins text-4xl hidden sm:block">{product?.price}</div>
+            <div className="flex flex-col  ">
               <div className="flex font-Poppins text-sm items-center">
                 <div>Color</div> <BsDot className="text-[#a6a6a6] text-3xl" />
                 <div className="text-secondary-text">{defaultColor}</div>
@@ -198,7 +219,7 @@ const handleSelectColor=(color)=>{
         </div>
         
       </div>
-      <Reviews data={product.reviews} />
+      {/* <Reviews data={product.reviews} /> */}
     </div>
   );
 }
