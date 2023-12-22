@@ -15,6 +15,7 @@ import { addItemToCart, removeItemFromCart, clearCart } from './redux/Slices/Car
 import Shipping from './Components/Payments/Cart/Cart.jsx'
 import {Footer} from './Components/Footer/Footer'
 import Billing from './Components/Payments/Checkout.jsx'
+import Contributors from './Pages/Contributers.jsx'
 
 
 const App = () => {
@@ -36,6 +37,8 @@ const App = () => {
       <Route path='/test' element={<New />} />
       <Route path='/cart' element={<Shipping />} />
       <Route path='/checkout' element={<Billing />} />
+      <Route path='/contributers' element={<Contributors />} />
+
 
 
     </Routes>  
