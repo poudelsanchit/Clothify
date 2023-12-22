@@ -11,14 +11,13 @@ function SwiperTool() {
 
   return (
     <>
-    <div className='w-11/12 sm:w-[20rem]  '>
+    <div className='w-11/12 sm:w-[30rem]  '>
     <Swiper
-        // install Swiper modules
         modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={0}
         slidesPerView={1}
         autoplay={{
-          delay: 1000,
+          delay: 2000,
           disableOnInteraction: false,
         }}
 

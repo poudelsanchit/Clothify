@@ -1,11 +1,11 @@
 import React from 'react'
-import Nike from '../assets/nike.png'
+import Nike from '../../assets/nike.png'
 import { IoFingerPrintOutline,IoSearch  } from "react-icons/io5";
 import { CiHeart,CiShoppingCart  } from "react-icons/ci";
 import { Link, NavLink } from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
 import { useSelector } from 'react-redux';
-import { getProductsCount } from '../redux/Slices/Cart/cartSlice';
+import { getProductsCount } from '../../redux/Slices/Cart/cartSlice';
 import { PiGithubLogoThin } from "react-icons/pi";
 import { CgMenuLeft } from "react-icons/cg";
 
@@ -123,7 +123,7 @@ const NavBar = () => {
               {" "}
               <PiGithubLogoThin className=" text-2xl sm:text-3xl hover:scale-[1.01] cursor-pointer " />
             </a>
-            <Link to={"/shipping"}>
+            <Link to={"/cart"}>
               <div className="relative cursor-pointer">
                 <CiShoppingCart className="text-2xl sm:text-3xl hover:scale-[1.01] " />
                 <div className=" absolute h-3 w-3 sm:h-4 sm:w-4 rounded-full bg-yellow-400 top-0 right-0 flex justify-center items-center text-xs font-Chakra">

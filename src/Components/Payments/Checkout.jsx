@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaCheck } from "react-icons/fa6";
 import { CiCreditCard1, CiShoppingCart } from "react-icons/ci";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Button, Input } from '@chakra-ui/react'
@@ -15,7 +15,7 @@ const Billing = ({handleToggle}) => {
   const products= useSelector(state=> state.cart.items)
   const total= useSelector(getSumOfProducts)
   console.log(products[0]?.defaultsize)
-
+  const [toggleState, setToggleState] = useState(1);
   const handleBack=()=>{
    navigate(-1)
   }
@@ -24,14 +24,14 @@ const Billing = ({handleToggle}) => {
     <div className='flex flex-col w-full items-center justify-center'>
 
     <div className=" flex gap-4 w-full justify-center items-center ">
-      <div className="flex gap-4 justify-between w-11/12 ">
-        <div className="flex flex-col  gap-4  w-7/12 ">
+      <div className="flex lg:flex-row flex-col gap-4 justify-between w-11/12 ">
+        <div className="flex flex-col  lg:gap-4 gap-2  lg:w-7/12 ">
           <div className=" flex items-center gap-5">
             <IoIosArrowBack
               className="bg-[#3182ce] cursor-pointer text-white text-3xl rounded-md"
               onClick={handleBack}
             />
-            <div className=" font-bold text-4xl">Shopping cart</div>
+            <div className=" font-bold lg:text-4xl text-2xl">Checkout</div>
           </div>
           <Breadcrumb
             spacing="2px"
@@ -45,33 +45,33 @@ const Billing = ({handleToggle}) => {
             </BreadcrumbItem>
 
             <BreadcrumbItem>
-              <BreadcrumbLink as={Link} to="/men">
-                Men
+              <BreadcrumbLink as={Link} to="/cart">
+                Cart
               </BreadcrumbLink>
             </BreadcrumbItem>
 
             <BreadcrumbItem isCurrentPage>
-              <BreadcrumbLink as={Link} to="/men/product">
-                Product
+              <BreadcrumbLink as={Link} to="/checkout">
+                Checkout
               </BreadcrumbLink>
             </BreadcrumbItem>
           </Breadcrumb>
           <div className=" grid gap-4">
-            <div className=" py-10 pl-8 flex items-center gap-8 h-16 border border-gray-300 rounded-md    ">
+            <div className=" lg:py-10 lg:pl-8 py-2 pl-2 flex items-center gap-8 h-full border border-gray-300 rounded-md    ">
               <div className=" border rounded-full px-2 items-center justify-center font-bold">
                 a
               </div>
               <div className="flex w-full ">
                 <div className="flex flex-col ">
-                  <div className="flex  gap-3  text-sm font-medium  text-gray-600">
+                  <div className="flex  gap-3  lg:text-sm text-xs font-medium  text-gray-600">
                     LOGIN <FaCheck />
                   </div>
-                  <div className=" flex flex-col text-black text-sm font-medium ">
-                    Sanchit Poudel <span>+977-9860000044</span>
+                  <div className=" flex flex-col text-black lg:text-sm text-xs font-medium ">
+                    Sanchit Poudel <span>+977-9846905213</span>
                   </div>
                 </div>
                 <Button
-                  className="flex gap-1  text-4xl ml-auto mr-10"
+                  className="flex gap-1  text-4xl ml-auto lg:mr-10 mr-2"
                   variant="solid"
                   bgColor="black"
                   color="white"
@@ -82,24 +82,24 @@ const Billing = ({handleToggle}) => {
                 >
                   Change
                 </Button>
+               
               </div>
             </div>
-            <div className=" py-10 pl-8 flex items-center gap-8 h-16 border border-gray-300 rounded-md    ">
+            <div className=" lg:py-10 lg:pl-8 py-2 pl-2 flex items-center gap-8 h-full border border-gray-300 rounded-md    ">
               <div className=" border rounded-full px-2 items-center justify-center font-bold">
                 a
               </div>
               <div className="flex w-full ">
                 <div className="flex flex-col ">
-                  <div className="flex items-center  gap-3  text-sm font-medium  text-gray-600">
-                    <div> Shipping Address</div>
-                    <FaCheck />
+                  <div className="flex  gap-3  lg:text-sm text-xs font-medium  text-gray-600">
+                  Shipping Address <FaCheck />
                   </div>
-                  <div className=" flex flex-col text-black text-sm font-medium ">
-                    <div>Pokhara 30 Shishuwa, Kaski</div> <span>33800</span>
+                  <div className=" flex flex-col text-black lg:text-sm text-xs font-medium ">
+                    <div>Pokhara 30 Shishuwa, Kaski 33800</div>
                   </div>
                 </div>
                 <Button
-                  className="flex gap-1  text-4xl ml-auto mr-10"
+                  className="flex gap-1  text-4xl ml-auto lg:mr-10 mr-2"
                   variant="solid"
                   bgColor="black"
                   color="white"
@@ -110,22 +110,24 @@ const Billing = ({handleToggle}) => {
                 >
                   Change
                 </Button>
+               
               </div>
             </div>
+         
           </div>
-          <div className="flex flex-col gap-5 ">
-            <div className=" py-8 px-8 flex items-center gap-8 h-16  bg-gray-100 rounded-md  mt-5  ">
-              <div className=" flex mx-8 text-black text-md font-medium ">
+          <div className="flex flex-col lg:gap-5 gap-2 ">
+            <div className=" py-8 px-8 flex items-center gap-8 lg:h-16 h-6  bg-gray-100 rounded-md  mt-5  ">
+              <div className=" flex mx-8 text-black lg:text-lg text-sm font-medium ">
                 PAYMENT METHOD
               </div>
             </div>
             {/* debit card */}
             <div className='flex justify-center-center gap-5'>
               <div className='w-30 h-12  flex justify-center items-center '>
-                <div className='h-7 w-7 bg-black rounded-full cursor-pointer'></div>
+                <div className={toggleState===1? 'lg:h-7 lg:w-7 h-5 w-5 bg-black rounded-full cursor-pointer': 'lg:h-7 lg:w-7 h-5 w-5 border-2 border-[#322f2f] rounded-full cursor-pointer'}></div>
                  </div>
               <div className="flex flex-col h-max gap-4">
-              <div className="flex gap-5 items-center">
+              <div className="flex gap-5 items-center" onClick={()=>setToggleState(1)}>
                 <div className=" border-2 border-gray-600 rounded-xl  h-12 w-12 flex justify-center items-center">
                   <CiCreditCard1 size={36} />
                 </div>
@@ -185,10 +187,10 @@ const Billing = ({handleToggle}) => {
                 {/* Net banking*/}
                 <div className='flex justify-center-center gap-5'>
               <div className='w-30 h-12  flex justify-center items-center '>
-                <div className='h-7 w-7 border-2 border-[#322f2f] rounded-full cursor-pointer'></div>
+              <div className={toggleState===2? 'lg:h-7 lg:w-7 h-5 w-5 bg-black rounded-full cursor-pointer': 'lg:h-7 lg:w-7 h-5 w-5 border-2 border-[#322f2f] rounded-full cursor-pointer'}></div>
                  </div>                  
                    <div className="flex flex-col h-max gap-4">
-              <div className="flex gap-5 items-center">
+              <div className="flex gap-5 items-center" onClick={()=>setToggleState(2)}>
                 <div className=" border-2 border-gray-600 rounded-xl  h-12 w-12 flex justify-center items-center">
                   <TfiWorld size={36} />
                 </div>
@@ -202,10 +204,10 @@ const Billing = ({handleToggle}) => {
           {/* Google / Apple Waller*/}
           <div className='flex justify-center-center gap-5'>
               <div className='w-30 h-12  flex justify-center items-center '>
-                <div className='h-7 w-7 border-2 border-[#322f2f] rounded-full'></div>
+              <div className={toggleState===3? 'lg:h-7 lg:w-7 h-5 w-5 bg-black rounded-full cursor-pointer': 'lg:h-7 lg:w-7 h-5 w-5 border-2 border-[#322f2f] rounded-full cursor-pointer'}></div>
                  </div>
           <div className="flex flex-col h-max gap-4">
-              <div className="flex gap-5 items-center">
+              <div className="flex gap-5 items-center" onClick={()=>setToggleState(3)}>
                 <div className=" border-2 border-gray-600 rounded-xl  h-12 w-12 flex justify-center items-center">
                   <IoWalletOutline size={36} />
                 </div>
@@ -221,8 +223,8 @@ const Billing = ({handleToggle}) => {
       
         </div>
 
-        {/*  */}
-        <div className=" border h-fit rounded-lg grid gap-3 mt-5 w-5/12 ">
+       
+        <div className=" border h-fit rounded-lg grid gap-3 mt-5 lg:w-5/12 w-full ">
           <div className=" grid gap-2 px-6 pt-2">
             <div className=" border-b-[1px]">
               <p className=" text-xl font-bold font-Poppins">Your Products</p>

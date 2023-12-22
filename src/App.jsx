@@ -1,5 +1,5 @@
 import React from 'react'
-import NavBar from './Components/NavBar'
+import NavBar from './Components/Header/NavBar.jsx'
 import Body from './Pages/Body'
 import { Route, Routes } from 'react-router-dom'
 import Men from './Pages/Men'
@@ -12,9 +12,9 @@ import Card from './Components/Cards/Card'
 import { useSelector, useDispatch } from 'react-redux'
 import {decrement,increment} from './redux/Slices/counter/counterSlice'
 import { addItemToCart, removeItemFromCart, clearCart } from './redux/Slices/Cart/cartSlice';
-import Shipping from './Components/Payments/Shipping/Shipping.jsx'
+import Shipping from './Components/Payments/Cart/Cart.jsx'
 import {Footer} from './Components/Footer/Footer'
-import Billing from './Components/Payments/Billing.jsx'
+import Billing from './Components/Payments/Checkout.jsx'
 
 
 const App = () => {
@@ -34,19 +34,13 @@ const App = () => {
       <Route path='/sales' element={<Sales/>} />
       <Route path='/shoes/:id' element={<Card />} />
       <Route path='/test' element={<New />} />
-      <Route path='/shipping' element={<Shipping />} />
-      <Route path='/billing' element={<Billing />} />
+      <Route path='/cart' element={<Shipping />} />
+      <Route path='/checkout' element={<Billing />} />
 
 
     </Routes>  
-    {/* <Footer/> */}
-      {/* <BottomNavBar/> */}
-      {/* <div className="w-full h-screen  text-3xl  ">
-        <div className="flex gap-10 justify-center items-center mt-10 ">
-
-          <div > <div className='font-bold text-4xl pb-5'>Products Added :</div>  {cartItems.map((items)=>(<div className='text-md font-Poppins'>{items.name}</div>))}</div>
-        </div>{" "}
-      </div> */}
+    <Footer/>
+   
     </>
   );
 }

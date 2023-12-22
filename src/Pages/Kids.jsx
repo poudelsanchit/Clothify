@@ -1,9 +1,12 @@
 import React from 'react'
+import ComingSoon from './ComingSoon';
 
 const Kids = () => {
   return (
-    <div>Kids</div>
-  )
+    <>
+      <ComingSoon />
+    </>
+  );
 }
 
 export default Kids

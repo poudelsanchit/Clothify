@@ -7,7 +7,7 @@ import {
     useNumberInput,
   } from '@chakra-ui/react'
 
-const GetNumberRange = ({max,defaultvalue,min,maxw,onValueChange }) => {
+const GetNumberRange = ({defaultvalue,min,onValueChange }) => {
     const [currentValue, setCurrentValue] = useState(defaultvalue);
 
     const { getInputProps, getIncrementButtonProps, getDecrementButtonProps,value} =
@@ -28,15 +28,14 @@ const GetNumberRange = ({max,defaultvalue,min,maxw,onValueChange }) => {
   const inc = getIncrementButtonProps()
   const dec = getDecrementButtonProps()
   const input = getInputProps()
-  console.log(input)
-  console.log(currentValue)
 
   return (
-    <HStack maxW={maxw}  >
-      <Button {...dec}  onChange={()=>setQty({"name": valueAsNumber})}>-</Button>
-      <Input {...input} />
-      <Button {...inc}  onChange={()=>setQty( value)}>+</Button>
-    </HStack>
+    <div className='flex justify-evenly items-centerg gap-1'  >
+      <div className='sm:w-10 w-5 h-5  sm:h-10  bg-[#edf2f7] flex justify-center items-center rounded-sm' {...dec}  onChange={()=>setQty({"name": valueAsNumber})}>-</div>
+      <input type="number"  className='border-2 rounded-sm sm:w-10 w-10 h-5  sm:h-10 focus:outline-none pl-2' {...input}/>
+      <div className='sm:w-10 w-5 h-5  sm:h-10  bg-[#edf2f7] flex justify-center items-center rounded-sm' {...inc}  onChange={()=>setQty( value)}>+</div>
+
+    </div>
   );
 }
 

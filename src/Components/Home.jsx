@@ -6,9 +6,10 @@ import Swiper from './Swipers/AutoSwiper.jsx';
 
 function Home() {
   return (
-  
-      <div className="flex  sm:flex-row flex-col w-screen   sm:pl-12  items-center justify-between gap-10 sm:gap-0 ">
-        <div className="w-11/12 sm:w-3/6 mt-8 ">
+  <>
+  <div className='w-screen flex justify-center '>
+  <div className="flex  sm:flex-row flex-col w-11/12  items-center justify-center gap-10 sm:gap-0  ">
+        <div className="w-full sm:w-3/6 mt-8 mr-auto ">
           <div className="font-Poppins font-black text-4xl s:text-6xl sm:text-8xl  mb-4 ">
             <span>YOUR STYLE DESERVES</span>
              <br />
@@ -45,6 +46,12 @@ function Home() {
 
         <Swiper/>
       </div>
+  </div>
+   
+  
+  
+  </>
+     
 
   );
 }
