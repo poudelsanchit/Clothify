@@ -25,21 +25,30 @@ const colors = {
 const theme = extendTheme({ colors })
 
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <Auth0Provider
-  domain="dev-yw31n3ff483vqzp1.us.auth0.com"
-  clientId="PuDTuMAegDY1fRZbwFGUiiIZl0MknZm9"
-  authorizationParams={{
-    redirect_uri: window.location.origin
-  }}>
-      <BrowserRouter>
+    domain="dev-yw31n3ff483vqzp1.us.auth0.com"
+    clientId="PuDTuMAegDY1fRZbwFGUiiIZl0MknZm9"
+    authorizationParams={{
+      redirect_uri: window.location.origin,
+    }}
+  >
+    <BrowserRouter>
       <Provider store={store}>
-      <ChakraProvider  theme={theme}>
-      <PersistGate loading={null} persistor={persistor}>
-      <App />
-      </PersistGate>
-      </ChakraProvider>
+        <ChakraProvider theme={theme}>
+          <PersistGate loading={null} persistor={persistor}>
+            <Auth0Provider
+              domain="dev-7fkeu02ef45va3vu.us.auth0.com"
+              clientId="SSyKLuqgUdhfzE4WPlD7EZXumbWyemAd"
+              authorizationParams={{
+                redirect_uri: window.location.origin,
+              }}
+            >
+              <App />
+            </Auth0Provider>
+          </PersistGate>
+        </ChakraProvider>
       </Provider>
-      </BrowserRouter>
+    </BrowserRouter>
   </Auth0Provider>
-)
+);
