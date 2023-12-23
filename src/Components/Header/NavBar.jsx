@@ -1,16 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Nike from '../../assets/nike.png'
 import { IoFingerPrintOutline,IoSearch  } from "react-icons/io5";
 import { CiHeart,CiShoppingCart  } from "react-icons/ci";
 import { Link, NavLink } from 'react-router-dom';
-import { useAuth0 } from "@auth0/auth0-react";
 import { useSelector } from 'react-redux';
 import { getProductsCount } from '../../redux/Slices/Cart/cartSlice';
 import { PiGithubLogoThin } from "react-icons/pi";
 import { CgMenuLeft } from "react-icons/cg";
+import { useAuth0 } from "@auth0/auth0-react";
+import { FiLogOut } from "react-icons/fi";
 
 const NavBar = () => {
-  const { loginWithRedirect, logout,user, isAuthenticated, } = useAuth0();
+  const { user, isAuthenticated, isLoading ,loginWithRedirect,logout } = useAuth0();
+ const [isActive,setIsActive] = useState(false);
+ 
+
   const productsCount = useSelector(getProductsCount);
   return (
     <div className="sticky bg-white py-1 top-0  z-50 w-full font-Poppins text-black flex flex-col items-center bg-red">
@@ -22,37 +26,47 @@ const NavBar = () => {
             className="h-8 w-8 sm:h-12 sm:w-12 object-contain "
           />
         </Link>
-        {/* <div className='flex gap-5'>
-          <div>New & Featured</div>
-          <div>Men</div>
-          <div>Women</div>
-          <div>Kids</div>
-        </div> */}
+
         <div className="bg-[#f4f4f4] flex justify-center items-center rounded-md">
           <IoSearch className="text-[#a6a6a6] text-xl mx-2" />
           <input
             type="text"
-            className="bg-[#f4f4f4] rounded-xl focus:outline-none  text-[#a6a6a6] h-10 2-32 sm:w-72 sm:placeholder:text-sm sm:text-sm text-xs placeholder:text-xs"
+            className="bg-[#f4f4f4] rounded-xl focus:outline-none  text-[#a6a6a6] h-10 w-32 sm:w-72 sm:placeholder:text-sm sm:text-sm text-xs placeholder:text-xs"
             placeholder="Search"
           />
         </div>
-        <div className="flex justify-center items-center gap-2 cursor-pointer ">
-          {/* Auth0 */}
 
-          {isAuthenticated ? (
+        <div className="flex justify-center items-center w-3/11 gap-2 cursor-pointer ">
+          {isLoading ? (
+            <div> Loading....</div>
+          ) : isAuthenticated ? (
             <>
-              <img
-                src={user.picture}
-                className=" w-12 rounded-full border-solid border-2  border-black"
-              />
-              <button
-                className="flex gap-2 items-center"
-                onClick={() =>
-                  logout({ logoutParams: { returnTo: window.location.origin } })
-                }
-              >
-                <div>Logout</div>
-              </button>
+              <div className="relative  w-48 rounded-md" >
+                <img
+                  src={user.picture}
+                  className=" w-12 float-right rounded-full border-solid border-[1px] border-secondary-bg"
+                  onClick={() => setIsActive((prev) => !prev)}
+                 
+                />
+               
+               
+                <div
+                  className={isActive? "absolute top-16  right-0 bg-white border-2  text-white h-full flex gap-2 rounded-md items-center bottom-0 z-50" : " top-16 hidden right-0 bg-white border-2  text-white h-full flex gap-2 rounded-md items-center bottom-0 z-50"}
+                  onClick={() =>
+                    logout({
+                      logoutParams: { returnTo: window.location.origin },
+                    })
+                  }
+                >
+                  <div className='w-10  text-6xlxl flex justify-center items-center rounded-l-md bg-white text-black h-full'>
+                  <FiLogOut/>
+
+                  </div>
+                  <div className='flex justify-center items-center bg-black h-full w-full  pr-4  rounded-r-md'>Logout</div>
+                </div>
+                
+              </div>
+              
             </>
           ) : (
             <>
@@ -62,7 +76,7 @@ const NavBar = () => {
               >
                 {" "}
                 <IoFingerPrintOutline className="sm:text-2xl text-sm hover:scale-[1.01]" />
-                <span className='text-sm'> Log In</span>
+                <span className="text-sm"> Log In</span>
               </button>
             </>
           )}
