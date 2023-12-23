@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 import GetNumberRange from '../../Inputs/GetNumberRange';
 import GetSizeRange from '../../Inputs/GetSizeRange';
 import {  useDispatch } from 'react-redux'
-import { updateCartItemColor, updateCartItemQty, updateCartItemSize } from '../../../redux/Slices/Cart/cartSlice';
+import { updateCartItemColor, updateCartItemQty, updateCartItemSize,removeItemFromCart } from '../../../redux/Slices/Cart/cartSlice';
 import {SwiperImage1,SwiperImage2,SwiperImage3,SwiperImage4} from '../../../assets/index'
+import { CiTrash, CiShoppingCart } from 'react-icons/ci';
 
 const EachCard = ({items}) => {
 
@@ -45,15 +46,15 @@ const onOptionChangeHandler=(event)=>{
 
 
   return (
-    <div className=" flex h-32 w-full border-2 rounded-md  p-1 gap-5 ">
+    <div className=" flex h-32 w-full border-2 rounded-md  gap-5 ">
       <img
         src={items?.image}
         // src={SwiperImage1}
         alt=""
-        className="w-28 h-28  rounded-md object-cover "
+        className="w-28 h-28 m-1  rounded-md object-cover "
       />
 
-      <div className="flex flex-col justify-evenly w-full">
+      <div className="flex flex-col m-1  justify-evenly w-full">
         <div className="font-bold sm:text-xl text-sm">{items.name}</div>
 
         <div className="  text-base flex sm:flex-row flex-col justify-start  sm:gap-10 gap-2 text-secondary-text">
@@ -98,10 +99,11 @@ const onOptionChangeHandler=(event)=>{
           </div>
         </div>
       </div>
-      {/* <div className="flex justify-center items-center h-full ml-auto font-bold mr-5 text-xl ">
+      <div className='flex h-full justify-center items-center cursor-pointer text-3xl' onClick={()=>dispatch(removeItemFromCart(items.productId))}><CiTrash/></div>
+      <div className="hidden lg:flex justify-center items-center h-full ml-auto font-Poppins font-medium  text-lg w-20 bg-purple-600 text-white rounded-r-md ">
         {" "}
-        $ {totalPrice}
-      </div> */}
+        ${totalPrice}
+      </div>
     </div>
   );
 }
