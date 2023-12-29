@@ -45,6 +45,7 @@ const Contributors = () => {
               </a>
             ))}
           </div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi esse nostrum animi beatae obcaecati iste, sint cumque eligendi qui, voluptate cupiditate ut inventore. Odio commodi explicabo libero rem molestiae quae consectetur doloribus. Dignissimos assumenda excepturi, ea unde laboriosam eaque sapiente quos aspernatur, ab velit impedit, libero suscipit amet optio eius distinctio consequuntur temporibus reiciendis provident iste voluptas enim asperiores? Vero quidem accusantium totam eum minus, magni nihil inventore temporibus expedita possimus dolorem harum aut quos eveniet quae veritatis ipsa odit optio? Velit quos, illum fugiat perspiciatis nisi repellat doloribus cum tempora molestiae at possimus, ut ipsam voluptas id, aliquam ab.</p>
         </div>
       </div>
     );
