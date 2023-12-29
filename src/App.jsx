@@ -16,28 +16,73 @@ import Shipping from './Components/Payments/Cart/Cart.jsx'
 import {Footer} from './Components/Footer/Footer'
 import Billing from './Components/Payments/Checkout.jsx'
 import Contributors from './Pages/Contributers.jsx'
+import Favorites from './Pages/Favorites.jsx'
 
 
 const App = () => {
   const count = useSelector((state) => state.counter.value)
   const cartItems = useSelector(state => state.cart.items);
   const dispatch = useDispatch()
+  const routes = [
+    {
+      path: "/",
+      component: <Body />,
+    },
+    {
+      path: "/men",
+      component: <Men />,
+    },
+    {
+      path: "/women",
+      component: <Women />,
+    },
+    {
+      path: "/kids",
+      component: <Kids />,
+    },
+    {
+      path: "/sports",
+      component: <Sports />,
+    },
+    {
+      path: "/new",
+      component: <New />,
+    },
+    {
+      path: "/sales",
+      component: <Sales />,
+    },
+    {
+      path: "/shoes/:id",
+      component: <Card />,
+    },
+    {
+      path: "/cart",
+      component: <Shipping />,
+    },
+    {
+      path: "/checkout",
+      component: <Billing />,
+    },
+    {
+      path: "/contributers",
+      component: <Contributors />,
+    },
+    {
+      path: "/favorites",
+      component: <Favorites />,
+    },
+  ];
   return (
     <>
       <NavBar />
       <Routes>
-      <Route path='/' element={<Body/>} />
-      <Route path='/men' element={<Men/>} />
-      <Route path='/women' element={<Women/>} />
-      <Route path='/kids' element={<Kids/>} />
-      <Route path='/sports' element={<Sports/>} />
-      <Route path='/new' element={<New/>} />
-      <Route path='/sales' element={<Sales/>} />
-      <Route path='/shoes/:id' element={<Card />} />
-      <Route path='/test' element={<New />} />
-      <Route path='/cart' element={<Shipping />} />
-      <Route path='/checkout' element={<Billing />} />
-      <Route path='/contributers' element={<Contributors />} />
+        {
+          routes.map(({path,component})=> {return       <Route path={path} element={component} />
+        } )
+        }
+
+   
 
 
 

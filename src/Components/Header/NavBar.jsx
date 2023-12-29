@@ -146,8 +146,10 @@ const NavBar = () => {
                 </div>
               </div>
             </Link>
+            <Link to={'/favorites'}>
 
             <CiHeart className="text-2xl sm:text-3xl hover:scale-[1.01] cursor-pointer " />
+            </Link>
           </div>
         </div>
       </div>
