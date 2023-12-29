@@ -12,9 +12,6 @@ export function Footer() {
       </div>
       <div className="text-sm font-medium text-gray-500 flex flex-col">
         <div> © 2024 NIKE. All rights reserved.</div>
-        <Link to={"/contributers"}>
-          <div className='underline'>contributers</div>
-        </Link>
       </div>
     </div>
   );

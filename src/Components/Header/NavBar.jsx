@@ -9,7 +9,6 @@ import { PiGithubLogoThin } from "react-icons/pi";
 import { CgMenuLeft } from "react-icons/cg";
 import { useAuth0 } from "@auth0/auth0-react";
 import { FiLogOut } from "react-icons/fi";
-
 const NavBar = () => {
   const { user, isAuthenticated, isLoading ,loginWithRedirect,logout } = useAuth0();
  const [isActive,setIsActive] = useState(false);
@@ -133,10 +132,12 @@ const NavBar = () => {
 
         <div>
           <div className="flex  justify-center items-center gap-5">
-            <a href="https://github.com/poudelsanchit/Ecommerce" target="blank">
-              {" "}
-              <PiGithubLogoThin className=" text-2xl sm:text-3xl hover:scale-[1.01] cursor-pointer " />
-            </a>
+            <Link to={'/contributers'}>
+            <PiGithubLogoThin className=" text-2xl sm:text-3xl hover:scale-[1.01] cursor-pointer " />
+
+            </Link>
+         
+            
             <Link to={"/cart"}>
               <div className="relative cursor-pointer">
                 <CiShoppingCart className="text-2xl sm:text-3xl hover:scale-[1.01] " />

@@ -130,7 +130,7 @@ const handleSelectColor=(color)=>{
           </div>
         </div>
         <div className=" w-full sm:w-1/2 flex mt-12 justify-center ">
-          <div className="flex flex-col gap-5 sm:w-5/6 w-full ">
+          <div className="flex flex-col gap-5 sm:w-full w-full  ">
             <div className="sm:flex items-center gap-2  hidden ">
               <Avatar src="https://i.pinimg.com/564x/1b/99/35/1b993547a8a3d69870d1a5d55a5cccc2.jpg" />
               <div className="font-medium text-xl font-Poppins">Nike</div>
