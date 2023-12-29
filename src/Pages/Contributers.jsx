@@ -33,7 +33,7 @@ const Contributors = () => {
               <a
                 href={contributor.html_url}
                 target="_blank"
-                className="lg:h-28 h-16 lg:w-96 w-64 bg-purple-600 text-white font-normal font-Poppins rounded-md flex gap-5 pl-5 justify-start items-center"
+                className="lg:h-28 h-16 lg:w-96 w-64 bg-slate-700 text-white font-normal font-Poppins rounded-md flex gap-5 pl-5 justify-start items-center"
               >
                 <img
                   src={contributor.avatar_url}
