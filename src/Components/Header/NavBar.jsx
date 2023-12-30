@@ -5,6 +5,8 @@ import { CiHeart,CiShoppingCart  } from "react-icons/ci";
 import { Link, NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { getProductsCount } from '../../redux/Slices/Cart/cartSlice';
+import { getFavouritesCount } from '../../redux/Slices/favorites/favorites';
+
 import { PiGithubLogoThin } from "react-icons/pi";
 import { CgMenuLeft } from "react-icons/cg";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -15,6 +17,8 @@ const NavBar = () => {
  
 
   const productsCount = useSelector(getProductsCount);
+  const favoritesCount = useSelector(getFavouritesCount);
+
   return (
     <div className="sticky bg-white py-1 top-0  z-50 w-full font-Poppins text-black flex flex-col items-center bg-red">
       <div className="flex justify-between items-center  text-lg font-medium sm:h-16 h-14 w-11/12 ">
@@ -147,8 +151,13 @@ const NavBar = () => {
               </div>
             </Link>
             <Link to={'/favorites'}>
+            <div className="relative cursor-pointer">
+                <CiHeart className="text-2xl sm:text-3xl hover:scale-[1.01] " />
+                <div className=" absolute h-3 w-3 sm:h-4 sm:w-4 rounded-full bg-yellow-400 top-0 right-0 flex justify-center items-center text-xs font-Chakra">
+                  {favoritesCount}
+                </div>
+              </div>
 
-            <CiHeart className="text-2xl sm:text-3xl hover:scale-[1.01] cursor-pointer " />
             </Link>
           </div>
         </div>

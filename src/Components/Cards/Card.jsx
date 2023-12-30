@@ -10,14 +10,15 @@ import Reviews from '../ReviewsSection/Reviews';
 
 import { useSelector, useDispatch } from 'react-redux'
 import { addItemToCart} from '../../redux/Slices/Cart/cartSlice';
-
+import { addToFavorites, removeFromFavorites} from '../../redux/Slices/favorites/favorites'
 const Card = () => {
   const toast = useToast()
   const cartItems = useSelector(state=>state.cart.items)
+  const favoriteItems = useSelector(state=>state.favorites.favorites)
+
   const cartItemsLen = cartItems.length
   const dispatch = useDispatch();
   const id= useParams();
-  const [isFavourite,setIsFavourite] = useState(false);
   const [product,setProducts]= useState([])
   const fetchData=async()=>{
 
@@ -61,6 +62,34 @@ const handleSelectColor=(color)=>{
 
 
   },[])
+  const isProductInFavorites = favoriteItems.some(item => item.productId === id.id);
+  const [isFavourite, setIsFavourite] = useState(isProductInFavorites);
+
+  const handleAddToFavorites = ()=>{
+    setIsFavourite(prev=>!prev);
+    if (!isFavourite) {
+      dispatch(addToFavorites({ ...product }));
+      toast({
+        title: "Product added to Wishlists.",
+        status: "success",
+        duration: 2000,
+        position: "top-right",
+        isClosable: true,
+      });
+    }
+    else
+    {
+      dispatch(removeFromFavorites({...product}))
+      toast({
+        title: "Product removed to Wishlists.",
+        status: "error",
+        duration: 2000,
+        position: "top-right",
+        isClosable: true,
+      });
+    }
+   
+  }
 
   return (
     <div className="flex flex-col w-full h-auto justify-center items-center gap-20  ">
@@ -208,10 +237,10 @@ const handleSelectColor=(color)=>{
               <IconButton
                 height={12}
                 width={12}
-                colorScheme="blue"
+                colorScheme={isFavourite ? "blue" : "blue"} // Use red color when item is already in favorites
                 aria-label="Search database"
-                icon={isFavourite? <FaHeart className="text-2xl text-red-400" /> : <CiHeart className="text-2xl "/>}
-                onClick={()=>setIsFavourite(prev=>!prev)}
+                icon={isFavourite? <FaHeart className="text-2xl text-red-200" /> : <CiHeart className="text-3xl "/>}
+                onClick={handleAddToFavorites}
               />
             </Stack>
             <div className='flex gap-2 items-center'> <BsTruck /> Free delivery on orders over $30.0</div>

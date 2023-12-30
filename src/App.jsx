@@ -10,7 +10,6 @@ import Sales from './Pages/Sales'
 import Kids from './Pages/Kids'
 import Card from './Components/Cards/Card'
 import { useSelector, useDispatch } from 'react-redux'
-import {decrement,increment} from './redux/Slices/counter/counterSlice'
 import { addItemToCart, removeItemFromCart, clearCart } from './redux/Slices/Cart/cartSlice';
 import Shipping from './Components/Payments/Cart/Cart.jsx'
 import {Footer} from './Components/Footer/Footer'
@@ -20,7 +19,6 @@ import Favorites from './Pages/Favorites.jsx'
 
 
 const App = () => {
-  const count = useSelector((state) => state.counter.value)
   const cartItems = useSelector(state => state.cart.items);
   const dispatch = useDispatch()
   const routes = [
