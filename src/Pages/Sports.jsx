@@ -1,12 +1,10 @@
-import React from 'react'
-import ComingSoon from './ComingSoon'
+import React from "react";
 
 const Sports = () => {
   return (
     <>
-      <ComingSoon />
     </>
   );
-}
+};
 
-export default Sports
+export default Sports;
