@@ -4,9 +4,9 @@ function Nissbody() {
   return (
     <div>
       <div className=" mx-auto w-11/12 flex flex-col  justify-center ">
-        <div className=" flex items-center gap-80">
-          <div className="text-4xl my-4">Men</div>
-          <div className=" flex  gap-32 text-base  font-medium cursor-pointer">
+        <div className=" flex items-center gap-96 my-6">
+          <div className="text-3xl ">Men</div>
+          <div className=" flex gap-20 text-base  font-medium cursor-pointer">
             <div>Shoes</div>
             <div>Clothing</div>
             <div>Accessories</div>
