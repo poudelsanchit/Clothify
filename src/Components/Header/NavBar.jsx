@@ -107,19 +107,19 @@ const NavBar = () => {
             >
               Women
             </NavLink>
-            <NavLink
+            {/* <NavLink
               className={({ isActive }) => (isActive ? "text-active" : "")}
               to={"/kids"}
             >
               Kids
-            </NavLink>
+            </NavLink> */}
             <NavLink
               className={({ isActive }) => (isActive ? "text-active" : "")}
               to={"/sports"}
             >
               Sports
             </NavLink>
-            <NavLink
+            {/* <NavLink
               className={({ isActive }) => (isActive ? "text-active" : "")}
               to={"/new"}
             >
@@ -130,7 +130,7 @@ const NavBar = () => {
               to={"/sales"}
             >
               Sales
-            </NavLink>
+            </NavLink> */}
           </div>
         </div>
 

@@ -239,7 +239,7 @@ const handleSelectColor=(color)=>{
                 width={12}
                 colorScheme={isFavourite ? "blue" : "blue"} // Use red color when item is already in favorites
                 aria-label="Search database"
-                icon={isFavourite? <FaHeart className="text-2xl text-red-200" /> : <CiHeart className="text-3xl "/>}
+                icon={isFavourite? <FaHeart className="text-2xl text-red-200" /> : <CiHeart className="text-3xl  "/>}
                 onClick={handleAddToFavorites}
               />
             </Stack>

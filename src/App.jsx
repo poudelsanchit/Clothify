@@ -79,11 +79,6 @@ const App = () => {
           routes.map(({path,component})=> {return       <Route path={path} element={component} />
         } )
         }
-
-   
-
-
-
     </Routes>  
     <Footer/>
    
