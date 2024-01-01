@@ -7,10 +7,10 @@ function Nissbody() {
         <div className=" flex items-center gap-96 my-6">
           <div className="text-3xl ">Men</div>
           <div className=" flex gap-20 text-base  font-medium cursor-pointer">
-            <div>Shoes</div>
+            {/* <div>Shoes</div>
             <div>Clothing</div>
             <div>Accessories</div>
-            <div>Sale</div>
+            <div>Sale</div> */}
           </div>
         </div>
         <div>
