@@ -50,7 +50,7 @@ const App = () => {
       component: <Sales />,
     },
     {
-      path: "/:shoes/:id",
+      path: "/:type/:id",
       component: <Card />,
     },
     {
