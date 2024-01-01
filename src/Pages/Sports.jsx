@@ -24,9 +24,7 @@ const Sports = () => {
       <div className="w-full h-auto flex justify-center mb-4" id="homeShop">
       <div className="w-11/12">
         <ProductsSwiper products={data} title={'Cleats'} type={'sports'}/>
-        <ProductsSwiper products={data} title={'Sports'} type={'Boots'}/>
-
-
+        <ProductsSwiper products={data} title={'Sports'} type={'sports'}/>
         </div>
         </div>
     </div>

@@ -23,6 +23,8 @@ const Women = () => {
       <div className="w-full h-auto flex justify-center mb-4" id="homeShop">
       <div className="w-11/12">
         <ProductsSwiper products={data} title={'Women'} type={'women'}/>
+        <ProductsSwiper products={data} title={''} type={'women'}/>
+
 
 
         </div>

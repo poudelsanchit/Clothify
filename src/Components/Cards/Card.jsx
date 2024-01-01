@@ -9,6 +9,7 @@ import { BsDot,BsTruck } from "react-icons/bs";
 import { useSelector, useDispatch } from 'react-redux'
 import { addItemToCart} from '../../redux/Slices/Cart/cartSlice';
 import { addToFavorites, removeFromFavorites} from '../../redux/Slices/favorites/favorites'
+import Reviews from '../ReviewsSection/Reviews';
 const Card = () => {
   const {type} = useParams();
     const id= useParams();
@@ -90,6 +91,8 @@ const handleSelectColor=(color)=>{
     }
    
   }
+  
+
 
   return (
     <div className="flex flex-col w-full h-auto justify-center items-center gap-20  ">
@@ -248,7 +251,7 @@ const handleSelectColor=(color)=>{
         </div>
         
       </div>
-      {/* <Reviews data={product.reviews} /> */}
+      <Reviews data={product.reviews} />
     </div>
   );
 }
