@@ -1,76 +1,100 @@
-import React, { useEffect, useState } from 'react'
-import { Avatar, Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Stack } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
-import { BsDot } from "react-icons/bs";
-import { Button } from '@chakra-ui/react'
-import { CiShoppingCart,CiHeart  } from "react-icons/ci";
-import { IconButton } from '@chakra-ui/react'
-import { FaStar } from "react-icons/fa";
-import { BsTruck } from "react-icons/bs";
-import { useParams } from 'react-router-dom';
+import React, { forwardRef, useEffect, useState } from 'react'
 import axios from 'axios';
+import { Avatar, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Stack,IconButton ,useToast,Button } from '@chakra-ui/react';
+import { Link ,useParams} from 'react-router-dom';
+import { CiShoppingCart,CiHeart  } from "react-icons/ci";
+import { FaHeart } from "react-icons/fa6";
+import { FaStar } from "react-icons/fa";
+import { BsDot,BsTruck } from "react-icons/bs";
 import Reviews from '../ReviewsSection/Reviews';
+
 import { useSelector, useDispatch } from 'react-redux'
 import { addItemToCart} from '../../redux/Slices/Cart/cartSlice';
-import { useToast } from '@chakra-ui/react'
-
+import { addToFavorites, removeFromFavorites} from '../../redux/Slices/favorites/favorites'
 const Card = () => {
   const toast = useToast()
-
   const cartItems = useSelector(state=>state.cart.items)
+  const favoriteItems = useSelector(state=>state.favorites.favorites)
+
   const cartItemsLen = cartItems.length
-
-  console.log(cartItems.length)
-
   const dispatch = useDispatch();
-  const id= useParams()
+  const id= useParams();
   const [product,setProducts]= useState([])
   const fetchData=async()=>{
 
-    const response = await axios.get('http://localhost:3000/products')
+    const response = await axios.get('http://localhost:3000/popular')
     const products = response.data;
     const foundProduct = products.find(product => product.productId === id.id);
+    setSelectedSize(foundProduct.sizes[0]);
+    setSelectedColor(foundProduct.color[0].color)
+
     if (foundProduct) {
       setProducts(foundProduct);
     } else {
-      console.log('Product not found');
     }
 
 
   }
+  const [defaultSize, setSelectedSize] = useState(0);
+  const [defaultColor, setSelectedColor] = useState(0);
+
 const handleAddToCart=()=>{
-  if(cartItemsLen<5)
-  {
-    
-    dispatch(addItemToCart(product));
-    toast({
-      
-      title: 'Product added to cart.',
-      status: 'success',
-      duration: 2000,
-      position: 'top-right',
-      isClosable: true,
-    })
-
-  }
-  else{
-    alert('Can add more data' )
-
-  }
-
+  console.log(defaultColor)
+  dispatch(addItemToCart({ ...product, defaultSize, defaultColor }));
+  toast({
+    title: "Product added to cart.",
+    status: "success",
+    duration: 2000,
+    position: "top-right",
+    isClosable: true,
+  });
+}
+const handleSizeSelection = (size) => {
+  setSelectedSize(size);
+};
+const handleSelectColor=(color)=>{
+  setSelectedColor(color);
 }
   useEffect(()=>{
     window.scrollTo({behavior:'smooth',left:0, top:0})
     fetchData();
-      
+   
 
 
   },[])
+  const isProductInFavorites = favoriteItems.some(item => item.productId === id.id);
+  const [isFavourite, setIsFavourite] = useState(isProductInFavorites);
+
+  const handleAddToFavorites = ()=>{
+    setIsFavourite(prev=>!prev);
+    if (!isFavourite) {
+      dispatch(addToFavorites({ ...product }));
+      toast({
+        title: "Product added to Wishlists.",
+        status: "success",
+        duration: 2000,
+        position: "top-right",
+        isClosable: true,
+      });
+    }
+    else
+    {
+      dispatch(removeFromFavorites({...product}))
+      toast({
+        title: "Product removed to Wishlists.",
+        status: "error",
+        duration: 2000,
+        position: "top-right",
+        isClosable: true,
+      });
+    }
+   
+  }
 
   return (
-    <div className="flex flex-col w-full h-full justify-center items-center gap-20  ">
-      <div className="w-11/12 h-full flex ">
-        <div className=" w-1/2  flex flex-col gap-2 mt-2">
+    <div className="flex flex-col w-full h-auto justify-center items-center gap-20  ">
+      <div className="w-11/12 h-full flex sm:flex-row flex-col ">
+        <div className=" w-full sm:w-1/2   flex flex-col gap-2 mt-2">
           <Breadcrumb
             spacing="2px"
             separator={<BsDot className="text-3xl text-[#a6a6a6] " />}
@@ -94,35 +118,14 @@ const handleAddToCart=()=>{
               </BreadcrumbLink>
             </BreadcrumbItem>
           </Breadcrumb>
-          <img
-            src={product?.image}
-            alt=""
-            className="w-11/12 bg-orange-400 rounded-md h-[30rem] object-cover"
-          />
-          <div className=" flex w-11/12 justify-between gap-5 flex-wrap">
-            {product?.imgsides?.slice(0,5).map((shoe)=>{
-              return  <img
-              src={shoe}
-              alt=""
-              className="h-[5.2rem] w-[5.2rem] rounded-md object-cover "
-            />
-            })}
-           
-            <div className="h-[5.2rem] w-[5.2rem] border-[0.1px] border-[#ece9e9] rounded-md flex justify-center items-center text-xs font-medium text-secondary-text cursor-pointer">
-              +2 more
-            </div>
-          </div>
-        </div>
-        <div className=" w-1/2 flex mt-12 justify-center ">
-          <div className="flex flex-col gap-5 w-5/6">
-            <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2  sm:hidden ">
               <Avatar src="https://i.pinimg.com/564x/1b/99/35/1b993547a8a3d69870d1a5d55a5cccc2.jpg" />
               <div className="font-medium text-xl font-Poppins">Nike</div>
             </div>
-            <div className="font-bold font-Poppins text-3xl">
+            <div className="font-bold font-Poppins text-2xl  sm:hidden block">
              {product?.name}
             </div>
-            <div className="flex gap-2 items-center ">
+            <div className="flex gap-2 items-center  sm:hidden  ">
               <FaStar className="text-yellow-500" />
               <FaStar className="text-yellow-500" />
               <FaStar className="text-yellow-500" />
@@ -133,20 +136,66 @@ const handleAddToCart=()=>{
                 69 Reviews
               </div>
             </div>
-            <div className="font-bold font-Poppins text-4xl">{product?.price}</div>
-            <div className="flex flex-col ">
+            <div className="font-bold font-Poppins text-4xl sm:hidden block">{product?.price}</div>
+
+            
+          <img
+            src={product?.image}
+            alt=""
+            className="w-full sm:w-11/12 bg-orange-400 rounded-md h-[30rem] object-cover"
+          />
+          <div className=" flex w-11/12 justify-between gap-2 sm:gap-5 flex-wrap">
+            {product?.imgsides?.slice(0,5).map((shoe)=>{
+              return  <img
+              src={shoe}
+              alt=""
+              className="h-[5.2rem] w-[5.2rem] rounded-md object-cover "
+            />
+            })}
+           
+            <div className=" mr-auto h-[5.2rem] w-[5.2rem] border-[0.1px] border-[#ece9e9] rounded-md flex justify-center items-center text-xs font-medium text-secondary-text cursor-pointer">
+              +2 more
+            </div>
+          </div>
+        </div>
+        <div className=" w-full sm:w-1/2 flex mt-12 justify-center ">
+          <div className="flex flex-col gap-5 sm:w-full w-full  ">
+            <div className="sm:flex items-center gap-2  hidden ">
+              <Avatar src="https://i.pinimg.com/564x/1b/99/35/1b993547a8a3d69870d1a5d55a5cccc2.jpg" />
+              <div className="font-medium text-xl font-Poppins">Nike</div>
+            </div>
+            <div className="font-bold font-Poppins text-3xl  hidden sm:block">
+             {product?.name}
+            </div>
+            <div className="sm:flex gap-2 items-center  hidden  ">
+              <FaStar className="text-yellow-500" />
+              <FaStar className="text-yellow-500" />
+              <FaStar className="text-yellow-500" />
+              <FaStar className="text-yellow-500" />
+              <FaStar className="text-gray-300" />
+              <div className="text-secondary-text font-Poppins text-xs">
+                {" "}
+                69 Reviews
+              </div>
+            </div>
+            <div className="font-bold font-Poppins text-4xl hidden sm:block">{product?.price}</div>
+            <div className="flex flex-col  ">
               <div className="flex font-Poppins text-sm items-center">
                 <div>Color</div> <BsDot className="text-[#a6a6a6] text-3xl" />
-                <div className="text-secondary-text">Blue</div>
+                <div className="text-secondary-text">{defaultColor}</div>
               </div>
               <div className=" flex gap-2 flex-wrap">
                 {product?.color?.map((shoeColor) => {
                   return (
-                    <img
-                      src={shoeColor}
-                      alt=""
-                      className="h-14 w-12 rounded-md object-cover "
-                    />
+                    <div className={defaultColor===shoeColor.color? 'border-[1.7px] border-[#433b3b] rounded-lg h-16 w-16 ' : 'rounded-lg h-16 w-16 ' }>
+                      {" "}
+                      <img
+                        src={shoeColor.url}
+                        alt=""
+                        className='object-cover h-full w-full rounded-md  cursor-pointer '
+                        onClick={() => handleSelectColor(shoeColor.color)}
+                      />
+                    </div>
                   );
                 })}
               </div>
@@ -160,7 +209,11 @@ const handleAddToCart=()=>{
               <div className=" flex gap-2 flex-wrap  w-5/6">
                 {product?.sizes?.map((sizes) => {
                   return (
-                    <div className="h-16 w-16 rounded-md  border-2 flex justify-center items-center text-sm font-Poppins font-bold">
+                    <div
+                      key={sizes} 
+                      className={defaultSize===sizes ? "h-16 w-16 rounded-md  border-2 border-[#000000] cursor-pointer  flex justify-center items-center text-sm font-Poppins font-bold" : " cursor-pointer h-16 w-16 rounded-md  border-2 flex justify-center items-center text-sm font-Poppins font-bold"}
+                      onClick={() => handleSizeSelection(sizes)}
+                    >
                       {sizes}
                     </div>
                   );
@@ -184,9 +237,10 @@ const handleAddToCart=()=>{
               <IconButton
                 height={12}
                 width={12}
-                colorScheme="blue"
+                colorScheme={isFavourite ? "blue" : "blue"} // Use red color when item is already in favorites
                 aria-label="Search database"
-                icon={<CiHeart className="text-2xl" />}
+                icon={isFavourite? <FaHeart className="text-2xl text-red-200" /> : <CiHeart className="text-3xl  "/>}
+                onClick={handleAddToFavorites}
               />
             </Stack>
             <div className='flex gap-2 items-center'> <BsTruck /> Free delivery on orders over $30.0</div>
@@ -194,7 +248,7 @@ const handleAddToCart=()=>{
         </div>
         
       </div>
-      <Reviews data={product.reviews} />
+      {/* <Reviews data={product.reviews} /> */}
     </div>
   );
 }

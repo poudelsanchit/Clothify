@@ -20,6 +20,10 @@ const Swiper = ({products,title}) => {
       <div className="text-[1.7rem]  font-medium font-Poppins mb-4 mt-10">
        {title}
       </div>
+      <div className='flex justify-around w-full'>
+        <div onClick={slideLeft}>Left</div>
+        <div onClick={slideRight}>Right</div>
+      </div>
       <div className="flex items-center relative group">
         <MdChevronLeft
           onClick={slideLeft}

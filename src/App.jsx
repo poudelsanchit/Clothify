@@ -1,5 +1,5 @@
 import React from 'react'
-import NavBar from './Components/NavBar'
+import NavBar from './Components/Header/NavBar.jsx'
 import Body from './Pages/Body'
 import { Route, Routes } from 'react-router-dom'
 import Men from './Pages/Men'
@@ -9,44 +9,78 @@ import New from './Pages/New'
 import Sales from './Pages/Sales'
 import Kids from './Pages/Kids'
 import Card from './Components/Cards/Card'
-import BottomNavBar from './Components/BottomNavBar'
 import { useSelector, useDispatch } from 'react-redux'
-import {decrement,increment} from './redux/Slices/counter/counterSlice'
-import { addItemToCart, removeItemFromCart, clearCart } from './redux/Slices/Cart/cartSlice';
-import Checkout from './Pages/Checkout'
+import Shipping from './Components/Payments/Cart/Cart.jsx'
+import {Footer} from './Components/Footer/Footer'
+import Billing from './Components/Payments/Checkout.jsx'
+import Contributors from './Pages/Contributers.jsx'
+import Favorites from './Pages/Favorites.jsx'
+
 
 const App = () => {
-  const count = useSelector((state) => state.counter.value)
   const cartItems = useSelector(state => state.cart.items);
   const dispatch = useDispatch()
+  const routes = [
+    {
+      path: "/",
+      component: <Body />,
+    },
+    {
+      path: "/men",
+      component: <Men />,
+    },
+    {
+      path: "/women",
+      component: <Women />,
+    },
+    {
+      path: "/kids",
+      component: <Kids />,
+    },
+    {
+      path: "/sports",
+      component: <Sports />,
+    },
+    {
+      path: "/new",
+      component: <New />,
+    },
+    {
+      path: "/sales",
+      component: <Sales />,
+    },
+    {
+      path: "/:shoes/:id",
+      component: <Card />,
+    },
+    {
+      path: "/cart",
+      component: <Shipping />,
+    },
+    {
+      path: "/checkout",
+      component: <Billing />,
+    },
+    {
+      path: "/contributers",
+      component: <Contributors />,
+    },
+    {
+      path: "/favorites",
+      component: <Favorites />,
+    },
+  ];
   return (
     <>
       <NavBar />
-     <Routes>
-      <Route path='/' element={<Body/>} />
-      <Route path='/men' element={<Men/>} />
-      <Route path='/women' element={<Women/>} />
-      <Route path='/kids' element={<Kids/>} />
-      <Route path='/sports' element={<Sports/>} />
-      <Route path='/new' element={<New/>} />
-      <Route path='/sales' element={<Sales/>} />
-      <Route path='/shoes/:id' element={<Card />} />
-      <Route path='/test' element={<New />} />
-      <Route path='/checkout' element={<Checkout />} />
-
-
-
-
-
-
-    </Routes> 
-      {/* <BottomNavBar/> */}
-      {/* <div className="w-full h-screen  text-3xl  ">
-        <div className="flex gap-10 justify-center items-center mt-10 ">
-
-          <div > <div className='font-bold text-4xl pb-5'>Products Added :</div>  {cartItems.map((items)=>(<div className='text-md font-Poppins'>{items.name}</div>))}</div>
-        </div>{" "}
-      </div> */}
+      <Routes>
+        {
+          routes.map(({path,component})=> {return       <Route path={path} element={component} />
+        } )
+        }
+    </Routes>  
+    <Footer/>
+   
     </>
   );
 }

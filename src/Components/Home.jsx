@@ -6,11 +6,13 @@ import Swiper from './Swipers/AutoSwiper.jsx';
 
 function Home() {
   return (
-  
-      <div className="flex w-full   pl-12 justify-between ">
-        <div className=" w-3/6 mt-8">
-          <div className="font-Poppins font-black text-8xl  mb-4 ">
-            YOUR STYLE DESERVES <br />
+  <>
+  <div className='w-screen flex justify-center '>
+  <div className="flex  sm:flex-row flex-col w-11/12  items-center justify-center gap-10 sm:gap-0  ">
+        <div className="w-full sm:w-3/6 mt-8 mr-auto ">
+          <div className="font-Poppins font-black text-4xl s:text-6xl sm:text-8xl  mb-4 ">
+            <span>YOUR STYLE DESERVES</span>
+             <br />
             THE{" "}
             <span className="  bg-gradient-to-r from-purple-800  to-blue-900 text-transparent bg-clip-text ">
               {" "}
@@ -19,7 +21,7 @@ function Home() {
           </div>
 
           
-          <p className=" font-Poppins font-semibold text-lg mt-5  mb-5">
+          <p className=" font-Poppins font-medium text-lg mt-5  mb-5 text-secondary-text">
             Elevate your style with our Nike Products, providing top-notch
             fashion solutions to meet your every need. Upgrade your look with us
             today and experience the best in athletic fashion.
@@ -42,8 +44,14 @@ function Home() {
           </Stack>
         </div>
 
-        <Swiper className=" h-[40rem] bg-pink-100" />
+        <Swiper/>
       </div>
+  </div>
+   
+  
+  
+  </>
+     
 
   );
 }

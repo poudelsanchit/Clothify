@@ -11,14 +11,13 @@ function SwiperTool() {
 
   return (
     <>
-      <Swiper
-        // install Swiper modules
+    <div className='w-11/12 sm:w-[30rem]  '>
+    <Swiper
         modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
-        className="h-[40rem] w-[29rem] object-cover"
         spaceBetween={0}
         slidesPerView={1}
         autoplay={{
-          delay: 1000,
+          delay: 2000,
           disableOnInteraction: false,
         }}
 
@@ -29,14 +28,15 @@ function SwiperTool() {
           return (
             <SwiperSlide>
               <img
-                className="h-[40rem] object-cover"
+                className="h-[40rem] w-full sm:w-[40rem] object-cover"
                 src={images}
-                alt="hero-image"
               />
             </SwiperSlide>
           );
         })}
       </Swiper>
+    </div>
+      
     </>
   );
 }

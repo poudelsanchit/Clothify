@@ -18,7 +18,10 @@ const itemsSlice = createSlice({
 
       if (existingItem) {
         // If the product with the same productId already exists, increment the quantity
-        existingItem.qty += newItem.qty || 1; // Assuming quantity is present in newItem
+        existingItem.qty += newItem.qty || 1; // Assuming quantity is present in newItem4
+        existingItem.defaultSize = newItem.defaultSize || 0;
+        existingItem.defaultColor = newItem.defaultColor || 0;
+
       } else {
         // Otherwise, add the new item to the cart
         state.items.push(newItem);
@@ -26,7 +29,17 @@ const itemsSlice = createSlice({
     },
     removeItemFromCart: (state, action) => {
       const itemIdToRemove = action.payload;
-      state.items = state.items.filter((item) => item.id !== itemIdToRemove);
+     state.items = state.items.filter((item) => item.productId !== itemIdToRemove);
+    },
+    updateCartItemSize: (state,action)=>{
+      const { productId, size } = action.payload;
+      const itemToUpdate = state.items.find(
+        (item) => item.productId === productId
+      );
+      if(itemToUpdate)
+      {
+        itemToUpdate.defaultSize= size
+      }
     },
     // Action to update the quantity of an item in the cart
     updateCartItemQty: (state, action) => {
@@ -40,13 +53,29 @@ const itemsSlice = createSlice({
       }
 
     },
+    updateCartItemColor: (state,action)=>{
+      const { productId, color } = action.payload;
+      const itemToUpdate = state.items.find((item)=> item.productId=== productId)
+      if(itemToUpdate)
+      {
+        itemToUpdate.defaultColor= color
+      }
+    },
     clearCart: (state) => {
       state.items = [];
     },
   },
 });
 
-export const { addItemToCart, removeItemFromCart, clearCart,updateCartItemQty } = itemsSlice.actions;
+
+export const {
+  addItemToCart,
+  removeItemFromCart,
+  clearCart,
+  updateCartItemQty,
+  updateCartItemSize,
+  updateCartItemColor
+} = itemsSlice.actions;
 
 export default itemsSlice.reducer;
 export const getTotalPrice = state => {
