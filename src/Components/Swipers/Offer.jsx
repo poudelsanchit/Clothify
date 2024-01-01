@@ -17,7 +17,7 @@ const Offer = () => {
   ];
 
   return (
-    <div className=" w-full bg-[#e7e7e7da]">
+    <div className=" w-full bg-[#f7f2f2da]">
       <Swiper
         modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={0}
@@ -32,7 +32,7 @@ const Offer = () => {
         {SwiperTexts.map((text, index) => {
           return (
             <SwiperSlide key={index}>
-              <div className=" flex justify-center  h-12 w-full">
+              <div className=" flex justify-center  h-12 w-full cursor-pointer">
                 <div className=" flex justify-center items-center  text-sm">
                   {text}
                 </div>

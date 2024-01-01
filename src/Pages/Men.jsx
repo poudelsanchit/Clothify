@@ -20,14 +20,21 @@ const Men = () => {
   return (
     <div className=" p-0 flex flex-col items-start  w-full">
       <Offer />
-      <Nissbody />
+      <Nissbody
+        title={"Men"}
+        imgurl={
+          "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/w_1824,c_limit/bf6ccafa-64c3-4c0f-b6e2-084f4e27af2f/men-s-shoes-clothing-accessories.jpg"
+        }
+        subtitle1={"THE RESOLUTION STARTER PACK"}
+        subtitle2={
+          "Get after your fitness goals with a curated collection of comfy kicks,lightweight tops, and more supportive styles."
+        }
+      />
       <div className="w-full h-auto flex justify-center mb-4" id="homeShop">
-      <div className="w-11/12">
-        <ProductsSwiper products={data} title={'Men'} type={'men'}/>
-
-
+        <div className="w-11/12">
+          <ProductsSwiper products={data} title={"Men"} type={"men"} />
         </div>
-        </div>
+      </div>
     </div>
   );
 };
