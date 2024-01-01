@@ -4,19 +4,19 @@ import ProductsSwiper from "./Swipers/ProductsSwiper";
 
 const HomeShop = () => {
 
-  const [products,setProducts]= useState([])
+  const [popular,setProducts]= useState([])
   const fetchData=async()=>{
-    const ProductsData = await axios.get('http://localhost:3000/women')
+    const ProductsData = await axios.get('http://localhost:3000/popular')
     setProducts(ProductsData.data)
 
   }
-  const [products2,setProducts2]= useState([])
+  const [bestsales,setProducts2]= useState([])
   const fetchProducts2=async()=>{
     const ProductsData = await axios.get('http://localhost:3000/bestsales')
     setProducts2(ProductsData.data)
 
   }
-  const [products3,setProducts3]= useState([])
+  const [bestchoices,setProducts3]= useState([])
   const fetchProducts3=async()=>{
     const ProductsData = await axios.get('http://localhost:3000/bestchoices')
     setProducts3(ProductsData.data)
@@ -31,9 +31,9 @@ const HomeShop = () => {
   return (
     <div className="w-full h-auto flex justify-center mb-4" id="homeShop">
       <div className="w-11/12">
-        <ProductsSwiper products={products} title={"Popular right now"} />
-        <ProductsSwiper products={products2} title={"Best sales"} />
-        <ProductsSwiper products={products} title={"Best Choices"} />
+        <ProductsSwiper products={popular} title={"Popular right now"} type={'popular'} />
+        <ProductsSwiper products={bestsales} title={"Best sales"} type={'bestsales'}/>
+        <ProductsSwiper products={bestchoices} title={"Best Choices"} type={'bestchoices'}/>
       </div>
     </div>
   );

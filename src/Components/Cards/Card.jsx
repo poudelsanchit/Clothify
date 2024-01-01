@@ -6,23 +6,23 @@ import { CiShoppingCart,CiHeart  } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa";
 import { BsDot,BsTruck } from "react-icons/bs";
-import Reviews from '../ReviewsSection/Reviews';
-
 import { useSelector, useDispatch } from 'react-redux'
 import { addItemToCart} from '../../redux/Slices/Cart/cartSlice';
 import { addToFavorites, removeFromFavorites} from '../../redux/Slices/favorites/favorites'
 const Card = () => {
+  const {type} = useParams();
+    const id= useParams();
+
   const toast = useToast()
   const cartItems = useSelector(state=>state.cart.items)
   const favoriteItems = useSelector(state=>state.favorites.favorites)
 
   const cartItemsLen = cartItems.length
   const dispatch = useDispatch();
-  const id= useParams();
   const [product,setProducts]= useState([])
   const fetchData=async()=>{
 
-    const response = await axios.get('http://localhost:3000/popular')
+    const response = await axios.get(`http://localhost:3000/${type}`)
     const products = response.data;
     const foundProduct = products.find(product => product.productId === id.id);
     setSelectedSize(foundProduct.sizes[0]);

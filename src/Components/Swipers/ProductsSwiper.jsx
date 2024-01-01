@@ -8,7 +8,7 @@ import { GoChevronLeft, GoChevronRight } from 'react-icons/go';
 import 'swiper/css/bundle';
 
 
-const ProductsSwiper = ({ title, products }) => {
+const ProductsSwiper = ({ title, products,type }) => {
   const swiperRef = useRef(null);
 
   const handleNext = () => {
@@ -28,7 +28,7 @@ const ProductsSwiper = ({ title, products }) => {
 
   return (
     <>
-      <div className="text-[1.7rem] font-medium font-Poppins mb-4 mt-10">
+      <div className="text-[1.7rem] font-medium font-Poppins  mt-10">
         {title}
       </div>
       <div className="w-full h-10 flex">
@@ -72,7 +72,7 @@ const ProductsSwiper = ({ title, products }) => {
       >
         {shuffledProducts.map((product) => (
           <SwiperSlide key={product.id}>
-            <EachCard data={product} />
+            <EachCard data={product} type={type}/>
           </SwiperSlide>
         ))}
       </Swiper>
