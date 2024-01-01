@@ -1,20 +1,21 @@
-import React, { useState } from 'react'
-import Nike from '../../assets/nike.png'
-import { IoFingerPrintOutline,IoSearch  } from "react-icons/io5";
-import { CiHeart,CiShoppingCart  } from "react-icons/ci";
-import { Link, NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { getProductsCount } from '../../redux/Slices/Cart/cartSlice';
-import { getFavouritesCount } from '../../redux/Slices/favorites/favorites';
+import React, { useState } from "react";
+
+import Clothify from "../../assets/clothify-dark.png";
+import { IoFingerPrintOutline, IoSearch } from "react-icons/io5";
+import { CiHeart, CiShoppingCart } from "react-icons/ci";
+import { Link, NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { getProductsCount } from "../../redux/Slices/Cart/cartSlice";
+import { getFavouritesCount } from "../../redux/Slices/favorites/favorites";
 
 import { PiGithubLogoThin } from "react-icons/pi";
 import { CgMenuLeft } from "react-icons/cg";
 import { useAuth0 } from "@auth0/auth0-react";
 import { FiLogOut } from "react-icons/fi";
 const NavBar = () => {
-  const { user, isAuthenticated, isLoading ,loginWithRedirect,logout } = useAuth0();
- const [isActive,setIsActive] = useState(false);
- 
+  const { user, isAuthenticated, isLoading, loginWithRedirect, logout } =
+    useAuth0();
+  const [isActive, setIsActive] = useState(false);
 
   const productsCount = useSelector(getProductsCount);
   const favoritesCount = useSelector(getFavouritesCount);
@@ -24,9 +25,9 @@ const NavBar = () => {
       <div className="flex justify-between items-center  text-lg font-medium sm:h-16 h-14 w-11/12 ">
         <Link to={"/"}>
           <img
-            src={Nike}
+            src={Clothify}
             alt=""
-            className="h-8 w-8 sm:h-12 sm:w-12 object-contain "
+            className="h-8 w-8 sm:h-10 sm:w-10 object-contain "
           />
         </Link>
 
@@ -44,32 +45,33 @@ const NavBar = () => {
             <div> Loading....</div>
           ) : isAuthenticated ? (
             <>
-              <div className="relative  w-48 rounded-md" >
+              <div className="relative  w-48 rounded-md">
                 <img
                   src={user.picture}
                   className=" w-12 float-right rounded-full border-solid border-[1px] border-secondary-bg"
                   onClick={() => setIsActive((prev) => !prev)}
-                 
                 />
-               
-               
+
                 <div
-                  className={isActive? "absolute top-16  right-0 bg-white border-2  text-white h-full flex gap-2 rounded-md items-center bottom-0 z-50" : " top-16 hidden right-0 bg-white border-2  text-white h-full flex gap-2 rounded-md items-center bottom-0 z-50"}
+                  className={
+                    isActive
+                      ? "absolute top-16  right-0 bg-white border-2  text-white h-full flex gap-2 rounded-md items-center bottom-0 z-50"
+                      : " top-16 hidden right-0 bg-white border-2  text-white h-full flex gap-2 rounded-md items-center bottom-0 z-50"
+                  }
                   onClick={() =>
                     logout({
                       logoutParams: { returnTo: window.location.origin },
                     })
                   }
                 >
-                  <div className='w-10  text-6xlxl flex justify-center items-center rounded-l-md bg-white text-black h-full'>
-                  <FiLogOut/>
-
+                  <div className="w-10  text-6xlxl flex justify-center items-center rounded-l-md bg-white text-black h-full">
+                    <FiLogOut />
                   </div>
-                  <div className='flex justify-center items-center bg-black h-full w-full  pr-4  rounded-r-md'>Logout</div>
+                  <div className="flex justify-center items-center bg-black h-full w-full  pr-4  rounded-r-md">
+                    Logout
+                  </div>
                 </div>
-                
               </div>
-              
             </>
           ) : (
             <>
@@ -136,12 +138,10 @@ const NavBar = () => {
 
         <div>
           <div className="flex  justify-center items-center gap-5">
-            <Link to={'/contributers'}>
-            <PiGithubLogoThin className=" text-2xl sm:text-3xl hover:scale-[1.01] cursor-pointer " />
-
+            <Link to={"/contributers"}>
+              <PiGithubLogoThin className=" text-2xl sm:text-3xl hover:scale-[1.01] cursor-pointer " />
             </Link>
-         
-            
+
             <Link to={"/cart"}>
               <div className="relative cursor-pointer">
                 <CiShoppingCart className="text-2xl sm:text-3xl hover:scale-[1.01] " />
@@ -150,20 +150,19 @@ const NavBar = () => {
                 </div>
               </div>
             </Link>
-            <Link to={'/favorites'}>
-            <div className="relative cursor-pointer">
+            <Link to={"/favorites"}>
+              <div className="relative cursor-pointer">
                 <CiHeart className="text-2xl sm:text-3xl hover:scale-[1.01] " />
                 <div className=" absolute h-3 w-3 sm:h-4 sm:w-4 rounded-full bg-yellow-400 top-0 right-0 flex justify-center items-center text-xs font-Chakra">
                   {favoritesCount}
                 </div>
               </div>
-
             </Link>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default NavBar
+export default NavBar;
