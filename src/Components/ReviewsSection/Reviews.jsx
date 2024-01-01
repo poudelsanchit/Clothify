@@ -10,7 +10,7 @@ const Reviews = ({data}) => {
   
 
   return (
-    <div className="w-11/12 h-96 p-1  ">
+    <div className="w-11/12 h-auro p-1 hidden sm:block">
       <div className=" mb-2 flex gap-4 text-2xl font-semibold">
      
         <div className={togglePage===2? " text-black cursor-pointer": " text-gray-400 cursor-pointer"} onClick={() => setTogglePage(2)}>

@@ -57,18 +57,18 @@ const onOptionChangeHandler=(event)=>{
       <div className="flex flex-col m-1  justify-evenly w-full">
         <div className="font-bold sm:text-xl text-sm">{items.name}</div>
 
-        <div className="  text-base flex sm:flex-row flex-col justify-start  sm:gap-10 gap-2 text-secondary-text">
-          <div className='flex gap-5  sm:flex-row '>
-          <div className="flex items-center gap-2">
-            <span className="font-medium  sm:text-base text-xs">Qty: </span>
+        <div className="  text-base flex sm:flex-row flex-col justify-start  sm:gap-10 gap-2 text-secondary-text pt-2">
+          <div className='flex gap-2 sm:gap-5  sm:flex-row flex-col '>
+          <div className="flex items-center ">
+            <span className="font-medium sm:text-base text-xs w-10">Qty: </span>
             <GetNumberRange
               defaultvalue={qty}
               min={1} 
               onValueChange={handleQtyChange}
             />
           </div>
-          <div className="flex items-center gap-2">
-            <span className="font-medium sm:text-base text-xs">Size: </span>
+          <div className="flex items-center ">
+            <span className="font-medium sm:text-base text-xs w-10">Size: </span>
             <GetSizeRange
               max={44}
               defaultvalue={size}
@@ -100,7 +100,7 @@ const onOptionChangeHandler=(event)=>{
         </div>
       </div>
       <div className='flex h-full justify-center items-center cursor-pointer text-3xl' onClick={()=>dispatch(removeItemFromCart(items.productId))}><CiTrash/></div>
-      <div className="hidden lg:flex justify-center items-center h-full ml-auto font-Poppins font-medium  text-lg w-20 bg-purple-600 text-white rounded-r-md ">
+      <div className="hidden lg:flex justify-center items-center h-full ml-auto font-Poppins font-medium  text-lg w-20  text-black rounded-r-md ">
         {" "}
         ${totalPrice}
       </div>

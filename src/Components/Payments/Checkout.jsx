@@ -226,7 +226,7 @@ const Billing = ({handleToggle}) => {
        
         <div className=" border h-fit rounded-lg grid gap-3 mt-5 lg:w-5/12 w-full ">
           <div className=" grid gap-2 px-6 pt-2">
-            <div className=" border-b-[1px]">
+            <div className=" border-b-[1px] py-2">
               <p className=" text-xl font-bold font-Poppins">Your Products</p>
             </div>
             {
