@@ -1,5 +1,5 @@
+
 import React, { useEffect, useState } from 'react'
-import ComingSoon from './ComingSoon'
 import axios from 'axios';
 
 const Sports = () => {
@@ -16,9 +16,8 @@ const Sports = () => {
   
   return (
     <>
-      <ComingSoon />
     </>
   );
-}
+};
 
-export default Sports
+export default Sports;
