@@ -1,26 +1,26 @@
-import React, { useRef } from 'react'
-import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
-import EachCard from '../Cards/EachCard';
+import React, { useRef } from "react";
+import { MdChevronLeft, MdChevronRight } from "react-icons/md";
+import EachCard from "../Cards/EachCard";
 
-const Swiper = ({products,title}) => {
-    const sliderRef = useRef(null);
-    const slideLeft = () => {
-      if (sliderRef.current) {
-        sliderRef.current.scrollLeft -= 540;
-      }
-    };
-  
-    const slideRight = () => {
-      if (sliderRef.current) {
-        sliderRef.current.scrollLeft += 540;
-      }
-    };
+const Swiper = ({ products, title }) => {
+  const sliderRef = useRef(null);
+  const slideLeft = () => {
+    if (sliderRef.current) {
+      sliderRef.current.scrollLeft -= 540;
+    }
+  };
+
+  const slideRight = () => {
+    if (sliderRef.current) {
+      sliderRef.current.scrollLeft += 540;
+    }
+  };
   return (
     <>
       <div className="text-[1.7rem]  font-medium font-Poppins mb-4 mt-10">
-       {title}
+        {title}
       </div>
-      <div className='flex justify-around w-full'>
+      <div className="flex justify-around w-full">
         <div onClick={slideLeft}>Left</div>
         <div onClick={slideRight}>Right</div>
       </div>
@@ -48,6 +48,6 @@ const Swiper = ({products,title}) => {
       </div>
     </>
   );
-}
+};
 
-export default Swiper
+export default Swiper;
