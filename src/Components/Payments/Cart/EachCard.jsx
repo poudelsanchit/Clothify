@@ -107,6 +107,7 @@ const EachCard = ({ items }) => {
         ${totalPrice}
       </div>
     </div>
+    </div>
   );
 };
 
