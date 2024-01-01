@@ -5,9 +5,8 @@ import 'swiper/css/navigation';
 import { Mousewheel, Navigation } from 'swiper/modules';
 import EachCard from '../Cards/EachCard';
 import { GoChevronLeft, GoChevronRight } from 'react-icons/go';
-
-// Import Swiper styles
 import 'swiper/css/bundle';
+
 
 const ProductsSwiper = ({ title, products }) => {
   const swiperRef = useRef(null);
@@ -23,6 +22,9 @@ const ProductsSwiper = ({ title, products }) => {
       swiperRef.current.slidePrev();
     }
   };
+//random data every time 
+  const shuffledProducts = products.slice().sort(() => Math.random() - 0.5);
+
 
   return (
     <>
@@ -68,7 +70,7 @@ const ProductsSwiper = ({ title, products }) => {
         }}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
       >
-        {products.map((product) => (
+        {shuffledProducts.map((product) => (
           <SwiperSlide key={product.id}>
             <EachCard data={product} />
           </SwiperSlide>

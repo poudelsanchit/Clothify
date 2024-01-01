@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 const EachCard = ({data}) => {
     const navigate= useNavigate();
      const navigateToShoe=()=>{
-         navigate(`/shoes/${data.productId}`)
+         navigate(`/${'njh'}/${data.productId}`)
 
      }
   return (
