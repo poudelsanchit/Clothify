@@ -22,7 +22,7 @@ const Card = () => {
   const [product,setProducts]= useState([])
   const fetchData=async()=>{
 
-    const response = await axios.get('http://localhost:3000/products')
+    const response = await axios.get('http://localhost:3000/popular')
     const products = response.data;
     const foundProduct = products.find(product => product.productId === id.id);
     setSelectedSize(foundProduct.sizes[0]);

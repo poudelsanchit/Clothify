@@ -10,7 +10,6 @@ import Sales from './Pages/Sales'
 import Kids from './Pages/Kids'
 import Card from './Components/Cards/Card'
 import { useSelector, useDispatch } from 'react-redux'
-import { addItemToCart, removeItemFromCart, clearCart } from './redux/Slices/Cart/cartSlice';
 import Shipping from './Components/Payments/Cart/Cart.jsx'
 import {Footer} from './Components/Footer/Footer'
 import Billing from './Components/Payments/Checkout.jsx'
@@ -51,7 +50,7 @@ const App = () => {
       component: <Sales />,
     },
     {
-      path: "/shoes/:id",
+      path: "/:shoes/:id",
       component: <Card />,
     },
     {

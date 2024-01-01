@@ -3,22 +3,26 @@ import axios from "axios";
 import ProductsSwiper from "./Swipers/ProductsSwiper";
 
 const HomeShop = () => {
-  const [products, setProducts] = useState([]);
-  const fetchData = async () => {
-    const ProductsData = await axios.get("http://localhost:3000/products");
-    setProducts(ProductsData.data);
-  };
-  const [products2, setProducts2] = useState([]);
-  const fetchProducts2 = async () => {
-    const ProductsData = await axios.get("http://localhost:3000/products2");
-    setProducts2(ProductsData.data);
-  };
-  const [products3, setProducts3] = useState([]);
-  const fetchProducts3 = async () => {
-    const ProductsData = await axios.get("http://localhost:3000/products3");
-    setProducts3(ProductsData.data);
-  };
-  useEffect(() => {
+
+  const [products,setProducts]= useState([])
+  const fetchData=async()=>{
+    const ProductsData = await axios.get('http://localhost:3000/women')
+    setProducts(ProductsData.data)
+
+  }
+  const [products2,setProducts2]= useState([])
+  const fetchProducts2=async()=>{
+    const ProductsData = await axios.get('http://localhost:3000/bestsales')
+    setProducts2(ProductsData.data)
+
+  }
+  const [products3,setProducts3]= useState([])
+  const fetchProducts3=async()=>{
+    const ProductsData = await axios.get('http://localhost:3000/bestchoices')
+    setProducts3(ProductsData.data)
+
+  }
+  useEffect(()=>{
     fetchData();
     fetchProducts2();
     fetchProducts3();
