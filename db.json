@@ -3268,18 +3268,5 @@
             }
         ]
     }  
-],
-
- 
-
-  "profile": [
-      {
-          "name": "typicode",
-          "id": 1
-      },
-      {
-          "name": "typicode",
-          "id": 1
-      }
-  ]
+]
 }
