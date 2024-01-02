@@ -23,6 +23,7 @@ const favoriteSlice = createSlice({
         },
         removeFromFavorites: (state,action)=>{
             const newItem = action.payload;
+            console.log(newItem)
             const isAlreadyInFavorites = state.favorites.some((item)=> item.productId === newItem.productId);
             if(isAlreadyInFavorites)
             {
@@ -31,7 +32,8 @@ const favoriteSlice = createSlice({
 
         },
         clearFavorites: (state)=>{
-            console.log('Clear');
+            state.favorites =[];
+            console.log(state)
         }
     }
 
