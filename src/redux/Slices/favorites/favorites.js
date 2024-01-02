@@ -10,6 +10,7 @@ const favoriteSlice = createSlice({
     reducers:{
         addToFavorites : ( state,action)=>{
             const newItem = action.payload;
+            console.log(newItem)
             
             // Check if the item is not already in favorites
             const isAlreadyInFavorites = state.favorites.some(item => item.productId === newItem.productId);
