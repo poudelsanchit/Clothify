@@ -32,7 +32,7 @@ const GetNumberRange = ({defaultvalue,min,onValueChange }) => {
   return (
     <div className='flex justify-evenly items-centerg gap-1'  >
       <div className='sm:w-10 w-5 h-5  sm:h-10  bg-[#edf2f7] flex justify-center items-center rounded-sm' {...dec}  onChange={()=>setQty({"name": valueAsNumber})}>-</div>
-      <input type="number"  className='border-2 rounded-sm sm:w-10 w-10 h-5  sm:h-10 focus:outline-none pl-2' {...input}/>
+      <input type="number"  className='border-2 rounded-sm sm:w-10 w-10 h-5  sm:h-10 focus:outline-none pl-2 text-xs' {...input}/>
       <div className='sm:w-10 w-5 h-5  sm:h-10  bg-[#edf2f7] flex justify-center items-center rounded-sm' {...inc}  onChange={()=>setQty( value)}>+</div>
 
     </div>

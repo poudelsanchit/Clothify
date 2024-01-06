@@ -1,9 +1,9 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-const EachCard = ({data}) => {
+const EachCard = ({data,type}) => {
     const navigate= useNavigate();
      const navigateToShoe=()=>{
-         navigate(`/shoes/${data.productId}`)
+         navigate(`/${type}/${data.productId}`)
 
      }
   return (
