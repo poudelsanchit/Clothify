@@ -69,7 +69,7 @@ const handleSelectColor=(color)=>{
   const handleAddToFavorites = ()=>{
     setIsFavourite(prev=>!prev);
     if (!isFavourite) {
-      dispatch(addToFavorites({ ...product }));
+      dispatch(addToFavorites({ ...product,type:type  }));
       toast({
         title: "Product added to Wishlists.",
         status: "success",

@@ -1,3 +1,4 @@
+
 import { Button, IconButton, Stack } from "@chakra-ui/react";
 import EachCard from "./EachCard";
 import { CiHeart, CiShoppingCart } from "react-icons/ci";
@@ -27,6 +28,7 @@ const Shipping = () => {
       })
       .catch((err) => console.log(err));
   };
+
 
   return (
     <>

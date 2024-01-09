@@ -280,11 +280,13 @@
       ]
     },
     {
+
       "productId": "fcdcc8df45678",
       "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/e274f47a-32ff-49f6-b419-a6a7636368d7/air-jordan-1-mid-womens-shoes-Kg3nnj.png",
       "name": "Air Jordan 1 Mid Women's",
       "category": "Women's Shoes",
       "price": "150",
+
       "qty": 1,
       "defaultSize": 0,
       "sizes": [40.5, 41, 42, 43, 43.5, 44, 44.5, 45, 46],
