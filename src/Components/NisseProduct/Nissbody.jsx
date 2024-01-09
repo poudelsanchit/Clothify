@@ -1,6 +1,6 @@
 import React from "react";
 
-function Nissbody({title,imgurl,subtitle1,subtitle2}) {
+function Nissbody({ title, imgurl, subtitle1, subtitle2 }) {
   return (
     <div>
       <div className=" mx-auto w-11/12 flex flex-col  justify-center ">
@@ -14,18 +14,15 @@ function Nissbody({title,imgurl,subtitle1,subtitle2}) {
           </div>
         </div>
         <div>
-          <img
-            src={imgurl}
-            alt="Nike Just Do It"
-          />
+          <img src={imgurl} alt="Nike Just Do It" />
         </div>
 
         {/* Heading */}
         <div className="  ">
-          <div className=" flex text-center mx-auto mt-12 mb-8  w-1/2 font-extrabold text-7xl">
+          <div className=" flex text-center mx-auto mt-12 mb-8  font-extrabold  text-4xl lg:text-7xl lg:w-1/2">
             {subtitle1}
           </div>
-          <div className=" flex text-center mx-auto my-8  w-1/2  text-base">
+          <div className=" flex text-center mx-auto my-8  lg:w-1/2   text-base">
             {subtitle2}
           </div>
           <a href="#homeShop">
