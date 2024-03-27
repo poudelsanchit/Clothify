@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { getTotalPrice } from '../../../redux/Slices/Cart/cartSlice';
 import { getSumOfProducts } from '../../../redux/Slices/Cart/cartSlice';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const Shipping = () => {
   const navigate = useNavigate();
@@ -16,7 +17,10 @@ const total= useSelector(getSumOfProducts)
 const handleCheckout=()=>{
   navigate('/checkout')
 }
+useEffect(()=>{
+  window.scrollTo({behavior:'smooth',left: 0,top:0})
 
+},[])
 
   return (
     <>

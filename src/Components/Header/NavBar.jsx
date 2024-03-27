@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import Clothify from "../../assets/clothify-dark.png";
 import { IoFingerPrintOutline, IoSearch } from "react-icons/io5";
 import { CiHeart, CiShoppingCart } from "react-icons/ci";
@@ -12,13 +11,17 @@ import { PiGithubLogoThin } from "react-icons/pi";
 import { CgMenuLeft } from "react-icons/cg";
 import { useAuth0 } from "@auth0/auth0-react";
 import { FiLogOut } from "react-icons/fi";
+import SeachBox from "./SeachBox";
 const NavBar = () => {
   const { user, isAuthenticated, isLoading, loginWithRedirect, logout } =
     useAuth0();
   const [isActive, setIsActive] = useState(false);
+  const [isSearchFocused, setIsSearchFocused] = useState(false); // Track input focus
+
 
   const productsCount = useSelector(getProductsCount);
   const favoritesCount = useSelector(getFavouritesCount);
+  const [searchText,setSearchText] = useState('');
 
   return (
     <div className="sticky bg-white py-1 top-0  z-50 w-full font-Poppins text-black flex flex-col items-center bg-red">
@@ -31,13 +34,22 @@ const NavBar = () => {
           />
         </Link>
 
-        <div className="bg-[#f4f4f4] flex justify-center items-center rounded-md">
-          <IoSearch className="text-[#a6a6a6] text-xl mx-2" />
-          <input
-            type="text"
-            className="bg-[#f4f4f4] rounded-xl focus:outline-none  text-[#a6a6a6] h-10 w-32 sm:w-72 sm:placeholder:text-sm sm:text-sm text-xs placeholder:text-xs"
-            placeholder="Search"
-          />
+        <div className="w-96 relative">
+          <div className="bg-[#f4f4f4] flex justify-center items-center rounded-md">
+            <IoSearch className="text-[#a6a6a6] text-xl mx-2" />
+            <input
+              type="text"
+              className="bg-[#f4f4f4] rounded-xl focus:outline-none  text-[#a6a6a6] h-10 w-32 sm:w-72 sm:placeholder:text-sm sm:text-sm text-xs placeholder:text-xs"
+              placeholder="Search"
+              onFocus={() => setIsSearchFocused(true)}
+              onBlur={() => setIsSearchFocused(false)}
+              value={searchText}
+              onChange={(e)=>setSearchText(e.target.value)}
+            />
+          </div>
+          {isSearchFocused && 
+          <SeachBox  searchQuery={searchText}/>
+          }
         </div>
 
         <div className="flex justify-center items-center w-3/11 gap-2 cursor-pointer ">

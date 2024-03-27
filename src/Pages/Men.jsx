@@ -9,7 +9,6 @@ const Men = () => {
   const fetchMenData = async()=>{
     const res = await axios.get('http://localhost:3000/men')
      setData(res.data)
-     console.log(res)
   }
 
   useEffect(()=>{
@@ -32,7 +31,10 @@ const Men = () => {
       />
       <div className="w-full h-auto flex justify-center mb-4" id="homeShop">
         <div className="w-11/12">
-          <ProductsSwiper products={data} title={"Men"} type={"men"} />
+          {
+            data.length !==0?           <ProductsSwiper products={data} title={"Men"} type={"men"} /> : <h1>No products Available..</h1>
+
+          }
         </div>
       </div>
     </div>

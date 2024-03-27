@@ -1,7 +1,8 @@
-import React from "react";
-import Clothify from "../../assets/clothify-dark.png";
-import { Link } from "react-router-dom";
-import Nike from "./nike.png";
+
+import React from 'react'
+import { Link } from 'react-router-dom';
+import Clothify from '../../assets/clothify-dark.png'
+
 
 export function Footer() {
   return (
@@ -12,7 +13,7 @@ export function Footer() {
         </Link>
       </div>
       <div className="text-sm font-medium text-gray-500 flex flex-col">
-        <div> © 2024 NIKE. All rights reserved.</div>
+        <div> © 2024 Clothify. All rights reserved.</div>
       </div>
     </div>
   );
