@@ -1,6 +1,8 @@
+
 import React from 'react'
 import { Link } from 'react-router-dom';
 import Clothify from '../../assets/clothify-dark.png'
+
 
 export function Footer() {
   return (

@@ -18,6 +18,7 @@ const NavBar = () => {
   const [isActive, setIsActive] = useState(false);
   const [isSearchFocused, setIsSearchFocused] = useState(false); // Track input focus
 
+
   const productsCount = useSelector(getProductsCount);
   const favoritesCount = useSelector(getFavouritesCount);
   const [searchText,setSearchText] = useState('');
