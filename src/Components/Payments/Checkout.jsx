@@ -9,12 +9,13 @@ import { TfiWorld } from "react-icons/tfi";
 import { IoWalletOutline } from "react-icons/io5";
 import { useSelector } from 'react-redux';
 import { getSumOfProducts } from '../../redux/Slices/Cart/cartSlice';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const Billing = ({handleToggle}) => {
+  const { user, isAuthenticated, isLoading  } = useAuth0();
   const navigate = useNavigate();
   const products= useSelector(state=> state.cart.items)
   const total= useSelector(getSumOfProducts)
-  console.log(products[0]?.defaultsize)
   const [toggleState, setToggleState] = useState(1);
   const handleBack=()=>{
    navigate(-1)
@@ -67,7 +68,7 @@ const Billing = ({handleToggle}) => {
                     LOGIN <FaCheck />
                   </div>
                   <div className=" flex flex-col text-black lg:text-sm text-xs font-medium ">
-                    Sanchit Poudel <span>+977-9846905213</span>
+                   {user?.name} <span>{user?.phone_number}</span>
                   </div>
                 </div>
                 <Button

@@ -8,7 +8,6 @@ const HomeShop = () => {
   const fetchData=async()=>{
     const ProductsData = await axios.get('http://localhost:3000/popular')
     setProducts(ProductsData.data)
-
   }
   const [bestsales,setProducts2]= useState([])
   const fetchProducts2=async()=>{
@@ -31,9 +30,31 @@ const HomeShop = () => {
   return (
     <div className="w-full h-auto flex justify-center mb-4" id="homeShop">
       <div className="w-11/12">
-        <ProductsSwiper products={popular} title={"Popular right now"} type={'popular'} />
-        <ProductsSwiper products={bestsales} title={"Best sales"} type={'bestsales'}/>
-        <ProductsSwiper products={bestchoices} title={"Best Choices"} type={'bestchoices'}/>
+        {popular.length !== 0 ? (
+          <ProductsSwiper
+            products={popular}
+            title={"Popular right now"}
+            type={"popular"}
+          />
+        ) : null}
+        {bestsales.length !== 0 ? (
+          <ProductsSwiper
+            products={bestsales}
+            title={"Best sales"}
+            type={"bestsales"}
+          />
+        ) : null}
+
+        {bestchoices.length !== 0 ? (
+          <ProductsSwiper
+            products={bestchoices}
+            title={"Best Choices"}
+            type={"bestchoices"}
+          />
+        ) : null}
+        {
+          (popular.length ===0 && bestsales.length ===0 && bestchoices.length===0) ?  <h1>No products available</h1> : null
+        }
       </div>
     </div>
   );
