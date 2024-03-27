@@ -21,16 +21,14 @@ const Contributors = () => {
 
     fetchData();
   }, [apiUrl]);
-  // console.log(contributors);
   return (
     <div className="w-full min-h-screen h-full flex justify-center ">
       <div className="w-full font-roboto flex flex-col items-center gap-4 ">
         <div className="flex flex-col gap-3">
-          {/* <h2 className="font-semibold text-2xl mt-4">Project Repository:</h2> */}
           <a
             href="https://github.com/poudelsanchit/Clothify"
             target="_blank"
-            className="flex items-center gap-2 border-2 border-black rounded-lg transition-all w-[24rem] hover:scale-105 mt-4 font-Poppins"
+            className="flex items-center gap-2 border-2 border-secondary-bg rounded-lg transition-all w-[24rem] hover:scale-105 mt-4 font-Poppins"
           >
             <div className="flex flex-col items-center p-1">
               <img src={Clothify} alt="" className="w-16
@@ -48,12 +46,12 @@ const Contributors = () => {
         </div>
         <div className="font-semibold text-2xl mt-4">Github Contributors:</div>
         <div className="flex gap-4 flex-wrap w-full justify-center ">
-          {contributors.map((contributor, index) => (
+          {contributors.length !==0 ?contributors.map((contributor, index) => (
             <a
               key={index}
               href={contributor.html_url}
               target="_blank"
-              className="w-fit min-w-[20rem] h-fit flex justify-between border-2 border-dark-bg rounded-lg font-normal font-Poppins transition-all text-dark-bg hover:scale-105 opacity-90 hover:opacity-100 "
+              className="w-fit min-w-[20rem] h-fit flex justify-between border-2  border-secondary-bg rounded-lg font-normal font-Poppins transition-all text-dark-bg hover:scale-105 opacity-90 hover:opacity-100 "
             >
               <div className="flex items-center gap-2 p-2">
                 <img
@@ -69,11 +67,11 @@ const Contributors = () => {
                   </div> */}
                 </div>
               </div>
-              <div className="rounded-r-md bg-button p-2 text-white flex items-center text-3xl border-l-2 border-dark-bg">
+              <div className="rounded-r-md bg-button p-2 text-white flex items-center text-3xl border-l-2 border-secondary-bg">
                 <PiGithubLogoThin />
               </div>
             </a>
-          ))}
+          )) : <div>loading....</div>}
         </div>
       </div>
     </div>
