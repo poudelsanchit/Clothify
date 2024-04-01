@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import SearchedItem from "./SearchedItem";
 
 const SeachBox = ({ searchQuery }) => {
   const [items, setItems] = useState([]);
@@ -38,17 +39,17 @@ const SeachBox = ({ searchQuery }) => {
   }, []);
 
   return (
-    <div className="bg-[#f4f4f4] h-max w-full absolute mt-3 rounded-md p-4 text-sm">
+    <div className="bg-[#f4f4f4] h-max w-full absolute mt-3 rounded-md  text-sm">
       {!searchQuery ? (
         <div>No recent searches.....</div>
       ) : (
-        <div>
+        <div className="flex gap-2 flex-col">
           {items
             .filter((result) =>
               result.name.toLowerCase().includes(searchQuery.toLowerCase())
             )
             .slice(0,5).map((item, index) => (
-              <h1 key={index}>{item.name}</h1>
+              <SearchedItem key={index} item= {item}/>
             ))}
         </div>
       )}
