@@ -32,7 +32,11 @@ const Men = () => {
       <div className="w-full h-auto flex justify-center mb-4" id="homeShop">
         <div className="w-11/12">
           {
-            data.length !==0?           <ProductsSwiper products={data} title={"Men"} type={"mens"} /> : <h1>No products Available..</h1>
+            data.length !==0? <>
+            <ProductsSwiper products={data} title={"Men"} type={"mens"} />
+            <ProductsSwiper products={data} title={""} type={"mens"} />
+
+            </>  : <h1>No products Available..</h1>
 
           }
         </div>

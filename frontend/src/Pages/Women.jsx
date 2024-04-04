@@ -7,7 +7,7 @@ import axios from "axios";
 const Women = () => {
   const [data,setData]= useState([])
   const fetchMenData = async()=>{
-    const res = await axios.get('http://localhost:3000/women')
+    const res = await axios.get('http://localhost:5000/items/type/women')
      setData(res.data)
   }
 
