@@ -15,7 +15,7 @@ const Admin = () => {
     return (
         <div className='h-screen flex  justify-center'>
             <div className=' w-10/12 flex'>
-                <div className='font-Poppins text-2xl'>
+                <div className='font-Poppins text-3xl'>
                     Admin Panel
                 </div>
             </div>
