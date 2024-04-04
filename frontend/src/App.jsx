@@ -15,7 +15,7 @@ import {Footer} from './Components/Footer/Footer'
 import Billing from './Components/Payments/Checkout.jsx'
 import Contributors from './Pages/Contributers.jsx'
 import Favorites from './Pages/Favorites.jsx'
-import Admin from './Components/Admin.jsx'
+import Admin from './Components/Admin/Admin.jsx'
 
 
 const App = () => {
