@@ -1,5 +1,5 @@
 import { Button, IconButton, Stack } from '@chakra-ui/react';
-import EachCard from './EachCard';
+import EachCard from './EachCart';
 import { CiHeart, CiShoppingCart } from 'react-icons/ci';
 import { useSelector } from 'react-redux';
 import { getTotalPrice } from '../../../redux/Slices/Cart/cartSlice';
@@ -10,7 +10,6 @@ import { useEffect } from 'react';
 const Shipping = () => {
   const navigate = useNavigate();
   const cartItems = useSelector(state=>state.cart.items)
-  console.log(cartItems.length)
   const tax= 2;
 const total= useSelector(getSumOfProducts)
 

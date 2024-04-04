@@ -24,17 +24,16 @@ const EachCard = ({ items }) => {
 
   const handleQtyChange = (newValue) => {
     setQty(newValue);
-    dispatch(updateCartItemQty({ productId: items.productId, qty: newValue }));
+    dispatch(updateCartItemQty({ _id: items._id, qty: newValue }));
   };
   const handleSizeChange = (newValue) => {
     console.log(newValue);
     dispatch(
-      updateCartItemSize({ productId: items.productId, size: newValue })
+      updateCartItemSize({ _id: items._id, size: newValue })
     );
   };
 
-  const priceWithoutDollarSign = parseInt(items?.price?.replace(/\D/g, ""), 10);
-  const totalPrice = qty * priceWithoutDollarSign;
+  const totalPrice = qty * items?.price
   const options = ["HTML", "CSS", "JavaScript", "React", "Redux"];
 
   const onOptionChangeHandler = (event) => {
@@ -45,14 +44,14 @@ const EachCard = ({ items }) => {
 
     // Dispatch action to update Redux state
     dispatch(
-      updateCartItemColor({ productId: items.productId, color: newColor })
+      updateCartItemColor({ _id: items._id, color: newColor })
     );
   };
 
   return (
     <div className=" flex h-32 w-full border-2 rounded-md  gap-5 ">
       <img
-        src={items?.image}
+        src={items?.image && items?.image.length > 0 ? items.image[0] : "" }
         // src={SwiperImage1}
         alt=""
         className="w-28 h-28 m-1  rounded-md object-cover "
@@ -89,7 +88,7 @@ const EachCard = ({ items }) => {
               value={color}
               className="text-xs sm:text-base"
             >
-              {items?.color?.map((option, index) => {
+              {items?.colors?.map((option, index) => {
                 return (
                   <option key={index} value={option.color}>
                     {option.color}
@@ -101,7 +100,7 @@ const EachCard = ({ items }) => {
         </div>
       </div>
 
-      <div className='flex h-full justify-center items-center cursor-pointer text-3xl' onClick={()=>dispatch(removeItemFromCart(items.productId))}><CiTrash/></div>
+      <div className='flex h-full justify-center items-center cursor-pointer text-3xl' onClick={()=>dispatch(removeItemFromCart(items._id))}><CiTrash/></div>
       <div className="hidden lg:flex justify-center items-center h-full ml-auto font-Poppins font-medium  text-lg w-20  text-black rounded-r-md ">
         {" "}
         ${totalPrice}
