@@ -16,6 +16,7 @@ import Billing from './Components/Payments/Checkout/Checkout.jsx'
 import Contributors from './Pages/Contributers.jsx'
 import Favorites from './Pages/Favorites.jsx'
 import Admin from './Components/Admin/Admin.jsx'
+import ErrorPage from './Pages/ErrorPage.jsx'
 
 
 const App = () => {
@@ -74,6 +75,11 @@ const App = () => {
       path: "/admin",
       component: <Admin />,
     },
+    {
+      path: "*",
+      component: <ErrorPage />,
+    },
+   
   ];
   const currentPath = useLocation(); 
 
