@@ -1,7 +1,7 @@
 import React from 'react'
 import NavBar from './Components/Header/NavBar.jsx'
 import Body from './Pages/Body'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import Men from './Pages/Men'
 import Women from './Pages/Women'
 import Sports from './Pages/Sports'
@@ -75,17 +75,22 @@ const App = () => {
       component: <Admin />,
     },
   ];
+  const currentPath = useLocation();
   return (
     <>
-      <NavBar />
+      {
+        currentPath.pathname === '/admin' ? null :
+          <NavBar />
+      }
       <Routes>
         {
-          routes.map(({path,component})=> {return       <Route path={path} element={component} />
-        } )
+          routes.map(({ path, component }) => {
+            return <Route path={path} element={component} />
+          })
         }
-    </Routes>  
-    <Footer/>
-   
+      </Routes>
+      <Footer />
+
     </>
   );
 }

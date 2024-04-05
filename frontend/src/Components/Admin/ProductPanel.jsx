@@ -1,0 +1,40 @@
+import React, { useState } from 'react'
+import { IoSearch, IoNotificationsOutline } from "react-icons/io5";
+import AddProduct from './AddProduct';
+
+const ProductPanel = () => {
+    const [isAddProductActive, setIsAddProductActive] = useState(false);
+    const toggleAddProduct = () => {
+        setIsAddProductActive(prev => !prev);
+    }
+    return (
+        <div className='flex flex-col w-full'>
+            <div className='flex justify-between items-center'>
+                <div className='flex flex-col'>
+                    <span className='text-sm text-[#616161]'>Welcome back, Ananda</span>
+                    <span className='text-5xl font-semibold'>Overview</span>
+                </div>
+                <div className='flex items-center gap-4 px-2'>
+                    <IoSearch className='text-4xl bg-[#e1e1e1] p-2 rounded-full cursor-pointer hover:scale-110 duration-200' />
+                    <IoNotificationsOutline className='text-4xl bg-[#e1e1e1] p-2 rounded-full cursor-pointer hover:scale-110 duration-200' />
+                    <div className='flex items-center gap-2 p-2 rounded-3xl cursor-pointer hover:bg-[#e1e1e1]'>
+                        <img className='w-10 h-10 rounded-full' src="https://avatars.githubusercontent.com/u/105543272?v=4" alt="" />
+                        <span className='text-lg'>Ananda</span>
+                    </div>
+                </div>
+            </div>
+            <div className='flex gap-10'>
+                <div className='w-fit px-6 py-2 text-primary-text bg-button cursor-pointer' onClick={toggleAddProduct} >
+                    Add Product
+                </div>
+                {
+                    isAddProductActive && (
+                        <AddProduct onClose={toggleAddProduct} />
+                    )
+                }
+            </div>
+        </div>
+    )
+}
+
+export default ProductPanel
