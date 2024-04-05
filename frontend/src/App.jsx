@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import NavBar from './Components/Header/NavBar.jsx'
 import Body from './Pages/Body'
 import { Route, Routes, useLocation } from 'react-router-dom'
@@ -75,7 +75,9 @@ const App = () => {
       component: <Admin />,
     },
   ];
-  const currentPath = useLocation();
+  const currentPath = useLocation(); 
+
+  console.log(currentPath)
   return (
     <>
       {
