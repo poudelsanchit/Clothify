@@ -8,7 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { TfiWorld } from "react-icons/tfi";
 import { IoWalletOutline } from "react-icons/io5";
 import { useSelector } from 'react-redux';
-import { getSumOfProducts } from '../../redux/Slices/Cart/cartSlice';
+import { getSumOfProducts } from '../../../redux/Slices/Cart/cartSlice';
 import { useAuth0 } from '@auth0/auth0-react';
 
 const Billing = ({handleToggle}) => {
@@ -24,9 +24,8 @@ const Billing = ({handleToggle}) => {
   return (
     <div className='flex flex-col w-full items-center justify-center'>
 
-    <div className=" flex gap-4 w-full justify-center items-center ">
-      <div className="flex lg:flex-row flex-col gap-4 justify-between w-11/12 ">
-        <div className="flex flex-col  lg:gap-4 gap-2  lg:w-7/12 ">
+    <div className=" flex flex-col gap-4 w-full justify-center items-center ">
+    <div className='w-11/12'>
           <div className=" flex items-center gap-5">
             <IoIosArrowBack
               className="bg-[#3182ce] cursor-pointer text-white text-3xl rounded-md"
@@ -57,6 +56,10 @@ const Billing = ({handleToggle}) => {
               </BreadcrumbLink>
             </BreadcrumbItem>
           </Breadcrumb>
+          </div>
+      
+      <div className="flex lg:flex-row flex-row gap-4 justify-between w-11/12 ">
+        <div className="flex flex-col  lg:gap-4 gap-2  lg:w-7/12  ">
           <div className=" grid gap-4">
             <div className=" lg:py-10 lg:pl-8 py-2 pl-2 flex items-center gap-8 h-full border border-gray-300 rounded-md    ">
               <div className=" border rounded-full px-2 items-center justify-center font-bold">
@@ -225,7 +228,7 @@ const Billing = ({handleToggle}) => {
         </div>
 
        
-        <div className=" border h-fit rounded-lg grid gap-3 mt-5 lg:w-5/12 w-full ">
+        <div className=" border h-fit rounded-lg grid gap-3  lg:w-5/12 w-full ">
           <div className=" grid gap-2 px-6 pt-2">
             <div className=" border-b-[1px] py-2">
               <p className=" text-xl font-bold font-Poppins">Your Products</p>
@@ -234,7 +237,7 @@ const Billing = ({handleToggle}) => {
               products.map((items)=> { return (
                 <div className=" flex gap-4 font-Poppins border-b-[1px] pb-2">
                   <img
-                    src={items.image}
+                    src={items?.image && items?.image.length>0 ? items.image[0] : "" }
                     alt=""
                     className=" h-24 w-24 bg-orange-400 rounded-md object-cover"
                   />
@@ -288,7 +291,7 @@ const Billing = ({handleToggle}) => {
                   height={12}
                   _hover={{ bgColor: "#4F5054", color: "white" }}
                 >
-                Pay $117.00
+                Pay ${total}
                 </Button>
          
           </div>

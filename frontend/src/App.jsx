@@ -11,8 +11,13 @@ import Kids from './Pages/Kids'
 import Card from './Components/Cards/Card'
 import { useSelector, useDispatch } from 'react-redux'
 import Shipping from './Components/Payments/Cart/Cart.jsx'
+<<<<<<< HEAD
 import { Footer } from './Components/Footer/Footer'
 import Billing from './Components/Payments/Checkout.jsx'
+=======
+import {Footer} from './Components/Footer/Footer'
+import Billing from './Components/Payments/Checkout/Checkout.jsx'
+>>>>>>> 587a33cc3f26f6875a61d9883dabf05ebd432bf1
 import Contributors from './Pages/Contributers.jsx'
 import Favorites from './Pages/Favorites.jsx'
 import Admin from './Components/Admin/Admin.jsx'

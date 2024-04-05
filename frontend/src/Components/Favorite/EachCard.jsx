@@ -20,7 +20,7 @@ const EachCard = ({items,favorites}) => {
   }
   return (
     <>
-    <Link to={`/${items.type}/${items.productId}`}>
+    <Link to={`/${items.type}/${items._id}`}>
         <div className="h-96  rounded-md flex flex-col gap-1 cursor-pointer relative">
         <div className="  w-10 h-10 rounded-md absolute top-2 right-2 ">
         <IconButton
@@ -39,7 +39,7 @@ const EachCard = ({items,favorites}) => {
       </div>
 
           <img
-            src={items.image}
+            src={items ?.image && items?.image.length>0 ? items?.image[0]: '' }
             className="h-5/6 w-full object-cover rounded-t-md"
             alt=""
           />

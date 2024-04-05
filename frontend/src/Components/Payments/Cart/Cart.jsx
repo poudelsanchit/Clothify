@@ -1,5 +1,5 @@
 import { Button, IconButton, Stack } from '@chakra-ui/react';
-import EachCard from './EachCard';
+import EachCard from './EachCart';
 import { CiHeart, CiShoppingCart } from 'react-icons/ci';
 import { useSelector } from 'react-redux';
 import { getTotalPrice } from '../../../redux/Slices/Cart/cartSlice';
@@ -10,7 +10,6 @@ import { useEffect } from 'react';
 const Shipping = () => {
   const navigate = useNavigate();
   const cartItems = useSelector(state=>state.cart.items)
-  console.log(cartItems.length)
   const tax= 2;
 const total= useSelector(getSumOfProducts)
 
@@ -27,18 +26,20 @@ useEffect(()=>{
     {
       cartItems.length!==0? 
       <div className="flex flex-col w-full h-screen items-center  ">
-      <div className="flex lg:flex-row flex-col lg:w-11/12 w-full gap-10  ">
-        <div className=" lg:w-8/12 w-full font-Poppins flex flex-col lg:gap-5 gap-1 ">
-          <div className="lg:text-3xl text-xl font-medium tracking-tighter p-2 ">
+          <div className="lg:text-3xl text-xl font-medium tracking-tighter p-2 w-11/12 h-20  ">
             Prodcuts
           </div>
+      <div className="flex lg:flex-row flex-col lg:w-11/12 w-full gap-10  ">
+        
+        <div className=" lg:w-8/12 w-full font-Poppins flex flex-col lg:gap-5 gap-1 ">
+        
           <div className="flex flex-col gap-2 w-full p-2 ">
             {cartItems.map((items) => {
               return <EachCard items={items} />;
             })}
           </div>
         </div>
-        <div className="h-max lg:w-4/12 w-full  lg:pb-5  lg:mt-12  rounded-md  transition-all flex flex-col lg:pl-5 lg:pr-5 p-2 ">
+        <div className="h-max lg:w-4/12 w-full  lg:pb-5   rounded-md  transition-all flex flex-col lg:pl-5 lg:pr-5 p-2 ">
           <div className="w-full border-2  p-2 rounded-md lg:text-xl ">
             <div className="font-semibold  font-Poppins pb-2 border-b-2 pt-2">
               Order Summary
@@ -55,7 +56,7 @@ useEffect(()=>{
             <div className="  font-Poppins flex pb-2">
               {" "}
               <div>Total :</div>{" "}
-              <div className="ml-auto  text-red-600 font-semibold">
+              <div className="ml-auto  text-red-500 font-semibold">
                 {" "}
                 $ {total + 2}
               </div>{" "}

@@ -7,13 +7,11 @@ import axios from "axios";
 const Sports = () => {
   const [data,setData]= useState([])
   const fetchMenData = async()=>{
-    const res = await axios.get('http://localhost:3000/sports')
+    const res = await axios.get('http://localhost:5000/items/type/sports')
      setData(res.data)
   }
-
   useEffect(()=>{
     fetchMenData()
-
   },[])
  
   return (

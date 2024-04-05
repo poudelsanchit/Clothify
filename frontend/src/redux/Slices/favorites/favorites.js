@@ -10,10 +10,9 @@ const favoriteSlice = createSlice({
     reducers:{
         addToFavorites : ( state,action)=>{
             const newItem = action.payload;
-            console.log(newItem)
             
             // Check if the item is not already in favorites
-            const isAlreadyInFavorites = state.favorites.some(item => item.productId === newItem.productId);
+            const isAlreadyInFavorites = state.favorites.some(item => item._id === newItem._id);
             if (!isAlreadyInFavorites) {
                 state.favorites.push(newItem);
 
@@ -24,10 +23,10 @@ const favoriteSlice = createSlice({
         removeFromFavorites: (state,action)=>{
             const newItem = action.payload;
             console.log(newItem)
-            const isAlreadyInFavorites = state.favorites.some((item)=> item.productId === newItem.productId);
+            const isAlreadyInFavorites = state.favorites.some((item)=> item._id === newItem._id);
             if(isAlreadyInFavorites)
             {
-                state.favorites = state.favorites.filter((item)=> item.productId !== newItem.productId)
+                state.favorites = state.favorites.filter((item)=> item._id !== newItem._id)
             }
 
         },
