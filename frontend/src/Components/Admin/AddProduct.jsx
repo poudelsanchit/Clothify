@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { CiShoppingCart } from "react-icons/ci";
-import { useToast,Button } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 import { IoIosClose } from "react-icons/io";
 import axios from "axios";
+import { FaTrash } from "react-icons/fa6";
 
 const AddProduct = ({ onClose }) => {
-  const toast = useToast()
-
   const [productName, setProductName] = useState("");
   const [productDescription, setProductDescription] = useState("");
   const [category, setCategory] = useState("Mens");
@@ -30,17 +29,11 @@ const AddProduct = ({ onClose }) => {
       .post("http://localhost:5000/items/", productData)
       .then((response) => {
         console.log("Product added successfully:", response.data);
-        onClose();
-        toast({
-          title: "Product added.",
-          status: "success",
-          duration: 2000,
-          position: "top-right",
-          isClosable: true,
-        });
+        onClose(); // Close the dialog after successful posting
       })
       .catch((error) => {
         console.error("Error adding product:", error);
+        // You can handle error message or further actions here
       });
   };
 
@@ -51,7 +44,6 @@ const AddProduct = ({ onClose }) => {
   };
 
   const handleColorChange = (index, field, value) => {
-    console.log(field)
     const newData = [...colorData];
     newData[index] = { ...newData[index], [field]: value };
     setColorData(newData);
@@ -76,7 +68,7 @@ const AddProduct = ({ onClose }) => {
       ></div>
 
       {/* AddProduct Form */}
-      <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-4 bg-[#FBFBFB] h-max w-7/12 rounded-lg z-50 font-Roboto">
+      <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-4 bg-[#FBFBFB] h-max w-7/12 max-h-[100vh] overflow-y-auto rounded-lg z-50 font-Roboto">
         <div className="text-black text-xl  border-b-2 font-bold flex  justify-between">
           <div> Add Products</div>
           <IoIosClose onClick={onClose} className="text-4xl cursor-pointer" />
@@ -166,7 +158,7 @@ const AddProduct = ({ onClose }) => {
               <input
                 key={index}
                 type="text"
-                placeholder={`Image${index + 1}`}
+                placeholder={`Image URL ${index + 1}`}
                 className="w-full bg-[#F4F4F4] p-2 rounded-md pl-5 placeholder:text-sm"
                 value={imageUrls[index]}
                 onChange={(e) => handleImageUrlChange(index, e.target.value)}
@@ -175,7 +167,7 @@ const AddProduct = ({ onClose }) => {
           </div>
 
           {/* Colors */}
-          <div className="font-medium text-sm ">Colors & URLs</div>
+          <div className="font-medium text-sm ">Colors Urls</div>
           {colorData.map((color, index) => (
             <div key={index} className="flex gap-2">
               <input
@@ -187,24 +179,25 @@ const AddProduct = ({ onClose }) => {
               />
               <input
                 type="text"
-                placeholder={`Image URL ${index + 1}`}
+                placeholder={`Color URL ${index + 1}`}
                 className="w-full bg-[#F4F4F4] p-2 rounded-md pl-5 placeholder:text-sm"
                 value={color.url}
                 onChange={(e) => handleColorChange(index, "url", e.target.value)}
               />
-              <button
+               <button
                 type="button"
                 onClick={() => handleRemoveColor(index)}
                 className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
               >
-                Remove
+                <FaTrash />
+
               </button>
             </div>
           ))}
-          <button
+         <button
             type="button"
             onClick={handleAddColor}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded ml-auto w-32"
           >
             Add Color
           </button>
