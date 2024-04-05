@@ -7,9 +7,8 @@ const Admin = () => {
     const [sidebarItem, setSidebarItem] = useState(1);
 
     const fetchData = async () => {
-        const data = await axios.get("http://localhost:5000/api/items/")
-        console.log(data.data);
-
+        const data = await axios.get("http://localhost:5000/items/")
+        console.log(data.data)
     }
     useEffect(() => {
         fetchData();
