@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import NavBar from './Components/Header/NavBar.jsx'
 import Body from './Pages/Body'
 import { Route, Routes, useLocation } from 'react-router-dom'
@@ -16,6 +16,7 @@ import Billing from './Components/Payments/Checkout/Checkout.jsx'
 import Contributors from './Pages/Contributers.jsx'
 import Favorites from './Pages/Favorites.jsx'
 import Admin from './Components/Admin/Admin.jsx'
+import ErrorPage from './Pages/ErrorPage.jsx'
 
 
 const App = () => {
@@ -74,8 +75,15 @@ const App = () => {
       path: "/admin",
       component: <Admin />,
     },
+    {
+      path: "*",
+      component: <ErrorPage />,
+    },
+   
   ];
-  const currentPath = useLocation();
+  const currentPath = useLocation(); 
+
+  console.log(currentPath)
   return (
     <>
       {
