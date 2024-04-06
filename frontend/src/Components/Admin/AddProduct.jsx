@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { CiShoppingCart } from "react-icons/ci";
-import { Button } from "@chakra-ui/react";
+import { Button,useToast } from "@chakra-ui/react";
 import { IoIosClose } from "react-icons/io";
 import axios from "axios";
 import { FaTrash } from "react-icons/fa6";
 
 const AddProduct = ({ onClose }) => {
+  const toast = useToast();
   const [productName, setProductName] = useState("");
   const [productDescription, setProductDescription] = useState("");
   const [category, setCategory] = useState("Mens");
@@ -30,11 +31,19 @@ const AddProduct = ({ onClose }) => {
       .then((response) => {
         console.log("Product added successfully:", response.data);
         onClose(); // Close the dialog after successful posting
+        toast({
+          title: "Product added to cart.",
+          status: "success",
+          duration: 2000,
+          position: "top-right",
+          isClosable: true,
+        });
       })
       .catch((error) => {
         console.error("Error adding product:", error);
         // You can handle error message or further actions here
       });
+
   };
 
   const handleImageUrlChange = (index, url) => {
