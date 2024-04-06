@@ -6,7 +6,7 @@ import Clothify from '../../assets/clothify-dark.png'
 
 export function Footer() {
   return (
-    <div className=" border-t-2  shadow-2xl  bottom-0  w-full font-roboto h-14 flex items-center px-8 justify-around mt-10">
+    <div className=" border-t-2  shadow-2xl  bottom-0  w-full font-roboto h-14 flex items-center px-8 justify-around">
       <div className="">
         <Link to={"/"}>
           <img src={Clothify} alt="" className="h-8" />
