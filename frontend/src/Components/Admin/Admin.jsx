@@ -5,18 +5,20 @@ import AdminPanel from './AdminPanel'
 
 const Admin = () => {
     const [sidebarItem, setSidebarItem] = useState(1);
+    const [allProducts, setAllProducts] = useState([]);
 
     const fetchData = async () => {
-        const data = await axios.get("http://localhost:5000/items/")
-        console.log(data.data)
+        const response = await axios.get("http://localhost:5000/items/")
+        setAllProducts(response.data);
+        // console.log(response.data)
     }
     useEffect(() => {
         fetchData();
     }, [])
     return (
-        <div className='h-[87vh] font-Poppins flex justify-start'>
+        <div className='min-h-[87vh] font-Poppins flex justify-start'>
             <AdminSidebar sidebarItem={sidebarItem} setSidebarItem={setSidebarItem} />
-            <AdminPanel sidebarItem={sidebarItem} />
+            <AdminPanel sidebarItem={sidebarItem} allProducts={allProducts} />
         </div>
     )
 }
