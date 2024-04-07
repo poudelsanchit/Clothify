@@ -3,6 +3,7 @@ import Offer from "../Components/Swipers/Offer";
 import Nissbody from "../Components/NisseProduct/Nissbody";
 import ProductsSwiper from "../Components/Swipers/ProductsSwiper";
 import axios from "axios";
+import Loader from "../Components/Loaders/Loader";
 
 const Sports = () => {
   const [data,setData]= useState([])
@@ -15,6 +16,9 @@ const Sports = () => {
   },[])
  
   return (
+    <>
+    {
+       data.length ==0 ? <Loader/> :
     <div className=" p-0 flex flex-col items-start  w-full min-h-screen">
       {/* <Offer />
       <Nissbody /> */}
@@ -30,6 +34,8 @@ const Sports = () => {
         </div>
         </div>
     </div>
+}
+</>
   );
 };
 

@@ -11,7 +11,7 @@ const EachCard = ({data,type}) => {
                 <img
                   src={data.image[0]}
                   alt=""
-                  className="h-[30rem] w-full rounded-md object-cover bg-purple-500"
+                  className="h-[30rem] w-full rounded-md object-cover"
                 />
                 <div className="text-lg font-medium">{data.name}</div>
                 <div className="text-secondary-text">{data.category}</div>

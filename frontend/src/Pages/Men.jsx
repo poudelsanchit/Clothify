@@ -3,6 +3,8 @@ import Offer from "../Components/Swipers/Offer";
 import Nissbody from "../Components/NisseProduct/Nissbody";
 import ProductsSwiper from "../Components/Swipers/ProductsSwiper";
 import axios from "axios";
+import Loader from "../Components/Loaders/Loader";
+
 
 const Men = () => {
   const [data,setData]= useState([])
@@ -15,9 +17,14 @@ const Men = () => {
     fetchMenData()
 
   },[])
+  console.log(data.length)
  
   return (
-    <div className=" p-0 flex flex-col items-start  w-full">
+    <>
+   
+    {
+      data.length ==0 ? <Loader/> :
+      <div className=" p-0 flex flex-col items-start  w-full">
       {/* <Offer /> */}
       {/* <Nissbody
         title={"Men"}
@@ -31,18 +38,18 @@ const Men = () => {
       /> */}
       <div className="w-full h-auto flex justify-center mb-4" id="homeShop">
         <div className="w-11/12">
-          {
-
-            data.length !==0? <>
             <ProductsSwiper products={data} title={"Men"} type={"mens"} />
             <ProductsSwiper products={data} title={""} type={"mens"} />
 
-            </>  : <h1>No products Available..</h1>
+            
 
-          }
+          
         </div>
       </div>
     </div>
+    }
+     </>
+    
     
   );
 };
