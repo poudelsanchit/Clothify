@@ -11,3 +11,10 @@
 *{
     scroll-behavior: smooth;
 }
+
+.neuphorism{
+    border-radius: 12px;
+    background: #FFFFFF;
+    box-shadow:  15px 15px 38px #bfbfbf,
+                 -15px -15px 38px #ffffff;
+}

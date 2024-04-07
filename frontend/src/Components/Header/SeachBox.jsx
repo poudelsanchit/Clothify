@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import SearchedItem from "./SearchedItem";
+import SearchedItem from './SearchedItem';
 
 const SeachBox = ({ searchQuery }) => {
   const [items, setItems] = useState([]);
@@ -8,24 +8,14 @@ const SeachBox = ({ searchQuery }) => {
   const fetchData = async () => {
     try {
       const requests = [
-        axios.get("http://localhost:3000/popular"),
-        axios.get("http://localhost:3000/bestsales"),
-        axios.get("http://localhost:3000/bestchoices"),
-        axios.get("http://localhost:3000/women"),
-        axios.get("http://localhost:3000/sports"),
-        axios.get("http://localhost:3000/men"),
+        axios.get("http://localhost:5000/items/"),
       ];
 
-      const [data1, data2, data3, data4, data5, data6] = await Promise.all(
+      const [data1] = await Promise.all(
         requests
       );
       const combinedData = [
-        ...data1.data,
-        ...data2.data,
-        ...data3.data,
-        ...data4.data,
-        ...data5.data,
-        ...data6.data,
+        ...data1.data
       ];
 
       setItems(combinedData);

@@ -54,13 +54,13 @@ const Contributors = () => {
               key={index}
               href={contributor.html_url}
               target="_blank"
-              className="w-fit min-w-[20rem] h-fit flex justify-between border-2  border-secondary-bg rounded-lg font-normal font-Poppins transition-all text-dark-bg hover:scale-105 opacity-90 hover:opacity-100 "
+              className="w-fit min-w-[30rem] h-fit flex justify-between border-2  border-secondary-bg rounded-lg font-normal font-Poppins transition-all text-dark-bg hover:scale-105 opacity-90 hover:opacity-100 "
             >
               <div className="flex items-center gap-2 p-2">
                 <img
                   src={contributor.avatar_url}
                   alt=""
-                  className=" w-20 rounded-full "
+                  className=" w-24 rounded-full "
                 />
                 <div className="flex flex-col gap-2">
                   <h3 className="text-md">{contributor?.login}</h3>

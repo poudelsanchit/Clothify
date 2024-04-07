@@ -16,7 +16,6 @@ const NavBar = () => {
   const { user, isAuthenticated, isLoading, loginWithRedirect, logout } =
     useAuth0();
   const [isActive, setIsActive] = useState(false);
-  const [isSearchFocused, setIsSearchFocused] = useState(false); // Track input focus
 
 
   const productsCount = useSelector(getProductsCount);
@@ -41,14 +40,13 @@ const NavBar = () => {
               type="text"
               className="bg-[#f4f4f4] rounded-xl focus:outline-none  text-[#a6a6a6] h-10 w-32 sm:w-72 sm:placeholder:text-sm sm:text-sm text-xs placeholder:text-xs"
               placeholder="Search"
-              onFocus={() => setIsSearchFocused(true)}
-              onBlur={() => setIsSearchFocused(false)}
               value={searchText}
               onChange={(e)=>setSearchText(e.target.value)}
             />
           </div>
-          {isSearchFocused && 
-          <SeachBox  searchQuery={searchText}/>
+          
+          {searchText !== '' ? 
+          <SeachBox  searchQuery={searchText}/>  : null
           }
         </div>
 

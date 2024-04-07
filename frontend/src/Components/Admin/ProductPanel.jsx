@@ -64,7 +64,7 @@ const ProductPanel = ({ allProducts }) => {
                 {
                     adminItems.map(({ logo, title, totalStats, growth, percent, thisWeek }) => {
                         return (
-                            <div className='min-w-60 min-h-40 bg-[#e1e1e1] flex flex-col items-start justify-center p-4 gap-3'>
+                            <div className='min-w-60 min-h-40 bg-[#e1e1e1] flex flex-col items-start justify-center p-4 gap-3 neuphorism '>
                                 <div className='flex items-center gap-1 text-sm'>
                                     <span className='text-xl rounded-full'>
                                         {logo}

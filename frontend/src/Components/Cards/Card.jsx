@@ -57,7 +57,7 @@ const Card = () => {
   useEffect(()=>{
     window.scrollTo({behavior:'smooth',left:0, top:0})
     fetchData();
-  },[])
+  },[id])
 
   const isProductInFavorites = favoriteItems.some(item => item._id === id.id);
   console.log(isProductInFavorites)
@@ -172,7 +172,7 @@ const Card = () => {
               </div>
             </div>
             <div className="font-bold font-Poppins text-4xl hidden sm:block">
-              {product?.price}
+              ${product?.price}
             </div>
             <div className="flex flex-col">
               <div className="flex font-Poppins text-sm items-center">

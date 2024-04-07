@@ -15,7 +15,7 @@ const EachCard = ({data,type}) => {
                 />
                 <div className="text-lg font-medium">{data.name}</div>
                 <div className="text-secondary-text">{data.category}</div>
-                <div className="font-medium w-[30rem] ">{data?.price}</div>
+                <div className="font-medium w-[30rem] ">${data?.price}</div>
               </div>
   );
 }
