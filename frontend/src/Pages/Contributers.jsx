@@ -44,8 +44,11 @@ const Contributors = () => {
             </div>
           </a>
         </div>
-        <div className="font-semibold text-2xl mt-4">Github Contributors:</div>
-        <div className="flex gap-4 flex-wrap w-full justify-center ">
+        <div className="font-semibold text-2xl mt-4 w-8/12">Github Contributors:</div>
+
+        <div className="  flex justify-center  w-full ">
+          <div className="w-8/12 grid grid-cols-2 gap-10">
+            
           {contributors.length !==0 ?contributors.map((contributor, index) => (
             <a
               key={index}
@@ -72,6 +75,7 @@ const Contributors = () => {
               </div>
             </a>
           )) : <div>loading....</div>}
+        </div>
         </div>
       </div>
     </div>
