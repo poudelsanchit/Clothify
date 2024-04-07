@@ -18,7 +18,7 @@ const Women = () => {
  
   return (
     <div className=" p-0 flex flex-col items-start  w-full min-h-screen">
-      <Offer />
+      {/* <Offer /> */}
       {/* <Nissbody />  */}
       <div className="w-full h-auto flex justify-center mb-4" id="homeShop">
         <div className="w-11/12">

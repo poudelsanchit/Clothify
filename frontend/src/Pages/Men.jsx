@@ -18,7 +18,7 @@ const Men = () => {
  
   return (
     <div className=" p-0 flex flex-col items-start  w-full">
-      <Offer />
+      {/* <Offer /> */}
       {/* <Nissbody
         title={"Men"}
         imgurl={

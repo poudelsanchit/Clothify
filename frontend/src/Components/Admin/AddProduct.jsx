@@ -122,7 +122,7 @@ const AddProduct = ({ onClose }) => {
                   onChange={(e) => setCategory(e.target.value)}
                   className="w-full bg-[#F4F4F4] p-2 rounded-md pl-5 placeholder:text-sm"
                 >
-                  {["Mens", "Women", "Sports"].map((option, index) => (
+                  {["Mens", "Women", "Sports","popular","bestsales","bestchoices"].map((option, index) => (
                     <option key={index}>{option}</option>
                   ))}
                 </select>
