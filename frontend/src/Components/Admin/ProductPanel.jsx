@@ -73,29 +73,34 @@ const ProductPanel = ({ allProducts }) => {
                         )
                     }
                 </div>
-                <table>
-                    <tr className='bg-black text-primary-text'>
+                <table  >
+                    <tr className='bg-[#F8FAFC] text-black font-bold text-xl border-b border-[#e1e1e1] font-roboto '>
                         <td className='p-2'>Image</td>
                         <td className='p-2'>Name</td>
+                        <td className='p-2'>Category</td>
                         <td className='p-2'>Price</td>
                         <td className='p-2'>Action</td>
                     </tr>
                     {
-                        allProducts.map(({ image, name, price }) => {
+                        allProducts.map(({ image, name, price,productType }) => {
                             return (
-                                <tr className='border-b border-[#e1e1e1]'>
+                                <tr className='border-b border-[#e1e1e1] tracking-tight'>
                                     <td className='p-2 w-[10%]'>
-                                        <img className='w-28 h-28' src={image[0]} alt="" />
+                                        <img className='w-16 h-16 rounded-sm object-cover' src={image[0]} alt="" />
                                     </td>
-                                    <td className='p-2 w-[30%]'>{name}</td>
+                                    <td className='p-2 w-[40%]'>{name}</td>
+                                    <td className='p-2 w-[10%]'>{productType}</td>
                                     <td className='p-2 w-[10%]'>${price}</td>
-                                    <td className='p-2 w-[10%]'>
-                                        <div className='mb-2 w-fit text-2xl py-1 px-3 text-black text-center cursor-pointer rounded-md hover:scale-110 duration-200'>
+                                    <td className='p-2 w-[10%] '>
+                                        <div className='flex  items-center gap-5'>
+                                        <div className=' w-fit p-2 bg-blue-600 rounded-md    text-white text-2xl text-center cursor-pointer  hover:scale-110 duration-200'>
                                             <CiEdit />
                                         </div>
-                                        <div className='mt-2 w-fit text-2xl py-1 px-3 text-black text-center cursor-pointer rounded-md hover:scale-110 duration-200'>
+                                        <div className=' w-fit p-2 bg-red-600 rounded-md    text-white text-2xl text-center cursor-pointer  hover:scale-110 duration-200'>
                                             <MdDelete />
                                         </div>
+                                        </div>
+                                       
                                     </td>
                                 </tr>
                             )
