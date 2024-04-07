@@ -3,8 +3,11 @@ import AddProduct from './AddProduct';
 import { MdVisibility, MdArrowUpward, MdOutlineArrowDownward, MdDelete } from "react-icons/md";
 import { FaArrowTrendUp, FaArrowTrendDown } from "react-icons/fa6";
 import { CiEdit } from "react-icons/ci";
+import { useToast } from "@chakra-ui/react";
+import axios from 'axios'
 
 const ProductPanel = ({ allProducts }) => {
+    const toast = useToast();
     const [isAddProductActive, setIsAddProductActive] = useState(false);
     const toggleAddProduct = () => {
         setIsAddProductActive(prev => !prev);
@@ -35,6 +38,26 @@ const ProductPanel = ({ allProducts }) => {
             thisWeek: '-128',
         },
     ]
+    const handleDelete=(_id)=>{
+        axios.delete(`http://localhost:5000/items/${_id}`)
+        .then(response => {
+            console.log('Product deleted:', _id);
+            window.location.reload();
+            toast({
+                title: "Product Removed.",
+                status: "warning",
+                duration: 2000,
+                position: "top-right",
+                isClosable: true,
+              });
+        })
+        .catch(error => {
+            // Handle error
+            console.error('Error deleting product:', error);
+        });
+
+
+    }
     return (
         <div className='flex flex-col w-full gap-6'>
             <div className='flex justify-evenly'>
@@ -82,7 +105,7 @@ const ProductPanel = ({ allProducts }) => {
                         <td className='p-2'>Action</td>
                     </tr>
                     {
-                        allProducts.map(({ image, name, price,productType }) => {
+                        allProducts.map(({ image, name, price,productType,_id }) => {
                             return (
                                 <tr className='border-b border-[#e1e1e1] tracking-tight'>
                                     <td className='p-2 w-[10%]'>
@@ -96,7 +119,7 @@ const ProductPanel = ({ allProducts }) => {
                                         <div className=' w-fit p-2 bg-blue-600 rounded-md    text-white text-2xl text-center cursor-pointer  hover:scale-110 duration-200'>
                                             <CiEdit />
                                         </div>
-                                        <div className=' w-fit p-2 bg-red-600 rounded-md    text-white text-2xl text-center cursor-pointer  hover:scale-110 duration-200'>
+                                        <div className=' w-fit p-2 bg-red-600 rounded-md    text-white text-2xl text-center cursor-pointer  hover:scale-110 duration-200' onClick={()=>handleDelete(_id)}>
                                             <MdDelete />
                                         </div>
                                         </div>

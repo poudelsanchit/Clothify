@@ -8,11 +8,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { TfiWorld } from "react-icons/tfi";
 import { IoWalletOutline } from "react-icons/io5";
 import { useSelector } from 'react-redux';
-<<<<<<< HEAD:src/Components/Payments/Checkout.jsx
-import { getSumOfProducts } from '../../redux/Slices/Cart/cartSlice';
-=======
+
 import { getSumOfProducts } from '../../../redux/Slices/Cart/cartSlice';
->>>>>>> fullstack:frontend/src/Components/Payments/Checkout/Checkout.jsx
 import { useAuth0 } from '@auth0/auth0-react';
 
 const Billing = ({handleToggle}) => {
