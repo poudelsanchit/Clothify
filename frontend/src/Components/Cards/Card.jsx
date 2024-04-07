@@ -240,7 +240,7 @@ const Card = () => {
           </div>
         </div>
       </div>
-      <Reviews data={product.reviews} />
+      {/* <Reviews data={product.reviews} /> */}
     </div>
   );
 }
