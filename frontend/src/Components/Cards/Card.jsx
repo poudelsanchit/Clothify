@@ -22,7 +22,7 @@ const Card = () => {
   const [product,setProducts]= useState([])
 
   const fetchData=async()=>{
-    const response = await axios.get(`http://localhost:5000/items/type/${type}`)
+    const response = await axios.get(`https://clothify-api.onrender.com/items/type/${type}`)
     const products = response.data;
     const foundProduct = products.find(product => product._id === id.id);
     setProducts(foundProduct);
