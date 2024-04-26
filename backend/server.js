@@ -11,7 +11,7 @@ const itemRoute = require("./routes/itemRoute");
 
 app.use(express.json());
 
-mongoose.connect(process.env.URI)
+mongoose.connect("mongodb+srv://snchtpdl12:TQGwmEuItBVYxoW7@cluster0.wvby1km.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
   .then(() => {
     console.log("Connected Successfully");
     app.listen(process.env.PORT || 8000, () => {
