@@ -9,7 +9,7 @@ import Loader from "../Components/Loaders/Loader";
 const Men = () => {
   const [data,setData]= useState([])
   const fetchMenData = async()=>{
-    const res = await axios.get('http://localhost:5000/items/type/mens')
+    const res = await axios.get('https://clothify-api.onrender.com/items/type/mens')
      setData(res.data)
   }
 

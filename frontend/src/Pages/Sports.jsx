@@ -8,7 +8,7 @@ import Loader from "../Components/Loaders/Loader";
 const Sports = () => {
   const [data,setData]= useState([])
   const fetchMenData = async()=>{
-    const res = await axios.get('http://localhost:5000/items/type/sports')
+    const res = await axios.get('https://clothify-api.onrender.com/items/type/sports')
      setData(res.data)
   }
   useEffect(()=>{
