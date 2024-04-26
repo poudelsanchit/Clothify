@@ -6,18 +6,18 @@ const HomeShop = () => {
 
   const [popular,setProducts]= useState([])
   const fetchData=async()=>{
-    const ProductsData = await axios.get('http://localhost:5000/items/type/popular')
+    const ProductsData = await axios.get('https://clothify-api.onrender.com/items/type/popular')
     setProducts(ProductsData.data)
   }
   const [bestsales,setProducts2]= useState([])
   const fetchProducts2=async()=>{
-    const ProductsData = await axios.get('http://localhost:5000/items/type/bestsales')
+    const ProductsData = await axios.get('https://clothify-api.onrender.com/items/type/bestsales')
     setProducts2(ProductsData.data)
 
   }
   const [bestchoices,setProducts3]= useState([])
   const fetchProducts3=async()=>{
-    const ProductsData = await axios.get('http://localhost:5000/items/type/bestchoices')
+    const ProductsData = await axios.get('https://clothify-api.onrender.com/items/type/bestchoices')
     setProducts3(ProductsData.data)
 
   }
