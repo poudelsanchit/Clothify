@@ -7,7 +7,7 @@ const EachCard = ({data,type}) => {
 
      }
   return (
-    <div className="flex p-2 flex-col w-full font-Poppins cursor-pointer opacity-95 hover:opacity-100" onClick={navigateToShoe} >
+    <div className="flex p-2 flex-col w-full font-Poppins cursor-pointer opacity-95 hover:opacity-100 " onClick={navigateToShoe} >
                 <img
                   src={data.image[0]}
                   alt=""

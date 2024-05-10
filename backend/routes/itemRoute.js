@@ -59,6 +59,7 @@ router.get("/:id",async(req,res)=>{
   try {
     const singleItem = await User.findById({_id:id})
     res.status(200).json(singleItem);
+    
 
   } catch (error) {
     console.error("Error fetching users:", error);

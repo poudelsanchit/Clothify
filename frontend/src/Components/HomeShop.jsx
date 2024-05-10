@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ProductsSwiper from "./Swipers/ProductsSwiper";
+import Loader from "./Loaders/Loader";
 
 const HomeShop = () => {
 
@@ -30,20 +31,21 @@ const HomeShop = () => {
   return (
     <div className="w-full h-auto flex justify-center mb-4" id="homeShop">
       <div className="w-11/12">
+        
         {popular.length !== 0 ? (
           <ProductsSwiper
             products={popular}
             title={"Popular right now"}
             type={"popular"}
           />
-        ) : null}
+        ) : <Loader/>}
         {bestsales.length !== 0 ? (
           <ProductsSwiper
             products={bestsales}
             title={"Best sales"}
             type={"bestsales"}
           />
-        ) : null}
+        ) : <Loader/>}
 
         {bestchoices.length !== 0 ? (
           <ProductsSwiper
@@ -51,7 +53,7 @@ const HomeShop = () => {
             title={"Best Choices"}
             type={"bestchoices"}
           />
-        ) : null}
+        ) : <Loader/>}
         {
           (popular.length ===0 && bestsales.length ===0 && bestchoices.length===0) ?  <h1>No products available</h1> : null
         }
