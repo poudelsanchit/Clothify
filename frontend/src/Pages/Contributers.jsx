@@ -37,7 +37,7 @@ const Contributors = () => {
             </div>
             <p className="text-md">
               Visit this project's github repository and do give it a star if
-              you liked our work.
+              you liked our work. Thank you.
             </p>
             <div className="rounded-r-md h-full bg-button p-2 text-white flex items-center text-3xl border-l-2 border-dark-bg">
               <PiGithubLogoThin />
